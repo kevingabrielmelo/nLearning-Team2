@@ -1,0 +1,54 @@
+#header{
+    background: #1a1a1a;
+}
+.body{
+    background: white;
+}
+
+.main_cadastro{
+    width: 1000px;
+	margin: 0px auto;
+    flex-direction: row;
+}
+
+.titulo_cadastro{
+    margin-top: 5%;
+    color: #131549;
+    
+    font-family: 'Roboto';
+    font-size: 46px;
+    font-weight: 300;
+}
+
+.titulos_forms{
+    color: #000000;
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+#margem_bot{
+    margin-bottom: 40%;
+}
+
+.input_forms{
+    height: 30px;
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.botao_salvar{
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 20px;
+    
+    height: 32px;
+    width: 100px;
+    margin-bottom: 10%;
+    margin-left: 20%;
+    margin-top: 36px;
+
+    background: #131549;
+    color: white;
+}
