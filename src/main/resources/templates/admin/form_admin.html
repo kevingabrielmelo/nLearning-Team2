@@ -26,6 +26,9 @@ Released   : 20132402
 <link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
 <link href="/bootstrap/css/lightbox.min.css" rel="stylesheet">
 <link href="/bootstrap/css/style.css" rel="stylesheet">
+<script type="text/javascript" src="/js/maskTel.js"> </script> <!-- Máscara para o telefone -->
+
+
 <!--[if IE 6]>
 <link href="default_ie6.css" rel="stylesheet" type="text/css" />
 <![endif]-->
@@ -57,7 +60,7 @@ Released   : 20132402
                 <input class="input_forms" type='text' placeholder="CPF" name="cpf"/>
     
                 <h3 class="titulos_forms">Telefone</h3>
-                <input class="input_forms" type='text' placeholder="Telefone" name="telefone"/>
+                <input class="input_forms" type='text' id="telefone" onkeypress="mascara(this, mtel);" placeholder="Telefone" name="telefone"/>
 
                 <h3 class="titulos_forms ">Endereço</h3>
                 <input id="margem_bottom" class="input_forms" type='text' placeholder="Endereço" name="endereco"/>
