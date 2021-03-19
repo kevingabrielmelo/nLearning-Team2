@@ -14,24 +14,24 @@ Edryan Matheus dos Santos Maciel (Dev Team)
 [Github](https://github.com/edryan25))
 
 José Alberto Martins de França  (Product Owner)
-([Linkedin](),
-[Github]())
+([Linkedin](https://www.linkedin.com/mwlite/in/jos%C3%A9-alberto-martins-de-fran%C3%A7a-041506170),
+[Github](https://github.com/BettoFranca))
 
 Kevin Gabriel Alves de Melo (Dev Team)
 ([Linkedin](https://www.linkedin.com/in/kevin-melo-1004/),
 [Github](https://github.com/kevingabrielmelo))
 
 Kauan do Espirito Santo Souza (Dev Team)
-([Linkedin](),
-[Github]())
+([Linkedin](https://www.linkedin.com/in/kauan-souza-284bb71b1/),
+[Github](https://github.com/Kauiaiai))
 
 Luiz Miguel Macedo Andre (Scrum Master)
 ([Linkedin](https://www.linkedin.com/in/luiz-miguel-475347193/),
 [Github](https://github.com/Salitop))
 
 Wagner Kenji Franco (Dev Team)
-([Linkedin](),
-[Github]())
+([Linkedin](https://www.linkedin.com/in/wagner-kenji-franco-kamoei-6883791b2/),
+[Github](https://github.com/UmCaraDaNet))
 
 ## Cards das Sprints
 
