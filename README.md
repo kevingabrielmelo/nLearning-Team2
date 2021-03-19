@@ -10,8 +10,8 @@ Daniel Vargas Ribeiro (Dev Team)
 [Github](https://github.com/DanVargaa))
 
 Edryan Matheus dos Santos Maciel (Dev Team)
-([Linkedin](),
-[Github]())
+([Linkedin](https://www.linkedin.com/in/edryan-maciel-43538b198/),
+[Github](https://github.com/edryan25))
 
 José Alberto Martins de França  (Product Owner)
 ([Linkedin](),
