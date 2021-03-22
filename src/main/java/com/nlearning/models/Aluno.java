@@ -14,7 +14,7 @@ public class Aluno implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id_aluno;
+	private long idAluno;
 	
 	private String nome;
 	private String email;
@@ -22,12 +22,12 @@ public class Aluno implements Serializable {
 	private String cpf;
 	private String telefone;
 	private String endereco;
-	 
-	public long getId_aluno() {
-		return id_aluno;
+	
+	public long getIdAluno() {
+		return idAluno;
 	}
-	public void setId_aluno(long id_aluno) {
-		this.id_aluno = id_aluno;
+	public void setIdAluno(long idAluno) {
+		this.idAluno = idAluno;
 	}
 	public String getNome() {
 		return nome;

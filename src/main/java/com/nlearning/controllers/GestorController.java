@@ -2,8 +2,10 @@ package com.nlearning.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.nlearning.models.Gestor;
 import com.nlearning.repository.GestorRepository;
@@ -23,5 +25,21 @@ public class GestorController {
 	public String form(Gestor gestor) {
 		gestorRepository.save(gestor);
 		return "redirect:cadastrarGestor";
+	}
+	
+	@RequestMapping(value = "/gestor/{idGestor}", method = RequestMethod.GET)
+	public ModelAndView detalhesEvento(@PathVariable("idGestor") Long idGestor) {
+		Gestor gestor = gestorRepository.findByIdGestor(idGestor);
+		ModelAndView mv = new ModelAndView("gestor/update_gestor");
+		mv.addObject("gestor", gestor);
+		
+		return mv;
+	}
+
+	@RequestMapping(value = "/gestor/{idGestor}", method = RequestMethod.POST)
+	public String form_update(Gestor gestor , Long idGestor) {
+		gestorRepository.findByIdGestor(idGestor);
+		gestorRepository.save(gestor);
+		return "redirect:/";
 	}
 }
