@@ -14,7 +14,7 @@ public class Tutor implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id_tutor;
+	private long idTutor;
 	
 	private String nome;
 	private String email;
@@ -22,11 +22,12 @@ public class Tutor implements Serializable {
 	private String cpf;
 	private String telefone;
 	private String endereco;
-	public long getId_tutor() {
-		return id_tutor;
+	
+	public long getIdTutor() {
+		return idTutor;
 	}
-	public void setId_tutor(long id_tutor) {
-		this.id_tutor = id_tutor;
+	public void setIdTutor(long idTutor) {
+		this.idTutor = idTutor;
 	}
 	public String getNome() {
 		return nome;

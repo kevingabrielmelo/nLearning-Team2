@@ -5,5 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import com.nlearning.models.Aluno;
 
 public interface AlunoRepository extends CrudRepository<Aluno, String>{
-	//Aluno findByid(long codigo);
+	//Procura Aluno por ID
+	Aluno findByIdAluno(Long codigo);
 }
