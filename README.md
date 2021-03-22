@@ -1,74 +1,70 @@
+# Lista de Requisitos
+![requisitos1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/req1.PNG)
 
-## Projeto
+Feito por Kevin Gabriel 
 
-O projeto Ness Health consiste em uma API desenvolvida usando Java spring-boot e um website desenvolvido utilizando HTML, CSS e JavaScript. Com essas ferramentas desenvolveremos um sistema, para educação a distância, visando organização, facilitando a comunicação entre alunos e tutores e uma auto-avaliação realizada pelo aluno, para que seja possível alcançar o máximo desempenho de ensino.
+![requisitos2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/req2.PNG)
 
-## Time
+Feito por Kevin Gabriel 
 
-Daniel Vargas Ribeiro (Dev Team)
-([Linkedin](https://www.linkedin.com/in/daniel-vargas-8b806a184/),
-[Github](https://github.com/DanVargaa))
+# User Stories
+![user1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/user1.PNG)
 
-Edryan Matheus dos Santos Maciel (Dev Team)
-([Linkedin](https://www.linkedin.com/in/edryan-maciel-43538b198/),
-[Github](https://github.com/edryan25))
+Feito por Kauan Souza e Edryan Matheus
 
-José Alberto Martins de França  (Product Owner)
-([Linkedin](https://www.linkedin.com/mwlite/in/jos%C3%A9-alberto-martins-de-fran%C3%A7a-041506170),
-[Github](https://github.com/BettoFranca))
+![user2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/user1.PNG)
 
-Kevin Gabriel Alves de Melo (Dev Team)
-([Linkedin](https://www.linkedin.com/in/kevin-melo-1004/),
-[Github](https://github.com/kevingabrielmelo))
+Feito por Kauan Souza e Edryan Matheus
 
-Kauan do Espirito Santo Souza (Dev Team)
-([Linkedin](https://www.linkedin.com/in/kauan-souza-284bb71b1/),
-[Github](https://github.com/Kauiaiai))
+# Modelagem do banco
+![model](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/modelagem%20banco.jpg)
 
-Luiz Miguel Macedo Andre (Scrum Master)
-([Linkedin](https://www.linkedin.com/in/luiz-miguel-475347193/),
-[Github](https://github.com/Salitop))
+Feito por Kevin Gabriel e Edryan Matheus
 
-Wagner Kenji Franco (Dev Team)
-([Linkedin](https://www.linkedin.com/in/wagner-kenji-franco-kamoei-6883791b2/),
-[Github](https://github.com/UmCaraDaNet))
+# Log e relacionamentos do banco
+![log](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/log%20e%20relacionamento%20banco.jpg)
 
-## Cards das Sprints
+Feito por Kevin Gabriel e Edryan Matheus
 
-![card1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_1.png)
+# Wireframes
+## Index
+![index](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/index.gif)
 
-![card_2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_2.png)
+Feito por Wagner Kenji e José Alberto 
 
-![card_3](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_3.png)
+## Telas de Login
+![login](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/Login_e_Telas.PNG)
 
-![card_4](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_4.png)
+Feito por Wagner Kenji e José Alberto 
 
-## Entregas
+## Tela de bem vindo para o administrador
+![admbv](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/BemVindo_adm.PNG)
 
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_1'> Branch 1 </a>-
-21/09/2020 a 27/09/2020
+Feito por Wagner Kenji e José Alberto 
 
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_2'> Branch 2 </a>-
-12/10/2020 a 18/10/2020	
+## Telas de Cadastro
+![cadastros](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/TelasDeCadastro.PNG)
 
+Feito por Wagner Kenji e José Alberto 
 
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_3'> Branch 3 </a>- 
-02/11/2020 a 08/11/2020	
+# Telas prontas
 
+# Cadastro administrador
+![cad1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/Cadastro1.PNG)
 
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_4'> Branch 4 </a>-
-23/11/2020 a 29/11/2020
+Feito por Daniel Vargas
 
-## Tecnologias Usadas
+# Cadastro aluno
+![cad2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/Cadastro2.PNG)
 
-Eclipse
+Feito por Daniel Vargas
 
-Java JDK 11
+# Cadastro Gestor
+![cad3](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/Cadastro3.PNG)
 
-MySQL
+Feito por Daniel Vargas
 
-Springboot
+# Cadastro Tutor
+![cad4](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/Cadastro4.PNG)
 
-Vscode
-
-Bootstrap
+Feito por Daniel Vargas
