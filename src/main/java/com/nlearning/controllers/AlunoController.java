@@ -2,8 +2,10 @@ package com.nlearning.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.nlearning.models.Aluno;
 import com.nlearning.repository.AlunoRepository;
@@ -23,6 +25,22 @@ public class AlunoController {
 	public String form(Aluno aluno) {
 		alunoRepository.save(aluno);
 		return "redirect:cadastrarAluno";
+	}
+	
+	@RequestMapping(value = "/aluno/{idAluno}", method = RequestMethod.GET)
+	public ModelAndView detalhesEvento(@PathVariable("idAluno") Long idAluno) {
+		Aluno aluno = alunoRepository.findByIdAluno(idAluno);
+		ModelAndView mv = new ModelAndView("aluno/update_aluno");
+		mv.addObject("aluno", aluno);
+		
+		return mv;
+	}
+
+	@RequestMapping(value = "/aluno/{idAluno}", method = RequestMethod.POST)
+	public String form_update(Aluno aluno , Long idAluno) {
+		alunoRepository.findByIdAluno(idAluno);
+		alunoRepository.save(aluno);
+		return "redirect:/";
 	}
 	
 //	@RequestMapping("/eventos")

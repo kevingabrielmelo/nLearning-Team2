@@ -14,7 +14,7 @@ public class Gestor implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id_gestor;
+	private long idGestor;
 	
 	private String nome;
 	private String email;
@@ -22,11 +22,12 @@ public class Gestor implements Serializable {
 	private String cpf;
 	private String telefone;
 	private String endereco;
-	public long getId_gestor() {
-		return id_gestor;
+	
+	public long getIdGestor() {
+		return idGestor;
 	}
-	public void setId_gestor(long id_gestor) {
-		this.id_gestor = id_gestor;
+	public void setIdGestor(long idGestor) {
+		this.idGestor = idGestor;
 	}
 	public String getNome() {
 		return nome;

@@ -14,7 +14,7 @@ public class Admin implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id_admin;
+	private long idAdmin;
 
 	private String nome;
 	private String email;
@@ -23,12 +23,12 @@ public class Admin implements Serializable {
 	private String telefone;
 	private String endereco;
 
-	public long getId_admin() {
-		return id_admin;
+	public long getIdAdmin() {
+		return idAdmin;
 	}
 
-	public void setId_admin(long id_admin) {
-		this.id_admin = id_admin;
+	public void setIdAdmin(long idAdmin) {
+		this.idAdmin = idAdmin;
 	}
 
 	public String getNome() {
