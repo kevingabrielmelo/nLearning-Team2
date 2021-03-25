@@ -36,6 +36,14 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/admin/{idAdmin}", method = RequestMethod.GET)
+	public String admin(HttpSession sessao) {
+		Usuario u = (Usuario) sessao.getAttribute("usuario");
+		if (u == null) {
+			return "redirect:/login";
+		} else {
+			return "admin/update_admin";
+		}
+	}
 	public ModelAndView detalhesEvento(@PathVariable("idAdmin") Long idAdmin) {
 		Admin admin = adminRepository.findByIdAdmin(idAdmin);
 		ModelAndView mv = new ModelAndView("admin/update_admin");

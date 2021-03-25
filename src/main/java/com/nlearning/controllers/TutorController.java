@@ -36,6 +36,14 @@ public class TutorController {
 	}
 
 	@RequestMapping(value = "/tutor/{idTutor}", method = RequestMethod.GET)
+	public String tutor(HttpSession sessao) {
+		Usuario u = (Usuario) sessao.getAttribute("usuario");
+		if (u == null) {
+			return "redirect:/login";
+		} else {
+			return "tutor/update_tutor";
+		}
+	}
 	public ModelAndView detalhesEvento(@PathVariable("idTutor") Long idTutor) {
 		Tutor tutor = tutorRepository.findByIdTutor(idTutor);
 		ModelAndView mv = new ModelAndView("tutor/update_tutor");

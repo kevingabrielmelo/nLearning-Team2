@@ -36,6 +36,14 @@ public class GestorController {
 	}
 
 	@RequestMapping(value = "/gestor/{idGestor}", method = RequestMethod.GET)
+	public String gestor(HttpSession sessao) {
+		Usuario u = (Usuario) sessao.getAttribute("usuario");
+		if (u == null) {
+			return "redirect:/login";
+		} else {
+			return "gestor/update_gestor";
+		}
+	}
 	public ModelAndView detalhesEvento(@PathVariable("idGestor") Long idGestor) {
 		Gestor gestor = gestorRepository.findByIdGestor(idGestor);
 		ModelAndView mv = new ModelAndView("gestor/update_gestor");

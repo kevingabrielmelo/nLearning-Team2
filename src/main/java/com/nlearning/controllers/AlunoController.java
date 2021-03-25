@@ -36,6 +36,14 @@ public class AlunoController {
 	}
 
 	@RequestMapping(value = "/aluno/{idAluno}", method = RequestMethod.GET)
+	public String aluno(HttpSession sessao) {
+		Usuario u = (Usuario) sessao.getAttribute("usuario");
+		if (u == null) {
+			return "redirect:/login";
+		} else {
+			return "aluno/update_aluno";
+		}
+	}
 	public ModelAndView detalhesEvento(@PathVariable("idAluno") Long idAluno) {
 		Aluno aluno = alunoRepository.findByIdAluno(idAluno);
 		ModelAndView mv = new ModelAndView("aluno/update_aluno");
