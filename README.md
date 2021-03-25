@@ -61,13 +61,11 @@ Wagner Kenji Franco (Dev Team)
 
 ## Tecnologias Usadas
 
-Eclipse
+Spring Tool Suite 4 (STS)
 
 Java JDK 11
 
 MySQL
-
-Springboot
 
 Vscode
 
