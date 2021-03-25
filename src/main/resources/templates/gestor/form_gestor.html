@@ -34,35 +34,36 @@
 		</div>
 		<div id="menu">
 			<ul>
-				<li><a href="index.html" accesskey="1" title="">Home</a></li>
+				<li><a href="/" accesskey="1" title="">Home</a></li>
 				<li><a href="#" accesskey="2" title="">Serviços</a></li>
 				<li><a href="#" accesskey="3" title="">Sobre nós</a></li>
-				<li><a href="#" accesskey="5" title="">Login</a></li>
+				<li><a href="logout" accesskey="5" title="">Sair</a></li>
 			</ul>
 		</div>
 	</div>
 	<div>
 		<div class="main_cadastro">
-			<h1 class="titulo_cadastro">Cadastro de gestor</h1>
+			<h1 class="titulo_cadastro">Cadastro de Gestor</h1>
 			<form method='post'>
 				<div class="row about-container">
 					<div class="col-lg-6">
-						<h3 class="titulos_forms ">Nome</h3>
+						<h3 class="titulos_forms ">Nome:</h3>
 						<input class="input_forms" type='text' placeholder="Nome"
 							name="nome" required />
 
-						<h3 class="titulos_forms">CPF</h3>
+						<h3 class="titulos_forms">CPF:</h3>
 						<input class="input_forms" maxlength="14" type='text' id="cpf"
-							onkeypress="mascara(this, mcpf);" placeholder="CPF" name="cpf" required />
+							onkeypress="mascara(this, mcpf);" placeholder="CPF" name="cpf"
+							required />
 
 
-						<h3 class="titulos_forms">Telefone</h3>
+						<h3 class="titulos_forms">Telefone:</h3>
 						<input class="input_forms" maxlength="15" type='text'
 							id="telefone" onkeypress="mascara(this, mtel);"
 							placeholder="Telefone" name="telefone" required />
 
 
-						<h3 class="titulos_forms ">Endereço</h3>
+						<h3 class="titulos_forms ">Endereço:</h3>
 						<input id="margem_bottom" class="input_forms" type='text'
 							placeholder="Endereço" name="endereco" required />
 
@@ -71,20 +72,18 @@
 					<div class="col-lg-6">
 
 
-						<h3 class="titulos_forms">E-mail</h3>
+						<h3 class="titulos_forms">E-mail:</h3>
 						<input class="input_forms" type='email'
 							placeholder="you@example.com" name="email" required />
 
-						<h3 class="titulos_forms">Senha</h3>
+						<h3 class="titulos_forms">Senha:</h3>
 						<input class="input_forms" type='password' placeholder="Senha"
 							name="senha" required />
 
-						<h3 class="titulos_forms">Confirme sua senha</h3>
+						<h3 class="titulos_forms">Confirme sua senha:</h3>
 						<input id="margem_bottom" class="input_forms" type='password'
-							placeholder="Confirme sua senha" required />
-							
-						 <input type="submit"
-							value="Salvar" class="botao_salvar">
+							placeholder="Confirme sua senha" required /> <input
+							type="submit" value="Salvar" class="botao_salvar">
 					</div>
 				</div>
 

@@ -1,5 +1,7 @@
 package com.nlearning.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nlearning.models.Aluno;
+import com.nlearning.models.Usuario;
 import com.nlearning.repository.AlunoRepository;
 
 @Controller
@@ -15,34 +18,39 @@ public class AlunoController {
 
 	@Autowired
 	private AlunoRepository alunoRepository;
-	
-	@RequestMapping(value="/cadastrarAluno", method=RequestMethod.GET)
-	public String form() {
-		return "aluno/form_aluno";
+
+	@RequestMapping(value = "/cadastrarAluno", method = RequestMethod.GET)
+	public String form(HttpSession sessao) {
+		Usuario u = (Usuario) sessao.getAttribute("usuario");
+		if (u == null) {
+			return "redirect:login";
+		} else {
+			return "aluno/form_aluno";
+		}
 	}
-	
-	@RequestMapping(value="/cadastrarAluno", method=RequestMethod.POST)
+
+	@RequestMapping(value = "/cadastrarAluno", method = RequestMethod.POST)
 	public String form(Aluno aluno) {
 		alunoRepository.save(aluno);
 		return "redirect:cadastrarAluno";
 	}
-	
+
 	@RequestMapping(value = "/aluno/{idAluno}", method = RequestMethod.GET)
 	public ModelAndView detalhesEvento(@PathVariable("idAluno") Long idAluno) {
 		Aluno aluno = alunoRepository.findByIdAluno(idAluno);
 		ModelAndView mv = new ModelAndView("aluno/update_aluno");
 		mv.addObject("aluno", aluno);
-		
+
 		return mv;
 	}
 
 	@RequestMapping(value = "/aluno/{idAluno}", method = RequestMethod.POST)
-	public String form_update(Aluno aluno , Long idAluno) {
+	public String form_update(Aluno aluno, Long idAluno) {
 		alunoRepository.findByIdAluno(idAluno);
 		alunoRepository.save(aluno);
 		return "redirect:/";
 	}
-	
+
 //	@RequestMapping("/eventos")
 //	public ModelAndView listaEventos() {
 //		ModelAndView mv = new ModelAndView("/evento/visualizarEvento");
