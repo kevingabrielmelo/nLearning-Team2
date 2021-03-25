@@ -41,7 +41,7 @@ public class GestorController {
 		if (u == null) {
 			return "redirect:/login";
 		} else {
-			return "gestor/form_gestor";
+			return "gestor/update_gestor";
 		}
 	}
 	public ModelAndView detalhesEvento(@PathVariable("idGestor") Long idGestor) {

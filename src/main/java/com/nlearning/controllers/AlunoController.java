@@ -41,7 +41,7 @@ public class AlunoController {
 		if (u == null) {
 			return "redirect:/login";
 		} else {
-			return "aluno/form_aluno";
+			return "aluno/update_aluno";
 		}
 	}
 	public ModelAndView detalhesEvento(@PathVariable("idAluno") Long idAluno) {

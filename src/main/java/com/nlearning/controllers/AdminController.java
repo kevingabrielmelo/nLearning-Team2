@@ -41,7 +41,7 @@ public class AdminController {
 		if (u == null) {
 			return "redirect:/login";
 		} else {
-			return "admin/form_admin";
+			return "admin/update_admin";
 		}
 	}
 	public ModelAndView detalhesEvento(@PathVariable("idAdmin") Long idAdmin) {

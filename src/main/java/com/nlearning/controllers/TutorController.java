@@ -41,7 +41,7 @@ public class TutorController {
 		if (u == null) {
 			return "redirect:/login";
 		} else {
-			return "tutor/form_tutor";
+			return "tutor/update_tutor";
 		}
 	}
 	public ModelAndView detalhesEvento(@PathVariable("idTutor") Long idTutor) {
