@@ -1,7 +1,5 @@
 package com.nlearning.controllers;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nlearning.models.Gestor;
-import com.nlearning.models.Usuario;
 import com.nlearning.repository.GestorRepository;
 
 @Controller
@@ -20,13 +17,8 @@ public class GestorController {
 	private GestorRepository gestorRepository;
 
 	@RequestMapping(value = "/cadastrarGestor", method = RequestMethod.GET)
-	public String form(HttpSession sessao) {
-		Usuario u = (Usuario) sessao.getAttribute("usuario");
-		if(u == null) {
-			return "redirect:login";
-		}else {
+	public String form() {
 		return "gestor/form_gestor";
-		}
 	}
 
 	@RequestMapping(value = "/cadastrarGestor", method = RequestMethod.POST)
