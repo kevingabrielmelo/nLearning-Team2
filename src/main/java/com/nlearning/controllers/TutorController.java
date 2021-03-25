@@ -1,5 +1,7 @@
 package com.nlearning.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nlearning.models.Tutor;
+import com.nlearning.models.Usuario;
 import com.nlearning.repository.TutorRepository;
 
 @Controller
@@ -17,8 +20,13 @@ public class TutorController {
 	private TutorRepository tutorRepository;
 	
 	@RequestMapping(value="/cadastrarTutor", method=RequestMethod.GET)
-	public String form() {
+	public String form(HttpSession sessao) {
+		Usuario u = (Usuario) sessao.getAttribute("usuario");
+		if(u == null) {
+			return "redirect:login";
+		}else {
 		return "tutor/form_tutor";
+		}
 	}
 	
 	@RequestMapping(value="/cadastrarTutor", method=RequestMethod.POST)
