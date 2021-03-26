@@ -18,24 +18,34 @@ public class TutorController {
 
 	@Autowired
 	private TutorRepository tutorRepository;
-
+	// Validação de login
 	@RequestMapping(value = "/cadastrarTutor", method = RequestMethod.GET)
 	public String form(HttpSession sessao) {
-		Usuario u = (Usuario) sessao.getAttribute("usuario");
-		if (u == null) {
-			return "redirect:login";
-		} else {
+		if (Usuario.tipoUsu == "admin" || Usuario.tipoUsu == "gestor") {
 			return "tutor/form_tutor";
+		} else {
+			return "redirect:login";
 		}
 	}
+	// Validação de login (MENU)
+		@RequestMapping(value = "/menuTutor")
+		public String checkMenu(HttpSession sessao) {
+			if (Usuario.tipoUsu == "tutor") {
+				return "tutor/menu_tutor";
+			} else {
+				return "redirect:login";
+			}
+		}	
 
-	@RequestMapping(value = "/cadastrarTutor", method = RequestMethod.POST)
-	public String form(Tutor tutor) {
-		tutorRepository.save(tutor);
-		return "redirect:cadastrarTutor";
-	}
-
+	//Vo mexe n pq esse ta funfando
 	@RequestMapping(value = "/tutor/{idTutor}", method = RequestMethod.GET)
+	public String tutor(HttpSession sessao) {
+		if (Usuario.tipoUsu == "admin" || Usuario.tipoUsu == "gestor") {
+			return "tutor/update_tutor";
+		} else {
+			return "redirect:login";
+		}
+	}
 	public ModelAndView detalhesEvento(@PathVariable("idTutor") Long idTutor) {
 		Tutor tutor = tutorRepository.findByIdTutor(idTutor);
 		ModelAndView mv = new ModelAndView("tutor/update_tutor");
@@ -44,10 +54,16 @@ public class TutorController {
 		return mv;
 	}
 
+	@RequestMapping(value = "/cadastrarTutor", method = RequestMethod.POST)
+	public String form(Tutor tutor) {
+		tutorRepository.save(tutor);
+		return "redirect:cadastrarTutor";
+	}
+	
 	@RequestMapping(value = "/tutor/{idTutor}", method = RequestMethod.POST)
 	public String form_update(Tutor tutor, Long idTutor) {
 		tutorRepository.findByIdTutor(idTutor);
 		tutorRepository.save(tutor);
-		return "redirect:/";
+		return "redirect:/tutor/{idTutor}";
 	}
 }
