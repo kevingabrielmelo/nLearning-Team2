@@ -28,35 +28,34 @@ public class AdminController {
 		}
 	}
 
-	//Validação de login (UPDATE)
+	// Validação de login (UPDATE)
 	@RequestMapping(value = "/update_admin")
-	    public String checkUpdate(Long idAdmin) {
+	public String checkUpdate(Long idAdmin) {
 		if (Usuario.tipoUsu != "admin") {
 			return "redirect:login";
 		} else {
-			return "redirect:Alterar_Dados_Admin";
+			return "redirect:alterarDadosAdmin";
 		}
 	}
-	//Encontra os dados do admin alvo para exibir na página
-	@RequestMapping(value = "Alterar_Dados_Admin", method = RequestMethod.GET)
-	    public ModelAndView dadosAdmin(Long idAdmin) {
-		idAdmin = Usuario.idUsu;
-		Admin admin = adminRepository.findByIdAdmin(idAdmin);
+
+	// Encontra os dados do admin alvo
+	@RequestMapping(value = "alterarDadosAdmin", method = RequestMethod.GET)
+	public ModelAndView dadosAdmin(Long idAdmin) {
+		Admin admin = adminRepository.findByIdAdmin(Usuario.idUsu);
 		ModelAndView mv = new ModelAndView("admin/update_admin");
 		mv.addObject("admin", admin);
 
 		return mv;
 	}
-	
-	//Salva os dados do admin alvo e atualiza no banco
-	@RequestMapping(value = "Alterar_Dados_Admin", method = RequestMethod.POST)
+
+	// Salva os dados do admin alvo e atualiza no banco
+	@RequestMapping(value = "alterarDadosAdmin", method = RequestMethod.POST)
 	public String form_update(Admin admin, Long idAdmin) {
-		adminRepository.findByIdAdmin(idAdmin);
+		admin.setIdAdmin(Usuario.idUsu);
 		adminRepository.save(admin);
-		return "redirect:Alterar_Dados_Admin";
+		return "redirect:alterarDadosAdmin";
 	}
-	
-	
+
 	// Não está sendo utilizado (Cadastrar ADM)
 	/*
 	 * @RequestMapping(value = "/cadastrarAdmin", method = RequestMethod.POST)
