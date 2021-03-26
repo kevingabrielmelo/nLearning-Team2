@@ -27,7 +27,14 @@ public class AlunoController {
 			return "redirect:login";
 		}
 	}
-	
+
+	// Cadastra os dados do aluno no banco de dados
+	@RequestMapping(value = "/cadastrarAluno", method = RequestMethod.POST)
+	public String form(Aluno aluno) {
+		alunoRepository.save(aluno);
+		return "redirect:cadastrarAluno";
+	}
+
 	// Validação de login (MENU)
 	@RequestMapping(value = "/menuAluno")
 	public String checkMenu(HttpSession sessao) {
@@ -38,39 +45,31 @@ public class AlunoController {
 		}
 	}
 
-	//Validação de login (UPDATE)
+	// Validação de login (UPDATE)
 	@RequestMapping(value = "/update_aluno")
-    public String checkUpdate() {
-	if (Usuario.tipoUsu == "tutor") {
-		return "redirect:login";
-	} else {
-		return "redirect:Alterar_Dados_Aluno";
+	public String checkUpdate() {
+		if (Usuario.tipoUsu == "tutor") {
+			return "redirect:login";
+		} else {
+			return "redirect:alterarDadosAluno";
+		}
 	}
-}
-	
-	//Encontra os dados do aluno alvo
-	@RequestMapping(value = "Alterar_Dados_Aluno", method = RequestMethod.GET)
+
+	// Encontra os dados do aluno alvo
+	@RequestMapping(value = "alterarDadosAluno", method = RequestMethod.GET)
 	public ModelAndView dadosAluno(Long idAluno) {
-		idAluno = Usuario.idUsu;
-		Aluno aluno = alunoRepository.findByIdAluno(idAluno);
+		Aluno aluno = alunoRepository.findByIdAluno(Usuario.idUsu);
 		ModelAndView mv = new ModelAndView("aluno/update_aluno");
 		mv.addObject("aluno", aluno);
 
 		return mv;
 	}
 
-	// Cadastra os dados do aluno no banco de dados
-	@RequestMapping(value = "/cadastrarAluno", method = RequestMethod.POST)
-	public String form(Aluno aluno) {
-		alunoRepository.save(aluno);
-		return "redirect:cadastrarAluno";
-	}
-
 	// Salva os dados do aluno alvo e atualiza no banco
-	@RequestMapping(value = "Alterar_Dados_Aluno", method = RequestMethod.POST)
+	@RequestMapping(value = "alterarDadosAluno", method = RequestMethod.POST)
 	public String form_update(Aluno aluno, Long idAluno) {
-		alunoRepository.findByIdAluno(idAluno);
+		aluno.setIdAluno(Usuario.idUsu);
 		alunoRepository.save(aluno);
-		return "redirect:Alterar_Dados_Aluno";
+		return "redirect:alterarDadosAluno";
 	}
 }
