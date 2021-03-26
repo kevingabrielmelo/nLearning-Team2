@@ -42,34 +42,35 @@
 				<li><a href="index.html" accesskey="1" title="">Home</a></li>
 				<li><a href="#" accesskey="2" title="">Serviços</a></li>
 				<li><a href="#" accesskey="3" title="">Sobre nós</a></li>
-				<li><a href="#" accesskey="5" title="">Login</a></li>
+				<li><a href="voltar" accesskey="5" title="">Voltar</a></li>
 			</ul>
 		</div>
 	</div>
 	<div>
 		<div class="main_cadastro">
 			<h1 class="titulo_cadastro">Alterar gestor</h1>
-			<form method='post'>
+			<form method='post' action="Alterar_Dados_Gestor">
 				<div class="row about-container">
 					<div class="col-lg-6">
 						<h3 class="titulos_forms ">Nome</h3>
-						<input class="input_forms" type='text' placeholder="Nome"
-							name="nome" required />
+						<input class="input_forms" type='text' placeholder="Nome" name="nome" required 
+							th:value="${gestor.nome}" th:placeholder="${gestor.nome}"/>
 
 						<h3 class="titulos_forms">CPF</h3>
 						<input class="input_forms" maxlength="14" type='text' id="cpf"
-							onkeypress="mascara(this, mcpf);" placeholder="CPF" name="cpf"
-							required />
+							onkeypress="mascara(this, mcpf);" placeholder="CPF" name="cpf" required
+							th:value="${gestor.cpf}" th:placeholder="${gestor.cpf}" />
 
 						<h3 class="titulos_forms">Telefone</h3>
 						<input class="input_forms" maxlength="15" type='text'
 							id="telefone" onkeypress="mascara(this, mtel);"
-							placeholder="Telefone" name="telefone" required />
+							placeholder="Telefone" name="telefone" required 
+							th:value="${gestor.telefone}" th:placeholder="${gestor.telefone}"/>
 
 						<h3 class="titulos_forms ">Endereço</h3>
 						<input id="margem_bottom" class="input_forms" type='text'
-							placeholder="Endereço" name="endereco" required />
-
+							placeholder="Endereço" name="endereco" required 
+							th:value="${gestor.endereco}" th:placeholder="${gestor.endereco}"/>
 					</div>
 
 					<div class="col-lg-6">
@@ -77,11 +78,11 @@
 
 						<h3 class="titulos_forms">E-mail</h3>
 						<input class="input_forms" type='email'
-							placeholder="you@example.com" name="email" required />
+							placeholder="you@example.com" name="email" required 
+							th:value="${gestor.email}" th:placeholder="${gestor.email}"/>
 
 						<h3 class="titulos_forms">Senha</h3>
-						<input class="input_forms" type='password' placeholder="Senha"
-							name="senha" required />
+						<input class="input_forms" type='password' placeholder="Senha" name="senha" required />
 
 						<h3 class="titulos_forms">Confirme sua senha</h3>
 						<input id="margem_bottom" class="input_forms" type='password'

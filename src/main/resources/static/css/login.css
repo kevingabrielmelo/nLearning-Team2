@@ -54,4 +54,15 @@ span.senha {
   .cancelbtn {
     width: 100%;
   }
+  
+  
+}
+.input_forms{
+    height: 30px;
+    width: 300px;
+    margin-bottom: 15px;
+    background: #FFFFFF;
+	border: 1px solid #131549;
+	box-sizing: border-box;
+	border-radius: 4px;
 }

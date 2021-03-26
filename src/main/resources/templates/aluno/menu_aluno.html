@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Login</title>
+<title></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -12,7 +12,7 @@
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700"
 	rel="stylesheet" type="text/css">
-<link href="/css/login.css" rel="stylesheet" type="text/css" />
+<link href="/css/cadastro.css" rel="stylesheet" type="text/css" />
 <link href="/css/default.css" rel="stylesheet" type="text/css"
 	media="all" />
 <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,10 +20,16 @@
 <link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
 <link href="/bootstrap/css/lightbox.min.css" rel="stylesheet">
 <link href="/bootstrap/css/style.css" rel="stylesheet">
-</head>
+<script type="text/javascript" src="/js/maskTel.js"> </script>
+<!-- Máscara para o telefone -->
+<script type="text/javascript" src="/js/maskCPF.js"> </script>
+<!-- Máscara para o CPF -->
 
+<!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
 </head>
-<body>
+<body class="body">
 	<div id="header">
 		<div id="logo">
 			<h1>
@@ -35,29 +41,20 @@
 				<li><a href="/" accesskey="1" title="">Home</a></li>
 				<li><a href="#" accesskey="2" title="">Serviços</a></li>
 				<li><a href="#" accesskey="3" title="">Sobre nós</a></li>
-				<li><a href="#" accesskey="5" title="">Login</a></li>
+				<li><a href="login" accesskey="5" title="">Sair</a></li>
 			</ul>
 		</div>
 	</div>
 	<div>
-		<form action="Login" method="get">
-
-			<div class="container">
-				<label for="email"><b>E-mail</b></label> 
-				<input type="text" name="email" id="email" required> 
-				    <label for="senha"><b>Senha</b></label>
-				    <input type="password" name="senha" id="senha" required>
-
-				<button type="submit">Login</button>
-				<label> <input type="checkbox" checked="checked" name="remember"> Manter conectado </label>
-			    <span class="senha"> <a href="#">Esqueceu a senha?</a></span>
-			</div>
-		</form>
+		<div class="main_cadastro">
+			<a href="update_aluno" accesskey="1" title="">
+			<h1	class="titulo_cadastro">Alterar Dados</h1></a>
 		</div>
-		<div id="banner-wrapper">
-			<div id="footer" class="container">
-				<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
-			</div>
+	</div>
+	<div id="banner-wrapper">
+		<div id="footer" class="container">
+			<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
 		</div>
+	</div>
 </body>
 </html>

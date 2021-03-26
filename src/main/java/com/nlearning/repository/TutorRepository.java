@@ -6,5 +6,7 @@ import com.nlearning.models.Tutor;
 
 public interface TutorRepository extends CrudRepository<Tutor, String>{
 	//Procura Tutor por ID
-		Tutor findByIdTutor(Long codigo);
+	Tutor findByIdTutor(Long codigo);
+	//Procura Tutor por Email
+	Tutor findByEmail(String email);
 }

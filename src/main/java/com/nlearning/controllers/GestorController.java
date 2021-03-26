@@ -19,43 +19,59 @@ public class GestorController {
 	@Autowired
 	private GestorRepository gestorRepository;
 
+	// Validação de login (CADASTRAR)
 	@RequestMapping(value = "/cadastrarGestor", method = RequestMethod.GET)
-	public String form(HttpSession sessao) {
-		Usuario u = (Usuario) sessao.getAttribute("usuario");
-		if (u == null) {
+	public String checkForm(HttpSession sessao) {
+		if (Usuario.tipoUsu != "admin") {
 			return "redirect:login";
 		} else {
 			return "gestor/form_gestor";
 		}
 	}
 
-	@RequestMapping(value = "/cadastrarGestor", method = RequestMethod.POST)
-	public String form(Gestor gestor) {
-		gestorRepository.save(gestor);
-		return "redirect:cadastrarGestor";
-	}
-
-	@RequestMapping(value = "/gestor/{idGestor}", method = RequestMethod.GET)
-	public String gestor(HttpSession sessao) {
-		Usuario u = (Usuario) sessao.getAttribute("usuario");
-		if (u == null) {
-			return "redirect:/login";
+	// Validação de login (UPDATE)
+	@RequestMapping(value= "/update_gestor")
+	    public String checkUpdate(HttpSession sessao) {
+		if (Usuario.tipoUsu == "admin" || Usuario.tipoUsu == "gestor") {
+			return "redirect:Alterar_Dados_Gestor";
 		} else {
-			return "gestor/update_gestor";
+			return "redirect:login";
 		}
 	}
-	public ModelAndView detalhesEvento(@PathVariable("idGestor") Long idGestor) {
+	
+	// Validação de login (MENU)
+	@RequestMapping(value = "/menuGestor")
+	public String checkMenu(HttpSession sessao) {
+		if (Usuario.tipoUsu == "gestor") {
+			return "gestor/menu_gestor";
+		} else {
+			return "redirect:login";
+		}
+	}
+	
+	
+	// Encontra os dados do gestor alvo para exibir na página
+	@RequestMapping(value = "Alterar_Dados_Gestor", method = RequestMethod.GET)
+	    public ModelAndView dadosGestor(Long idGestor) {
+		idGestor = Usuario.idUsu;
 		Gestor gestor = gestorRepository.findByIdGestor(idGestor);
 		ModelAndView mv = new ModelAndView("gestor/update_gestor");
 		mv.addObject("gestor", gestor);
 
 		return mv;
 	}
+    // Cadastra os dados do gestor no banco de dados
+	@RequestMapping(value = "/cadastrarGestor", method = RequestMethod.POST)
+	public String form(Gestor gestor) {
+		gestorRepository.save(gestor);
+		return "redirect:cadastrarGestor";
+	}
 
-	@RequestMapping(value = "/gestor/{idGestor}", method = RequestMethod.POST)
+	// Salva os dados do gestor alvo e atualiza no banco
+	@RequestMapping(value = "Alterar_Dados_Gestor", method = RequestMethod.POST)
 	public String form_update(Gestor gestor, Long idGestor) {
 		gestorRepository.findByIdGestor(idGestor);
 		gestorRepository.save(gestor);
-		return "redirect:/";
+		return "redirect:/menuGestor";
 	}
 }

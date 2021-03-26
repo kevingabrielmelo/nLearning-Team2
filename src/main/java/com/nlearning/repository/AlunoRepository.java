@@ -7,4 +7,6 @@ import com.nlearning.models.Aluno;
 public interface AlunoRepository extends CrudRepository<Aluno, String>{
 	//Procura Aluno por ID
 	Aluno findByIdAluno(Long codigo);
+	//Procura Aluno por Email
+	Aluno findByEmail(String email);
 }
