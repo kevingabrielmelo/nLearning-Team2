@@ -4,7 +4,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,32 +18,40 @@ public class AlunoController {
 	@Autowired
 	private AlunoRepository alunoRepository;
 
-	@RequestMapping(value = "/cadastrarAluno", method = RequestMethod.GET)
-	public String form(HttpSession sessao) {
-		Usuario u = (Usuario) sessao.getAttribute("usuario");
-		if (u == null) {
-			return "redirect:login";
-		} else {
+	// Validação de login (CADASTRAR)
+	@RequestMapping(value = "/cadastrarAluno")
+	public String checkForm(HttpSession sessao) {
+		if (Usuario.tipoUsu == "admin" || Usuario.tipoUsu == "gestor") {
 			return "aluno/form_aluno";
-		}
-	}
-
-	@RequestMapping(value = "/cadastrarAluno", method = RequestMethod.POST)
-	public String form(Aluno aluno) {
-		alunoRepository.save(aluno);
-		return "redirect:cadastrarAluno";
-	}
-
-	@RequestMapping(value = "/aluno/{idAluno}", method = RequestMethod.GET)
-	public String aluno(HttpSession sessao) {
-		Usuario u = (Usuario) sessao.getAttribute("usuario");
-		if (u == null) {
-			return "redirect:/login";
 		} else {
-			return "aluno/update_aluno";
+			return "redirect:login";
 		}
 	}
-	public ModelAndView detalhesEvento(@PathVariable("idAluno") Long idAluno) {
+	
+	// Validação de login (MENU)
+	@RequestMapping(value = "/menuAluno")
+	public String checkMenu(HttpSession sessao) {
+		if (Usuario.tipoUsu == "aluno") {
+			return "aluno/menu_aluno";
+		} else {
+			return "redirect:login";
+		}
+	}
+
+	//Validação de login (UPDATE)
+	@RequestMapping(value = "/update_aluno")
+    public String checkUpdate() {
+	if (Usuario.tipoUsu == "tutor") {
+		return "redirect:login";
+	} else {
+		return "redirect:Alterar_Dados_Aluno";
+	}
+}
+	
+	//Encontra os dados do aluno alvo
+	@RequestMapping(value = "Alterar_Dados_Aluno", method = RequestMethod.GET)
+	public ModelAndView dadosAluno(Long idAluno) {
+		idAluno = Usuario.idUsu;
 		Aluno aluno = alunoRepository.findByIdAluno(idAluno);
 		ModelAndView mv = new ModelAndView("aluno/update_aluno");
 		mv.addObject("aluno", aluno);
@@ -52,55 +59,18 @@ public class AlunoController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/aluno/{idAluno}", method = RequestMethod.POST)
+	// Cadastra os dados do aluno no banco de dados
+	@RequestMapping(value = "/cadastrarAluno", method = RequestMethod.POST)
+	public String form(Aluno aluno) {
+		alunoRepository.save(aluno);
+		return "redirect:cadastrarAluno";
+	}
+
+	// Salva os dados do aluno alvo e atualiza no banco
+	@RequestMapping(value = "Alterar_Dados_Aluno", method = RequestMethod.POST)
 	public String form_update(Aluno aluno, Long idAluno) {
 		alunoRepository.findByIdAluno(idAluno);
 		alunoRepository.save(aluno);
-		return "redirect:/";
+		return "redirect:Alterar_Dados_Aluno";
 	}
-
-//	@RequestMapping("/eventos")
-//	public ModelAndView listaEventos() {
-//		ModelAndView mv = new ModelAndView("/evento/visualizarEvento");
-//		Iterable<Aluno> eventos = eventoRepository.findAll();
-//		mv.addObject("eventos", eventos);
-//		return mv;
-//	}
-//	
-//	@RequestMapping(value = "/{codigo}", method = RequestMethod.GET)
-//	public ModelAndView detalhesEvento(@PathVariable("codigo") Long codigo) {
-//		Aluno evento = eventoRepository.findByCodigo(codigo);
-//		ModelAndView mv = new ModelAndView("evento/detalhesEvento");
-//		mv.addObject("evento", evento);
-//		
-//		Iterable<Convidado> convidados = cr.findByEvento(evento);
-//		mv.addObject("convidados", convidados);
-//		return mv;
-//	}
-//	
-//	@RequestMapping("/deletar")
-//	public String deletarEvento(Long codigo) {
-//		Aluno evento = eventoRepository.findByCodigo(codigo);
-//		eventoRepository.delete(evento);
-//		return "redirect:/eventos";
-//	}
-//	
-//	@RequestMapping("/deletarConvidado")
-//	public String deletarConvidado(String rg) {
-//		Convidado convidado = cr.findByRg(rg);
-//		cr.delete(convidado);
-//		
-//		Aluno evento = convidado.getEvento();
-//		long codigoLong = evento.getCodigo();
-//		String codigo = "" + codigoLong;
-//		return "redirect:/" + codigo;
-//	}
-//	
-//	@RequestMapping(value = "/{codigo}", method = RequestMethod.POST)
-//	public String detalhesEventoPost(@PathVariable("codigo") Long codigo, Convidado convidado) {
-//		Aluno evento = eventoRepository.findByCodigo(codigo);
-//		convidado.setEvento(evento);
-//		cr.save(convidado);
-//		return "redirect:/{codigo}";
-//	}
 }

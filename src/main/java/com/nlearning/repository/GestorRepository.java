@@ -6,5 +6,7 @@ import com.nlearning.models.Gestor;
 
 public interface GestorRepository extends CrudRepository<Gestor, String>{
 	//Procura Gestor por ID
-		Gestor findByIdGestor(Long codigo);
+	Gestor findByIdGestor(Long codigo);
+	//Procura Gestor por Email
+	Gestor findByEmail(String email);
 }
