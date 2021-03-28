@@ -68,3 +68,9 @@ Feito por Daniel Vargas
 ![cad4](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/Cadastro4.PNG)
 
 Feito por Daniel Vargas
+
+# Burndown
+
+![burndown](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Burndown.PNG)
+
+Feito por Kauan Souza
