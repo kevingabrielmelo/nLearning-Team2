@@ -21,9 +21,12 @@
 <!-- Máscara para o telefone -->
 <script type="text/javascript" src="/js/maskCPF.js"> </script>
 <!-- Máscara para o CPF -->
+<script type="text/javascript" src="/js/maskSenha.js"> </script>
+<!-- Confirmação de senha -->
 <!--[if IE 6]>
 <link href="default_ie6.css" rel="stylesheet" type="text/css" />
 <![endif]-->
+
 </head>
 <body class="body">
 	<div id="header">
@@ -78,12 +81,18 @@
 
 						<h3 class="titulos_forms">Senha:</h3>
 						<input class="input_forms" type='password' placeholder="Senha"
-							name="senha" required />
+							id="password" name="senha" required />
 
 						<h3 class="titulos_forms">Confirme sua senha:</h3>
-						<input id="margem_bottom" class="input_forms" type='password'
-							placeholder="Confirme sua senha" required /> <input
-							type="submit" value="Salvar" class="botao_salvar">
+						<input onchange="alertSenhaIncorreta()" id="password_confirmation"
+							class="input_forms" type='password' name="senhaConfirmacao"
+							placeholder="Confirme sua senha" required />
+
+						<div id="alertId" class="alert alert-danger fade in hide" role="alert">
+						Senhas divergentes. Por favor, insira senhas iguais!</div>
+
+						<input onclick="alertCadastro()" type="submit" value="Salvar" class="botao_salvar">
+
 					</div>
 				</div>
 
