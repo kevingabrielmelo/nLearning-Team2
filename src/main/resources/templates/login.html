@@ -20,7 +20,23 @@
 <link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
 <link href="/bootstrap/css/lightbox.min.css" rel="stylesheet">
 <link href="/bootstrap/css/style.css" rel="stylesheet">
+<script type="text/javascript" src="/js/maskUsuarioInvalido.js"> </script>
+<!-- Mask para mostrar senha -->
 </head>
+
+<style type="text/css">
+#pass {
+	width: 150px;
+	padding-right: 20px;
+}
+
+.olho {
+	cursor: pointer;
+	left: 160px;
+	position: absolute;
+	width: 20px;
+}
+</style>
 
 </head>
 <body>
@@ -43,21 +59,27 @@
 		<form action="Login" method="post">
 
 			<div class="container">
-				<label for="email"><b>E-mail</b></label> 
-				<input type="text" name="email" id="email" required> 
-				    <label for="senha"><b>Senha</b></label>
-				    <input type="password" name="senha" id="senha" required>
+				<label for="email"><b>E-mail</b></label> <input type="text"
+					name="email" id="email" required>
+					<img onmousedown="usuarioInvalido() "src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" id="olho" class="olho">
+					 <label for="senha"><b>Senha</b></label>
+				<input type="password" name="senha" id="senha" required>
 
 				<button type="submit">Login</button>
-				<label> <input type="checkbox" checked="checked" name="remember"> Manter conectado </label>
-			    <span class="senha"> <a href="#">Esqueceu a senha?</a></span>
+				<label> <input type="checkbox" checked="checked"
+					name="remember"> Manter conectado
+				</label> <span class="senha"> <a href="#">Esqueceu a senha?</a></span>
 			</div>
 		</form>
+	</div>
+	<div id="banner-wrapper">
+		<div id="footer" class="container">
+			<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
 		</div>
-		<div id="banner-wrapper">
-			<div id="footer" class="container">
-				<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
-			</div>
-		</div>
+	</div>
+	
+	<img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" id="olho" class="olho">
+<input type="password" id="pass">
+	
 </body>
 </html>
