@@ -30,9 +30,13 @@ public class AlunoController {
 
 	// Cadastra os dados do aluno no banco de dados
 	@RequestMapping(value = "/cadastrarAluno", method = RequestMethod.POST)
-	public String form(Aluno aluno) {
-		alunoRepository.save(aluno);
-		return "redirect:cadastrarAluno";
+	public String form(Aluno aluno, String senhaConfirmacao) {
+		if (aluno.getSenha().equals(senhaConfirmacao)) {
+			alunoRepository.save(aluno);
+			return "redirect:login";
+		} else {
+			return "redirect:cadastrarAluno";
+		}
 	}
 
 	// Validação de login (MENU)

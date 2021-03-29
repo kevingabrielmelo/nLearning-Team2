@@ -68,8 +68,14 @@ public class GestorController {
 
 	// Cadastra os dados do gestor no banco de dados
 	@RequestMapping(value = "/cadastrarGestor", method = RequestMethod.POST)
-	public String form(Gestor gestor) {
-		gestorRepository.save(gestor);
-		return "redirect:cadastrarGestor";
+	public String form(Gestor gestor, String senhaConfirmacao) {
+		if (gestor.getSenha().equals(senhaConfirmacao)) {
+			gestorRepository.save(gestor);
+			return "redirect:login";
+		}
+		else {
+			return "redirect:cadastrarGestor";
+		}
+		
 	}
 }
