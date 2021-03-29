@@ -67,8 +67,14 @@ public class TutorController {
 	}
 
 	@RequestMapping(value = "/cadastrarTutor", method = RequestMethod.POST)
-	public String form(Tutor tutor) {
-		tutorRepository.save(tutor);
-		return "redirect:cadastrarTutor";
+	public String form(Tutor tutor, String senhaConfirmacao) {
+		if (tutor.getSenha().equals(senhaConfirmacao)) {
+			tutorRepository.save(tutor);
+			return "redirect:login";
+		}
+		else {
+			return "redirect:cadastrarTutor";
+		}
+		
 	}
 }
