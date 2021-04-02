@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
-<head>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
 <meta name="keywords" content="" />
@@ -24,12 +25,14 @@
 <!-- Máscara para o telefone -->
 <script type="text/javascript" src="/js/maskCPF.js"> </script>
 <!-- Máscara para o CPF -->
+<script type="text/javascript" src="/js/carregarImagem.js"> </script>
+<!-- Máscara para o CPF -->
 
 <!--[if IE 6]>
 <link href="default_ie6.css" rel="stylesheet" type="text/css" />
 <![endif]-->
 </head>
-<body class="body">
+<body class="body" onmousemove="converteImagem()">
 	<div id="header">
 		<div id="logo">
 			<h1>
@@ -45,23 +48,36 @@
 			</ul>
 		</div>
 	</div>
-	<div>
-		<div class="main_cadastro">
-			<a href="cadastrarGestor" accesskey="1" title="">
-				<h1 class="titulo_cadastro">Cadastrar Gestor</h1>
-			</a> <a href="cadastrarTutor" accesskey="1" title="">
-				<h1 class="titulo_cadastro">Cadastrar Tutor</h1>
-			</a> <a href="cadastrarAluno" accesskey="1" title="">
-				<h1 class="titulo_cadastro">Cadastrar Aluno</h1>
-			</a> <a href="cadastrarCurso" accesskey="1" title="">
-				<h1 class="titulo_cadastro">Cadastrar Curso</h1>
-			</a> <a href="update_admin" accesskey="1" title="">
-				<h1 class="titulo_cadastro">Alterar Dados</h1>
-			</a> <a href="cursos" accesskey="1" title="">
-				<h1 class="titulo_cadastro">Cursos</h1>
-			</a>
-		</div>
+	<table class="container">
+		<thead>
+			<tr>
+				<th>Nome do curso</th>
+				<th>Descrição</th>
+				<th>Valor</th>
+				<th>Tutor</th>
+				<th>Imagem BD TEXT</th>
+				<th>Imagem BD</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="curso : ${curso}">
+
+				<td><span th:text="${curso.nomeCurso}"></span></td>
+				<td><span th:text="${curso.descricao}"></span></td>
+				<td><span th:text="${curso.valor}"></span></td>
+				<td><span th:text="${curso.tutor}"></span></td>
+				<td><span th:text="${curso.imagem}"></span></td>
+				<td><img th:src="${curso.imagem}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div th:each="curso : ${curso}">
+
+		<input type="hidden" id="img" th:value="${curso.imagem}">
+
 	</div>
+
 	<div id="banner-wrapper">
 		<div id="footer" class="container">
 			<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
