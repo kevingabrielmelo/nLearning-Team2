@@ -2,10 +2,11 @@ package com.nlearning.controllers;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,15 +44,30 @@ public class CursoController {
 	public ModelAndView listaCursos() throws UnsupportedEncodingException {
 		ModelAndView mv = new ModelAndView("/curso/lista_cursos");
 		Iterable<Curso> curso = cursoRepository.findAll();
-		mv.addObject("curso", curso);
+		List<Curso> list = new ArrayList<>();
+		List<String> list2 = new ArrayList<>();
+
+		for (Curso cursos : curso) {
+			String imagem = Base64.getEncoder().encodeToString(cursos.getImagem());
+			list.add(cursos);
+			list2.add(imagem);
+		}
+		
+		mv.addObject("imagem", list2);
+		mv.addObject("curso", list);
 
 		return mv;
 	}
 
-	@GetMapping(value = "/cursos/{id}")
-	public ResponseEntity<Curso> listCursos(@PathVariable("id_curso") Long id_curso) {
+	@GetMapping(value = "/cursos/{id_curso}")
+	public ModelAndView listCursos(@PathVariable("id_curso") Long id_curso) {
 		Curso curso = cursoRepository.findByIdCurso(id_curso);
-		// ModelAndView mv = new ModelAndView("/curso/lista_cursos");
-		return new ResponseEntity<Curso>(curso, HttpStatus.OK);
+		ModelAndView mv = new ModelAndView("/curso/lista_cursos");
+		mv.addObject("curso", curso);
+
+		String imagem = Base64.getEncoder().encodeToString(curso.getImagem());
+		mv.addObject("imagem", imagem);
+
+		return mv;
 	}
 }

@@ -31,8 +31,9 @@
 <!--[if IE 6]>
 <link href="default_ie6.css" rel="stylesheet" type="text/css" />
 <![endif]-->
+
 </head>
-<body class="body" onmousemove="converteImagem()">
+<body class="body">
 	<div id="header">
 		<div id="logo">
 			<h1>
@@ -48,6 +49,7 @@
 			</ul>
 		</div>
 	</div>
+
 	<table class="container">
 		<thead>
 			<tr>
@@ -55,8 +57,6 @@
 				<th>Descrição</th>
 				<th>Valor</th>
 				<th>Tutor</th>
-				<th>Imagem BD TEXT</th>
-				<th>Imagem BD</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -66,17 +66,13 @@
 				<td><span th:text="${curso.descricao}"></span></td>
 				<td><span th:text="${curso.valor}"></span></td>
 				<td><span th:text="${curso.tutor}"></span></td>
-				<td><span th:text="${curso.imagem}"></span></td>
-				<td><img th:src="${curso.imagem}"></td>
+				<tr th:each="imagem : ${imagem}">
+				<td><img th:src="@{'data:image/jpg;base64,'+${imagem}}"
+					width="320" height="205" /></td>
 			</tr>
 		</tbody>
+		
 	</table>
-
-	<div th:each="curso : ${curso}">
-
-		<input type="hidden" id="img" th:value="${curso.imagem}">
-
-	</div>
 
 	<div id="banner-wrapper">
 		<div id="footer" class="container">

@@ -1,7 +1,6 @@
 function converteImagem() {
-	
-	imagem = document.getElementById('img').value;
-	
-	var src = "data:image/png;base64,";
-	src += imagem;
+
+	imagem = document.getElementById('imagem').value;
+
+	imgElem.setAttribute('src', "data:image/jpg;base64," + imagem);
 }
