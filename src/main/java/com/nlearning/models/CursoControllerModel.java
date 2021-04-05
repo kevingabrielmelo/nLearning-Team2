@@ -2,33 +2,19 @@ package com.nlearning.models;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.web.multipart.MultipartFile;
 
-@Entity
-public class Curso implements Serializable {
+public class CursoControllerModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idCurso;
 
 	private String nomeCurso;
 	private String descricao;
 	private String valor;
 	private String tutor;
-	private byte[] imagem;
+	private MultipartFile imagem;
 
-	public long getIdCurso() {
-		return idCurso;
-	}
-
-	public void setIdCurso(long idCurso) {
-		this.idCurso = idCurso;
-	}
+	public CursoControllerModel() {}
 
 	public String getNomeCurso() {
 		return nomeCurso;
@@ -62,11 +48,11 @@ public class Curso implements Serializable {
 		this.tutor = tutor;
 	}
 
-	public byte[] getImagem() {
+	public MultipartFile getImagem() {
 		return imagem;
 	}
 
-	public void setImagem(byte[] imagem) {
+	public void setImagem(MultipartFile imagem) {
 		this.imagem = imagem;
 	}
 }
