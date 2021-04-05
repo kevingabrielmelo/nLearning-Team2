@@ -44,10 +44,9 @@
 			</ul>
 		</div>
 	</div>
-	<div>
 		<div class="main_cadastro">
 			<h1 class="titulo_cadastro">Cadastro de Curso</h1>
-			<form method='post'>
+			<form method='post' enctype="multipart/form-data">
 				<div class="row about-container">
 					<div class="col-lg-6">
 						<h3 class="titulos_forms ">Nome:</h3>
@@ -56,13 +55,11 @@
 
 						<h3 class="titulos_forms">Descrição:</h3>
 						<input class="input_forms" type='text' id="curso"
-							 placeholder="Descrição: " name="descricao"
-							required />
+							placeholder="Descrição: " name="descricao" required />
 
 
 						<h3 class="titulos_forms">Valor:</h3>
-						<input class="input_forms" maxlength="15" type='text'
-							id="valor" 
+						<input class="input_forms" maxlength="15" type='text' id="valor"
 							placeholder="Valor" name="valor" required />
 
 
@@ -70,22 +67,19 @@
 						<input id="tutor" class="input_forms" type='text'
 							placeholder="Tutor" name="tutor" required />
 
-					</div>
-
-					
-
-						<input onclick="alertCadastro()" type="submit" value="Salvar" class="botao_salvar">
-
+						<h3 class="titulos_forms ">Imagem:</h3>
+						<input type="file" name="imagem" id="imagem" required="">
+						<input onclick="alertCadastro()" type="submit" value="Salvar"
+							class="botao_salvar">
 					</div>
 				</div>
-
 			</form>
 		</div>
-	</div>
-	<div id="banner-wrapper">
-		<div id="footer" class="container">
-			<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
+
+		<div id="banner-wrapper">
+			<div id="footer" class="container">
+				<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
+			</div>
 		</div>
-	</div>
 </body>
 </html>
