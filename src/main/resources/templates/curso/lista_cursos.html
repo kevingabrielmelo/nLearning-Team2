@@ -66,8 +66,7 @@
 				<td><span th:text="${curso.descricao}"></span></td>
 				<td><span th:text="${curso.valor}"></span></td>
 				<td><span th:text="${curso.tutor}"></span></td>
-				<tr th:each="imagem : ${imagem}">
-				<td><img th:src="@{'data:image/jpg;base64,'+${imagem}}"
+				<td><img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}"
 					width="320" height="205" /></td>
 			</tr>
 		</tbody>
