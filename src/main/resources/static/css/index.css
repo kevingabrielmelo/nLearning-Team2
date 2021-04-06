@@ -1,3 +1,11 @@
+#header{
+    background:#1a1a1a ; 
+}
+
+.container_principal{
+    background: #0C3756;
+}
+
 .intro{
     margin-top: 3rem;
     display: flex;
@@ -6,12 +14,12 @@
 }
 
 .intro_text{
-    font-family: 'Unica One';
+    
     font-size: 17px;
 }
 
 .oferecimento_text{
-    font-family: 'Unica One';
+    
     font-size: 20px;
     text-align: center;
 }
@@ -24,7 +32,8 @@
 }
 
 .titulo_beneficios{
-    font-family: 'Unica One';
+    padding-top: 3rem;
+    color: white;
     font-size: 2.20rem;
     display: flex;
     flex-direction: row;
@@ -32,40 +41,163 @@
     margin-bottom: 3rem;
 }
 
-h1, h2, h3{
-    font-family: 'Varela Round'
-}
-
 #imagem{
     padding: 20px 0;
-    height: 200px;
+    height: 175px;
     width: 100px;
 }
-
-.container_beneficios{
-}
-
 .container_beneficios p{
     font-size: 16px;
-    font-family: 'Unica One';
+    
     font-weight: 400;
 }
 
-.imagem_beneficio{
+.imagem_beneficio1{
     float: left;
-    margin-right: 1rem;
+    margin-left: 20%;
+    margin-right: 25px;
+}
+
+.imagem_beneficio2{
+    float: left;
+    margin-left: 20%;
+    margin-right: 25px;
 }
 
 .margem_baixo{
-    margin-bottom: 10rem;
+    margin-bottom: 7rem;
 }
 
 .text_icons{
     margin-top: 1rem;
-    font-family: 'Unica One';
+    color: white;
     font-size: 16px;
+    text-align: center;
 }
 
 .lapis_tamanho{
     height: 116px;
+}
+
+.espac{
+    margin-top: 10px;
+}
+
+.produtos{
+    margin-left: 20px;
+    color: white;
+    font-size:25px;
+}
+
+.div_produtos{
+	margin: 180px auto;
+}
+
+.style_jornada{
+    margin-left: 33%;
+    color: #1F5372;
+}
+
+.btn_jornada{
+    margin-top: 3%;
+    margin-left: 43%;
+    height: 40px;
+    width: 150px;
+    background: #86B6C6;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.desc_aprender{
+    margin-top: 1rem;
+    margin-left: 38%;
+    color: #1F5372;
+    font-size: 20px;
+}
+
+.meio_jornada{
+    margin-top: 3rem;
+    margin-left: 47%;
+    color: #1F5372;
+}
+
+.btn_jornada2{
+    margin-top: 3%;
+    margin-left: 43%;
+    height: 40px;
+    width: 150px;
+    background: #3A728E;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.desc_ensinar{
+    margin-top: 1rem;
+    margin-left: 33%;
+    color: #1F5372;
+    font-size: 20px;
+}
+
+.div_beneficios{
+    background: #1F5372;
+}
+
+#error_margem{
+    margin-right: 0;
+}
+
+.desc_beneficios{
+    color: white;
+}
+
+.titulo_plataforma{
+    color: white;
+    margin-top: 100px;
+    margin-left: 24%;
+}
+
+.img_plataforma{
+    height: 350px;
+    width: 350px;
+    margin-bottom: 20%;
+}
+
+.desc_plataforma{
+    color: white;
+    text-align: center;
+    width: 300px;
+    margin-top: 5.5rem;
+    margin-left: 5rem;
+}
+
+#div_duvidas{
+    background: white;
+    margin-bottom: 0;
+}
+
+.titulo_duvidas{
+    margin: 0;
+    font-size: 2rem;
+    margin-left: 40%;
+    padding-top: 3%;
+}
+
+.btn_ajuda{
+    margin-top: 3%;
+    margin-left: 43%;
+    height: 40px;
+    width: 150px;
+    background: #86B6C6;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    margin-bottom: 3%;
 }
