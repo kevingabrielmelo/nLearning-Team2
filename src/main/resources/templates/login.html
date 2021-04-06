@@ -21,8 +21,6 @@
 <link href="/bootstrap/css/lightbox.min.css" rel="stylesheet">
 <link href="/bootstrap/css/style.css" rel="stylesheet">
 <script type="text/javascript" src="/js/maskUsuarioInvalido.js"> </script>
-<!-- Mask para mostrar senha -->
-</head>
 
 <style type="text/css">
 #pass {
@@ -32,14 +30,16 @@
 
 .olho {
 	cursor: pointer;
-	left: 160px;
+	left: 515px;
 	position: absolute;
 	width: 20px;
 }
 </style>
 
 </head>
-<body>
+
+</head>
+<body id="bg_body">
 	<div id="header">
 		<div id="logo">
 			<h1>
@@ -49,26 +49,30 @@
 		<div id="menu">
 			<ul>
 				<li><a href="/" accesskey="1" title="">Home</a></li>
-				<li><a href="#" accesskey="2" title="">Serviços</a></li>
-				<li><a href="#" accesskey="3" title="">Sobre nós</a></li>
-				<li><a href="#" accesskey="5" title="">Login</a></li>
+				<li><a href="/" accesskey="2" title="">Serviços</a></li>
+				<li><a href="/" accesskey="3" title="">Sobre nós</a></li>
+				<li><a href="/Login" accesskey="5" title="">Login</a></li>
 			</ul>
 		</div>
 	</div>
-	<div>
-		<form action="Login" method="post">
+	<div class="padrao">
+		<form action="Login" method="post" class="form_design">
+			<img class="logo_login" src="/imagens/logo.svg">
+			<h1 class="titulo_login">nLearning</h1>
+			<div class="container altura_container">
+				<label class="color_text" for="email"><b>E-mail</b></label> <input
+					class="input_forms" type="text" name="email" id="email" required>
+				<img onmousedown="usuarioInvalido() "
+					src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png"
+					id="olho" class="olho"> <label class="color_text" for="senha"><b>Senha</b></label>
+				<input class="input_forms" type="password" name="senha" id="senha"
+					required>
 
-			<div class="container">
-				<label for="email"><b>E-mail</b></label> <input type="text"
-					name="email" id="email" required>
-					<img onmousedown="usuarioInvalido() "src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" id="olho" class="olho">
-					 <label for="senha"><b>Senha</b></label>
-				<input type="password" name="senha" id="senha" required>
-
-				<button type="submit">Login</button>
-				<label> <input type="checkbox" checked="checked"
-					name="remember"> Manter conectado
-				</label> <span class="senha"> <a href="#">Esqueceu a senha?</a></span>
+				<button class="hover_btn" type="submit">Login</button>
+				<label class="color_text"><input type="checkbox"
+					checked="checked" name="remember"> Manter conectado </label> <span
+					class="senha"> <a class="color_text" href="#">Esqueceu a
+						senha?</a></span>
 			</div>
 		</form>
 	</div>
@@ -77,9 +81,5 @@
 			<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
 		</div>
 	</div>
-	
-	<img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" id="olho" class="olho">
-<input type="password" id="pass">
-	
 </body>
 </html>
