@@ -21,6 +21,7 @@ public class Curso implements Serializable {
 	private String valor;
 	private String tutor;
 	private byte[] imagem;
+	private String imagem_string;
 
 	public long getIdCurso() {
 		return idCurso;
@@ -68,5 +69,13 @@ public class Curso implements Serializable {
 
 	public void setImagem(byte[] imagem) {
 		this.imagem = imagem;
+	}
+
+	public String getImagem_string() {
+		return imagem_string;
+	}
+
+	public void setImagem_string(String imagem_string) {
+		this.imagem_string = imagem_string;
 	}
 }

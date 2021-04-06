@@ -44,17 +44,15 @@ public class CursoController {
 	public ModelAndView listaCursos() throws UnsupportedEncodingException {
 		ModelAndView mv = new ModelAndView("/curso/lista_cursos");
 		Iterable<Curso> curso = cursoRepository.findAll();
-		List<Curso> list = new ArrayList<>();
-		List<String> list2 = new ArrayList<>();
+		List<Curso> lista_cursos = new ArrayList<>();
 
 		for (Curso cursos : curso) {
 			String imagem = Base64.getEncoder().encodeToString(cursos.getImagem());
-			list.add(cursos);
-			list2.add(imagem);
+			cursos.setImagem_string(imagem);
+			lista_cursos.add(cursos);
 		}
-		
-		mv.addObject("imagem", list2);
-		mv.addObject("curso", list);
+
+		mv.addObject("curso", lista_cursos);
 
 		return mv;
 	}
@@ -63,11 +61,10 @@ public class CursoController {
 	public ModelAndView listCursos(@PathVariable("id_curso") Long id_curso) {
 		Curso curso = cursoRepository.findByIdCurso(id_curso);
 		ModelAndView mv = new ModelAndView("/curso/lista_cursos");
-		mv.addObject("curso", curso);
 
 		String imagem = Base64.getEncoder().encodeToString(curso.getImagem());
-		mv.addObject("imagem", imagem);
-
+		curso.setImagem_string(imagem);
+		mv.addObject("curso", curso);
 		return mv;
 	}
 }
