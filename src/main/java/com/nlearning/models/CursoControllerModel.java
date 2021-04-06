@@ -10,7 +10,7 @@ public class CursoControllerModel implements Serializable {
 
 	private String nomeCurso;
 	private String descricao;
-	private String valor;
+	private Double valor;
 	private String tutor;
 	private MultipartFile imagem;
 
@@ -32,11 +32,11 @@ public class CursoControllerModel implements Serializable {
 		this.descricao = descricao;
 	}
 
-	public String getValor() {
+	public Double getValor() {
 		return valor;
 	}
 
-	public void setValor(String valor) {
+	public void setValor(Double valor) {
 		this.valor = valor;
 	}
 
