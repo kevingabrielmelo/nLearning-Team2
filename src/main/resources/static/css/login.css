@@ -1,9 +1,6 @@
+
 #header{
-    background: #0B2E50;
-}
-/* Bordered form */
-form {
-  border: 3px solid #f1f1f1;
+    background: #1a1a1a;
 }
 
 /* Full-width inputs */
@@ -36,7 +33,7 @@ button:hover {
 
 /* Add padding to containers */
 .container {
-  padding: 85px;
+  padding: 30px;
 }
 
 /* The "Forgot password" text */
@@ -65,4 +62,46 @@ span.senha {
 	border: 1px solid #131549;
 	box-sizing: border-box;
 	border-radius: 4px;
+}
+
+.padrao{
+  background: #0B2E50;
+  align-items: center;
+  height: 500px;
+}
+
+.color_text{
+  color: white;
+}
+
+.form_design{
+  margin-top: 5%;
+  height: 400px;
+  margin-left: 33%;
+  width: 400px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 3px solid white;
+  background: #06233B;
+}
+
+#bg_body{
+  background: #0B2E50;
+}
+
+.logo_login{
+  float: left;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.titulo_login{
+  margin-top: 1.5rem;
+  margin-left: 100px;
+  color: white;
+}
+
+.hover_btn:hover{
+  background :#0008d8;
+  transition: 0.5s;
 }

@@ -85,6 +85,7 @@ hr
 {
 	width: 1000px;
 	margin: 0px auto;
+
 }
 
 .clearfix
@@ -324,12 +325,14 @@ hr
 
 #featured #fbox1
 {
+    background: #1F5372;
 	float: left;
 	width: 470px;
 }
 
 #featured #fbox2
 {
+    background: #1F5372;
 	float: right;
 	width: 470px;
 }

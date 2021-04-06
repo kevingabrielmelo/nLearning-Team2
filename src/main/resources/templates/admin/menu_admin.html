@@ -12,7 +12,7 @@
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700"
 	rel="stylesheet" type="text/css">
-<link href="/css/cadastro.css" rel="stylesheet" type="text/css" />
+<link href="/css/menu_padrao.css" rel="stylesheet" type="text/css" />
 <link href="/css/default.css" rel="stylesheet" type="text/css"
 	media="all" />
 <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,39 +29,69 @@
 <link href="default_ie6.css" rel="stylesheet" type="text/css" />
 <![endif]-->
 </head>
-<body class="body">
-	<div id="header">
-		<div id="logo">
-			<h1>
-				<a href="/">n<span>Learning</span></a>
-			</h1>
-		</div>
-		<div id="menu">
-			<ul>
-				<li><a href="/" accesskey="1" title="">Home</a></li>
-				<li><a href="#" accesskey="2" title="">Serviços</a></li>
-				<li><a href="#" accesskey="3" title="">Sobre nós</a></li>
-				<li><a href="login" accesskey="5" title="">Sair</a></li>
-			</ul>
-		</div>
+<body id="body">
+<div class="header">
+	<div class="logo">
+		<img class="espac" src="/imagens/logo.svg">
 	</div>
-	<div>
-		<div class="main_cadastro">
-			<a href="cadastrarGestor" accesskey="1" title="">
-				<h1 class="titulo_cadastro">Cadastrar Gestor</h1>
-			</a> <a href="cadastrarTutor" accesskey="1" title="">
-				<h1 class="titulo_cadastro">Cadastrar Tutor</h1>
-			</a> <a href="cadastrarAluno" accesskey="1" title="">
-				<h1 class="titulo_cadastro">Cadastrar Aluno</h1>
-			</a> <a href="cadastrarCurso" accesskey="1" title="">
-				<h1 class="titulo_cadastro">Cadastrar Curso</h1>
-			</a> <a href="update_admin" accesskey="1" title="">
-				<h1 class="titulo_cadastro">Alterar Dados</h1>
-			</a> <a href="cursos" accesskey="1" title="">
-				<h1 class="titulo_cadastro">Cursos</h1>
-			</a>
-		</div>
+	<div class="menu">
+		<h3 class="cursos">Cursos</h3>
+		<input class ="pesquisa"type="text" placeholder="Pesquise um curso específico...">
+        <img class="porta_sair"src="/imagens/porta.svg">
+		<a href="/Login"class="sair_titulo">Encerrar sessão</a>
 	</div>
+</div>
+	
+<div id="featured-wrapper">
+    <div id="featured" class="container_painel">
+        <div class="">
+            <div class="row about-container">
+                <div class="col-lg-3">
+                    <img class="imagem1"src="/imagens/lista_alunos.svg">
+                    <br>
+                    <br>
+                    <img class="imagem1"src="/imagens/lista_tutores.svg">
+                    <br>
+                    <br>
+                    <img class="imagem1"src="/imagens/lista_tutores.svg">
+
+                </div>
+
+                <div class="col-lg-3">
+                    <a href="cadastrarAluno"class="imagem_titulo">Cadastro de alunos</a>
+                    <br>
+                    <br>
+                    <a href="cadastrarTutor"class="imagem_titulo">Cadastro de tutores</a>
+                    <br>
+                    <br>
+                    <a href="update_admin"class="imagem_titulo">Alterar dados</a>
+                </div>
+                
+
+                <div class="col-lg-3">
+                    <img class="imagem2"src="/imagens/cursos_questoes.svg"> 
+                    <br>
+                    <br>
+                    <img class="imagem2 tamanho_gestor"src="/imagens/gestores.svg">
+                    <br>
+                    <br>
+                    <img class="imagem2"src="/imagens/cursos_questoes.svg"> 
+                </div>
+
+                <div class="col-lg-3">
+                    <a href="cadastrarCurso"class="imagem_titulo">Cadastro de cursos</a>
+                    <br>
+                    <br>
+                    <a href="cadastrarGestor"class="imagem_titulo">Cadastro de gestores</a>
+                    <br>
+                    <br>
+                    <a href="cursos"class="imagem_titulo">Lista de cursos</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 	<div id="banner-wrapper">
 		<div id="footer" class="container">
 			<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
