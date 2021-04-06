@@ -12,7 +12,7 @@ Feito por Kevin Gabriel
 
 Feito por Kauan Souza e Edryan Matheus
 
-![user2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/user1.PNG)
+![user2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/user2.PNG)
 
 Feito por Kauan Souza e Edryan Matheus
 
