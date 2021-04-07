@@ -28,9 +28,8 @@
 <script type="text/javascript" src="/js/carregarImagem.js"> </script>
 <!-- Máscara para o CPF -->
 
-<!--[if IE 6]>
-<link href="default_ie6.css" rel="stylesheet" type="text/css" />
-<![endif]-->
+<style>
+</style>
 
 </head>
 <body class="body">
@@ -62,21 +61,16 @@
 		<tbody>
 			<tr th:each="curso : ${curso}">
 
+				<td><img
+					th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}"
+					width="320" height="205" /></td>
 				<td><span th:text="${curso.nomeCurso}"></span></td>
 				<td><span th:text="${curso.descricao}"></span></td>
 				<td><span th:text="${curso.valor}"></span></td>
 				<td><span th:text="${curso.tutor}"></span></td>
-				<td><img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}"
-					width="320" height="205" /></td>
+				
 			</tr>
 		</tbody>
-		
 	</table>
-
-	<div id="banner-wrapper">
-		<div id="footer" class="container">
-			<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
-		</div>
-	</div>
 </body>
 </html>
