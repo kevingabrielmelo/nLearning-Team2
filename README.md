@@ -33,6 +33,10 @@ Wagner Kenji Franco (Dev Team)
 ([Linkedin](https://www.linkedin.com/in/wagner-kenji-franco-kamoei-6883791b2/),
 [Github](https://github.com/UmCaraDaNet))
 
+## Organização da equipe
+Trello do projeto com datas de entrega e futuros planejamentos.
+([Trello](https://trello.com/b/EVkEayjU/api-3-semestre),
+
 ## Entregas
 
 <a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_1'> Sprint 1 </a>-
