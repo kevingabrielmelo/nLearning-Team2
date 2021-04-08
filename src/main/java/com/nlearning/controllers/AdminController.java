@@ -62,5 +62,11 @@ public class AdminController {
 	 * public String form(Admin admin) { adminRepository.save(admin); return
 	 * "redirect:cadastrarAdmin"; }
 	 */
-
+	
+	@RequestMapping("/deletar/{id_admin}")
+	public String deletarAdmin(Long idAdmin) {
+		Admin admin = adminRepository.findByIdAdmin(idAdmin);
+		adminRepository.delete(admin);
+		return "redirect:/usuarios";
+	}
 }

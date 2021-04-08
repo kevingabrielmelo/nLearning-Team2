@@ -76,4 +76,11 @@ public class AlunoController {
 		alunoRepository.save(aluno);
 		return "redirect:alterarDadosAluno";
 	}
+	
+	@RequestMapping("/deletar/{id_aluno}")
+	public String deletarAluno(Long idAluno) {
+		Aluno aluno = alunoRepository.findByIdAluno(idAluno);
+		alunoRepository.delete(aluno);
+		return "redirect:/usuarios";
+	}
 }
