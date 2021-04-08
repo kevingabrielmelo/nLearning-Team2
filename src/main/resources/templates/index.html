@@ -34,6 +34,8 @@ Released   : 20132402
 <link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
 <link href="/bootstrap/css/lightbox.min.css" rel="stylesheet">
 <link href="/bootstrap/css/style.css" rel="stylesheet">
+<script type="text/javascript" src="/js/curriculo.js"> </script>
+<script type="text/javascript" src="/js/maskTel.js"> </script>
 <!--[if IE 6]>
 <link href="default_ie6.css" rel="stylesheet" type="text/css" />
 <![endif]-->
@@ -95,9 +97,38 @@ Released   : 20132402
 			<button class="btn_jornada">Venha aprender</button>
 			<p class="desc_aprender">para formar a base do seu futuro</p>
 			<h3 class="meio_jornada">ou</h3>
-			<button class="btn_jornada2">Venha Ensinar</button>
+			<button onclick="Mudarestado('minhaDiv')" class="btn_jornada2">Venha
+				Ensinar</button>
 			<p class="desc_ensinar">para providenciar a base das mentes do
 				amanhã</p>
+			<div style="display: none" id="minhaDiv">
+
+				<form method='post' enctype="multipart/form-data">
+					<div class="container">
+						<div class="col-lg-12">
+							<h3 class="titulos_forms ">Nome:</h3>
+							<input class="input_forms" type='text' placeholder="Nome"
+								name="nome" required />
+
+							<h3 class="titulos_forms">Telefone:</h3>
+							<input class="input_forms" maxlength="15" type='text'
+								id="telefone" onkeypress="mascara(this, mtel);"
+								placeholder="Telefone" name="telefone" required />
+
+							<h3 class="titulos_forms">E-mail:</h3>
+							<input class="input_forms" type='email'
+								placeholder="you@example.com" name="email" required />
+
+							<h3 class="titulos_forms ">Currículo:</h3>
+							<input type="file" name="curriculo" id="curriculo" required="">
+
+							<input onclick="alertCadastro()" type="submit" value="Salvar"
+								class="botao_salvar">
+
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
 		<div class="div_beneficios">
 			<h3 class="titulo_beneficios">Outros benefícios</h3>
