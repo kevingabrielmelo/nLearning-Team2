@@ -45,18 +45,18 @@ Wagner Kenji Franco (Dev Team)
 
 ## Entregas
 
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_1'> Branch 1 </a>-
+<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_1'> Sprint 1 </a>-
 08/03/2020 a 28/03/2020
 
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_2'> Branch 2 </a>-
+<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_2'> Sprint 2 </a>-
 29/04/2020 a 18/04/2020	
 
 
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_3'> Branch 3 </a>- 
+<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_3'> Sprint 3 </a>- 
 26/04/2020 a 16/05/2020	
 
 
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_4'> Branch 4 </a>-
+<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_4'> Sprint 4 </a>-
 17/05/2020 a 05/06/2020
 
 ## Tecnologias Usadas
