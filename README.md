@@ -34,8 +34,8 @@ Wagner Kenji Franco (Dev Team)
 [Github](https://github.com/UmCaraDaNet))
 
 ## Organização da equipe
-<a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Trello do projeto com datas de entrega e futuros planejamentos separados por sprint. </a>-
-08/03/2020 a 28/03/2020
+<a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Trello </a>
+do projeto com datas de entrega e futuros planejamentos separados por sprint. 
 
 ## Entregas
 
