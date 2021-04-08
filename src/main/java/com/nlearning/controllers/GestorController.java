@@ -76,6 +76,12 @@ public class GestorController {
 		else {
 			return "redirect:cadastrarGestor";
 		}
-		
+	}
+	
+	@RequestMapping("/deletar/{id_gestor}")
+	public String deletarGestor(Long idGestor) {
+		Gestor gestor = gestorRepository.findByIdGestor(idGestor);
+		gestorRepository.delete(gestor);
+		return "redirect:/usuarios";
 	}
 }
