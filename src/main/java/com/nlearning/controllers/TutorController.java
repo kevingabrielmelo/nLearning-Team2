@@ -75,6 +75,12 @@ public class TutorController {
 		else {
 			return "redirect:cadastrarTutor";
 		}
-		
+	}
+	
+	@RequestMapping("/deletar/{id_tutor}")
+	public String deletarTutor(Long idTutor) {
+		Tutor tutor = tutorRepository.findByIdTutor(idTutor);
+		tutorRepository.delete(tutor);
+		return "redirect:/usuarios";
 	}
 }

@@ -21,6 +21,8 @@
 <link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
 <link href="/bootstrap/css/lightbox.min.css" rel="stylesheet">
 <link href="/bootstrap/css/style.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script type="text/javascript" src="/js/maskTel.js"> </script>
 <!-- Máscara para o telefone -->
 <script type="text/javascript" src="/js/maskCPF.js"> </script>
@@ -34,7 +36,7 @@
 	width: 1000px;
 	background: #fff;
 	margin: auto;
-		border: 3px solid black;
+	border: 3px solid black;
 }
 
 h1 {
@@ -71,6 +73,7 @@ h1 {
 				<th>Telefone</th>
 				<th>Endereço</th>
 				<th>CPF</th>
+				<th>Deletar</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -81,7 +84,9 @@ h1 {
 				<td><span th:text="${admin.telefone}"></span></td>
 				<td><span th:text="${admin.endereco}"></span></td>
 				<td><span th:text="${admin.cpf}"></span></td>
-
+				<td><i><b><a
+							th:href="@{/deletar/{id_admin}(idAdmin = ${admin.idAdmin})}"><i
+								class="material-icons">delete_forever</i></a></b></i></td>
 			</tr>
 		</tbody>
 	</table>
@@ -99,6 +104,7 @@ h1 {
 				<th>Telefone</th>
 				<th>Endereço</th>
 				<th>CPF</th>
+				<th>Deletar</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -109,6 +115,9 @@ h1 {
 				<td><span th:text="${gestor.telefone}"></span></td>
 				<td><span th:text="${gestor.endereco}"></span></td>
 				<td><span th:text="${gestor.cpf}"></span></td>
+				<td><i><b><a
+							th:href="@{/deletar/{id_gestor}(idGestor = ${gestor.idGestor})}"><i
+								class="material-icons">delete_forever</i></a></b></i></td>
 			</tr>
 		</tbody>
 	</table>
@@ -118,7 +127,7 @@ h1 {
 	<br>
 
 	<table class="container">
-	<h1>Tutores</h1>
+		<h1>Tutores</h1>
 		<thead>
 			<tr>
 				<th>Nome</th>
@@ -126,6 +135,7 @@ h1 {
 				<th>Telefone</th>
 				<th>Endereço</th>
 				<th>CPF</th>
+				<th>Deletar</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -136,6 +146,9 @@ h1 {
 				<td><span th:text="${tutor.telefone}"></span></td>
 				<td><span th:text="${tutor.endereco}"></span></td>
 				<td><span th:text="${tutor.cpf}"></span></td>
+				<td><i><b><a
+							th:href="@{/deletar/{id_tutor}(idTutor = ${tutor.idTutor})}"><i
+								class="material-icons">delete_forever</i></a></b></i></td>
 			</tr>
 		</tbody>
 	</table>
@@ -145,7 +158,7 @@ h1 {
 	<br>
 
 	<table class="container">
-	<h1>Alunos</h1>
+		<h1>Alunos</h1>
 		<thead>
 			<tr>
 				<th>Nome</th>
@@ -153,7 +166,7 @@ h1 {
 				<th>Telefone</th>
 				<th>Endereço</th>
 				<th>CPF</th>
-				<th></th>
+				<th>Deletar</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -164,6 +177,9 @@ h1 {
 				<td><span th:text="${aluno.telefone}"></span></td>
 				<td><span th:text="${aluno.endereco}"></span></td>
 				<td><span th:text="${aluno.cpf}"></span></td>
+				<td><i><b><a
+							th:href="@{/deletar/{id_aluno}(idAluno = ${aluno.idAluno})}"><i
+								class="material-icons">delete_forever</i></a></b></i></td>
 			</tr>
 		</tbody>
 	</table>
