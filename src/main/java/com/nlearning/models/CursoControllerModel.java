@@ -8,6 +8,7 @@ public class CursoControllerModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private Long idCurso;
 	private String nomeCurso;
 	private String descricao;
 	private Double valor;
@@ -54,5 +55,13 @@ public class CursoControllerModel implements Serializable {
 
 	public void setImagem(MultipartFile imagem) {
 		this.imagem = imagem;
+	}
+
+	public Long getIdCurso() {
+		return idCurso;
+	}
+
+	public void setIdCurso(Long idCurso) {
+		this.idCurso = idCurso;
 	}
 }
