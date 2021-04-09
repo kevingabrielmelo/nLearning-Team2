@@ -9,7 +9,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,14 +56,29 @@ public class CursoController {
 		return mv;
 	}
 
-	@GetMapping(value = "/cursos/{id_curso}")
-	public ModelAndView listCursos(@PathVariable("id_curso") Long id_curso) {
-		Curso curso = cursoRepository.findByIdCurso(id_curso);
-		ModelAndView mv = new ModelAndView("/curso/lista_cursos");
-
+	@RequestMapping(value = "/selectCurso")
+	public ModelAndView telaCurso(@RequestParam("idCurso") Long idCurso) {
+		Curso curso = cursoRepository.findByIdCurso(idCurso);
+		ModelAndView mv = new ModelAndView("/curso/update_curso");
 		String imagem = Base64.getEncoder().encodeToString(curso.getImagem());
 		curso.setImagem_string(imagem);
 		mv.addObject("curso", curso);
 		return mv;
+	}
+
+	@RequestMapping(value = "selectCurso", method = RequestMethod.POST, consumes = { "multipart/form-data" })
+	public String form_update(@RequestParam("idCurso") Long idCurso,
+			@RequestParam(value = "imagem") MultipartFile imagem, CursoControllerModel curso) throws IOException {
+		Curso cursoUpdate = CursoMapper.converter(curso, imagem);
+		cursoUpdate.setIdCurso(idCurso);
+		cursoRepository.save(cursoUpdate);
+		return "redirect:/cursos";
+	}
+
+	@RequestMapping("/deletar/{id_curso}")
+	public String deletarCurso(Long idCurso) {
+		Curso curso = cursoRepository.findByIdCurso(idCurso);
+		cursoRepository.delete(curso);
+		return "redirect:/cursos";
 	}
 }
