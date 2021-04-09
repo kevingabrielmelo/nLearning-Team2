@@ -36,7 +36,7 @@ public class CursoController {
 	public String form(@RequestParam(value = "imagem") MultipartFile imagem, CursoControllerModel curso)
 			throws IOException {
 		cursoRepository.save(CursoMapper.converter(curso, imagem));
-		return "redirect:cadastrarCurso";
+		return "redirect:cursos";
 	}
 
 	@GetMapping(value = "/cursos")
