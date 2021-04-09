@@ -2,12 +2,12 @@
     background: #1a1a1a;
 }
 .espac{
-    margin-top: 10px;
-    margin-left: 150px;
+    margin-top: 3%;
+    margin-left: 5%;
 }
 
 .pesquisa{
-    margin-left: 50px;
+    margin-left: 5%;
     margin-top: 40px;
     width: 500px;
     height: 35px;
@@ -20,7 +20,7 @@
     font-size: 25px;
     width: 175px;
     height: 35px;
-    margin-left: 120px;
+    margin-left: 5%;
     margin-top:35px;
     margin-bottom: 45px;
     color: #1a1a1a;
@@ -52,10 +52,10 @@
 }
 
 .imagem1{
-    margin-left:200px ;
+    margin-left:5%;
     width: 40px;
     height: 40px;
-    margin-bottom: 80px;
+    margin-bottom: 1%;
 }
 
 .imagem2{
@@ -80,8 +80,9 @@
 }
 
 .container_painel{
-    width: 1360px;
+    width: flex;
     margin: 0px auto;
+    
 }
 
 .div_float{
@@ -93,9 +94,11 @@
     margin-bottom: 20px;
     font-size: 20px;
     color:#3A728E;
-    display: flex;
+    display: 1%;
     flex-direction: column;
     text-decoration: none;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
 }
 
 .porta_sair{
