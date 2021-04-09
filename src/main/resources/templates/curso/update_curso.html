@@ -29,39 +29,6 @@
 <script type="text/javascript" src="/js/carregarImagem.js"> </script>
 <!-- Carregar Imagem -->
 
-<style>
-table.blueTable {
-  width: 50%;
-  text-align: center;
-  border-collapse: collapse;
-  margin: auto;
-  
-}
-table.blueTable td, table.blueTable th {
-  border: 1px solid #AAAAAA;
-  padding: 3px 2px;
-}
-
-table.blueTable tr:nth-child(even) {
-  background: #D0E4F5;
-}
-table.blueTable thead {
-  background: #1C6EA4;
-}
-table.blueTable thead th {
-  font-size: 16px;
-  font-weight: bold;
-  color: #FFFFFF;
-}
-h3.titulo
-{
-text-align: center;
-padding: 10px;
-}
-
-
-</style>
-
 </head>
 <body class="body">
 	<div id="header">
@@ -73,39 +40,47 @@ padding: 10px;
 		<div id="menu">
 			<ul>
 				<li><a href="/" accesskey="1" title="">Home</a></li>
-				<li><a href="/" accesskey="2" title="">Serviços</a></li>
-				<li><a href="/" accesskey="3" title="">Sobre nós</a></li>
-				<li><a href="/Login" accesskey="5" title="">Sair</a></li>
+				<li><a href="" accesskey="2" title="">Serviços</a></li>
+				<li><a href="" accesskey="3" title="">Sobre nós</a></li>
+				<li><a href="/Login" accesskey="5" title="">Voltar</a></li>
 			</ul>
 		</div>
 	</div>
-<h3 class="titulo">Lista de cursos</h3>
-	<table class="blueTable" >
-		<thead>
-			<tr>
-				 <th>Foto</th> 
-				<th>Nome do curso</th>
-				<th>Descrição</th>
-				<th>Valor</th>
-				<th>Tutor</th>
-			<th colspan="2"></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="curso : ${curso}">
+		<div class="main_cadastro">
+			<h1 class="titulo_cadastro">Alterar dados do curso</h1>
+			<form method='post' enctype="multipart/form-data" >
+				<div class="row about-container">
+					<div class="col-lg-6">
+						<h3 class="titulos_forms ">Nome:</h3>
+						<input class="input_forms" type='text' placeholder="Nome" name="nomeCurso" required 
+						th:value="${curso.nomeCurso}" th:placeholder="${curso.nomeCurso}" />
 
-			<td><img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}" width="200" height="180"/></td> 
-				<td><span th:text="${curso.nomeCurso}"></span></td>
-				<td><span th:text="${curso.descricao}"></span></td>
-				<td><span th:inline="text">R$ [[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</span></td>
-				<td><span th:text="${curso.tutor}"></span></td>
-				<td><a th:href="@{/SelectCurso(idCurso = ${curso.idCurso})}"><button>Escolher</button></a></td>
-				<td><a th:href="@{/DeleteCurso(idCurso = ${curso.idCurso})}"><button>Excluir</button></a></td>
-				
-				
-			</tr>
-		</tbody>
-	</table>
+						<h3 class="titulos_forms">Descrição:</h3>
+						<input class="input_forms" type='text' id="curso"
+							placeholder="Descrição: " name="descricao" required 
+							th:value="${curso.descricao}" th:placeholder="${curso.descricao}"/>
+
+
+						<h3 class="titulos_forms">Valor:</h3>
+						<input class="input_forms" maxlength="15" type='number' id="valor"
+							placeholder="Valor" name="valor" required
+							th:value="${curso.valor}" th:placeholder="${curso.valor}" />
+
+
+						<h3 class="titulos_forms ">Tutor:</h3>
+						<input id="tutor" class="input_forms" type='text'
+							placeholder="Tutor" name="tutor" required
+							th:value="${curso.tutor}" th:placeholder="${curso.tutor}" />
+
+						<h3 class="titulos_forms ">Imagem:</h3>						
+						<input type="file" name="imagem" id="imagem" required="">
+						<input onclick="alertCadastro()" type="submit" value="Salvar"
+							class="botao_salvar">
+					</div>
+				</div>
+			</form>
+		</div>
+
 	<div style="padding-top:30%;">
 	<div id="banner-wrapper" class ="footer">
 		<div id="footer" class="container">
@@ -113,6 +88,5 @@ padding: 10px;
 		</div>
 	</div>
 	</div>
-		
 </body>
 </html>

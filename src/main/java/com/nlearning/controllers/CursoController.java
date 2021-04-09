@@ -9,7 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,6 +23,8 @@ import com.nlearning.repository.CursoRepository;
 @Controller
 public class CursoController {
 
+	
+	
 	@Autowired
 	private CursoRepository cursoRepository;
 
@@ -56,15 +58,24 @@ public class CursoController {
 
 		return mv;
 	}
-
-	@GetMapping(value = "/cursos/{id_curso}")
-	public ModelAndView listCursos(@PathVariable("id_curso") Long id_curso) {
-		Curso curso = cursoRepository.findByIdCurso(id_curso);
-		ModelAndView mv = new ModelAndView("/curso/lista_cursos");
-
+	
+	@RequestMapping(value = "/SelectCurso")
+	public ModelAndView telaCurso(@RequestParam("idCurso") Long idCurso) {
+		Curso curso = cursoRepository.findByIdCurso(idCurso);
+		ModelAndView mv = new ModelAndView("/curso/update_curso");		
 		String imagem = Base64.getEncoder().encodeToString(curso.getImagem());
 		curso.setImagem_string(imagem);
 		mv.addObject("curso", curso);
 		return mv;
 	}
+	
+	@RequestMapping(value = "SelectCurso", method = RequestMethod.POST, consumes = { "multipart/form-data"})
+	public String form_update(@RequestParam("idCurso") Long idCurso, @RequestParam(value = "imagem") MultipartFile imagem, CursoControllerModel curso) 
+			throws IOException{
+		curso.setIdCurso(idCurso);
+		System.out.print(idCurso);
+		cursoRepository.save(CursoMapper.converter(curso, imagem));
+		return "redirect:/cursos";
+	}
+	
 }
