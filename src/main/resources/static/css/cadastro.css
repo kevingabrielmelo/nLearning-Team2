@@ -13,6 +13,7 @@
 
 .titulo_cadastro{
     margin-top: 5%;
+    margin-left: 5%;
     color: #131549;
     font-family: Calibri;
 	font-style: bold;
@@ -33,6 +34,7 @@
     font-style: bold;
     font-size: 20px;
     font-weight: 400;
+    margin-left: 5%;
 }
 
 
@@ -48,6 +50,7 @@
 	border: 1px solid #131549;
 	box-sizing: border-box;
 	border-radius: 4px;
+	margin-left: 5%;
 }
 
 .botao_salvar{
