@@ -12,6 +12,7 @@ public class CursoMapper {
 	public static Curso converter(CursoControllerModel curso, MultipartFile imagem) throws IOException {
 		
 		var cursoBanco = new Curso();
+		cursoBanco.setIdCurso(curso.getIdCurso());
 		cursoBanco.setNomeCurso(curso.getNomeCurso());
 		cursoBanco.setDescricao(curso.getDescricao());
 		cursoBanco.setTutor(curso.getTutor());

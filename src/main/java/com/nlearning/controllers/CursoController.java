@@ -9,7 +9,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,8 +22,6 @@ import com.nlearning.repository.CursoRepository;
 @Controller
 public class CursoController {
 
-	
-	
 	@Autowired
 	private CursoRepository cursoRepository;
 
@@ -58,24 +55,28 @@ public class CursoController {
 
 		return mv;
 	}
-	
-	@RequestMapping(value = "/SelectCurso")
+
+	@RequestMapping(value = "/selectCurso")
 	public ModelAndView telaCurso(@RequestParam("idCurso") Long idCurso) {
 		Curso curso = cursoRepository.findByIdCurso(idCurso);
-		ModelAndView mv = new ModelAndView("/curso/update_curso");		
+		ModelAndView mv = new ModelAndView("/curso/update_curso");
 		String imagem = Base64.getEncoder().encodeToString(curso.getImagem());
 		curso.setImagem_string(imagem);
 		mv.addObject("curso", curso);
 		return mv;
 	}
-	
-	@RequestMapping(value = "SelectCurso", method = RequestMethod.POST, consumes = { "multipart/form-data"})
-	public String form_update(@RequestParam("idCurso") Long idCurso, @RequestParam(value = "imagem") MultipartFile imagem, CursoControllerModel curso) 
-			throws IOException{
-		curso.setIdCurso(idCurso);
-		System.out.print(idCurso);
+
+	@RequestMapping(value = "selectCurso", method = RequestMethod.POST, consumes = { "multipart/form-data" })
+	public String form_update(@RequestParam("idCurso") Long idCurso,
+			@RequestParam(value = "imagem") MultipartFile imagem, CursoControllerModel curso) throws IOException {
 		cursoRepository.save(CursoMapper.converter(curso, imagem));
 		return "redirect:/cursos";
 	}
-	
+
+	@RequestMapping("/deletar/{id_curso}")
+	public String deletarCurso(Long idCurso) {
+		Curso curso = cursoRepository.findByIdCurso(idCurso);
+		cursoRepository.delete(curso);
+		return "redirect:/cursos";
+	}
 }

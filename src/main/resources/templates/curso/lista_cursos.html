@@ -22,6 +22,8 @@
 <link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
 <link href="/bootstrap/css/lightbox.min.css" rel="stylesheet">
 <link href="/bootstrap/css/style.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script type="text/javascript" src="/js/maskTel.js"> </script>
 <!-- Máscara para o telefone -->
 <script type="text/javascript" src="/js/maskCPF.js"> </script>
@@ -31,35 +33,35 @@
 
 <style>
 table.blueTable {
-  width: 50%;
-  text-align: center;
-  border-collapse: collapse;
-  margin: auto;
-  
+	width: 50%;
+	text-align: center;
+	border-collapse: collapse;
+	margin: auto;
 }
+
 table.blueTable td, table.blueTable th {
-  border: 1px solid #AAAAAA;
-  padding: 3px 2px;
+	border: 1px solid #AAAAAA;
+	padding: 3px 2px;
 }
 
 table.blueTable tr:nth-child(even) {
-  background: #D0E4F5;
+	background: #D0E4F5;
 }
+
 table.blueTable thead {
-  background: #1C6EA4;
+	background: #1C6EA4;
 }
+
 table.blueTable thead th {
-  font-size: 16px;
-  font-weight: bold;
-  color: #FFFFFF;
-}
-h3.titulo
-{
-text-align: center;
-padding: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFFFFF;
 }
 
-
+h3.titulo {
+	text-align: center;
+	padding: 10px;
+}
 </style>
 
 </head>
@@ -79,40 +81,45 @@ padding: 10px;
 			</ul>
 		</div>
 	</div>
-<h3 class="titulo">Lista de cursos</h3>
-	<table class="blueTable" >
+	<h3 class="titulo">Lista de cursos</h3>
+	<table class="blueTable">
 		<thead>
 			<tr>
-				 <th>Foto</th> 
+				<th>Foto</th>
 				<th>Nome do curso</th>
 				<th>Descrição</th>
 				<th>Valor</th>
 				<th>Tutor</th>
-			<th colspan="2"></th>
+				<th colspan="2"></th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="curso : ${curso}">
 
-			<td><img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}" width="200" height="180"/></td> 
+				<td><img
+					th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}"
+					width="200" height="180" /></td>
 				<td><span th:text="${curso.nomeCurso}"></span></td>
 				<td><span th:text="${curso.descricao}"></span></td>
-				<td><span th:inline="text">R$ [[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</span></td>
+				<td><span th:inline="text">R$
+						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</span></td>
 				<td><span th:text="${curso.tutor}"></span></td>
-				<td><a th:href="@{/SelectCurso(idCurso = ${curso.idCurso})}"><button>Escolher</button></a></td>
-				<td><a th:href="@{/DeleteCurso(idCurso = ${curso.idCurso})}"><button>Excluir</button></a></td>
-				
-				
+				<td><a th:href="@{/selectCurso(idCurso = ${curso.idCurso})}"><button>Escolher</button></a></td>
+				<td><i><b><a
+							th:href="@{/deletar/{id_curso}(idCurso = ${curso.idCurso})}"><i
+								class="material-icons">delete_forever</i></a></b></i></td>
+
+
 			</tr>
 		</tbody>
 	</table>
-	<div style="padding-top:30%;">
-	<div id="banner-wrapper" class ="footer">
-		<div id="footer" class="container">
-			<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
+	<div style="padding-top: 30%;">
+		<div id="banner-wrapper" class="footer">
+			<div id="footer" class="container">
+				<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
+			</div>
 		</div>
 	</div>
-	</div>
-		
+
 </body>
 </html>
