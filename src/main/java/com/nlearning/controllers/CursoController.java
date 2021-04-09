@@ -69,7 +69,9 @@ public class CursoController {
 	@RequestMapping(value = "selectCurso", method = RequestMethod.POST, consumes = { "multipart/form-data" })
 	public String form_update(@RequestParam("idCurso") Long idCurso,
 			@RequestParam(value = "imagem") MultipartFile imagem, CursoControllerModel curso) throws IOException {
-		cursoRepository.save(CursoMapper.converter(curso, imagem));
+		Curso cursoUpdate = CursoMapper.converter(curso, imagem);
+		cursoUpdate.setIdCurso(idCurso);
+		cursoRepository.save(cursoUpdate);
 		return "redirect:/cursos";
 	}
 
