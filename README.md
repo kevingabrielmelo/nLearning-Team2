@@ -55,13 +55,13 @@ do projeto com datas de entrega e futuros planejamentos separados por sprint.
 
 ## Cards das Sprints
 
-![card1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_1.png)
+![card1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_1.png =200x200)
 
-![card_2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_2.png)
+![card_2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_2.png =200x200)
 
-![card_3](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_3.png)
+![card_3](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_3.png =200x200)
 
-![card_4](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_4.png)
+![card_4](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_4.png =200x200)
 
 ## Tecnologias Usadas
 
