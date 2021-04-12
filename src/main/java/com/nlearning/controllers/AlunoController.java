@@ -31,7 +31,7 @@ public class AlunoController {
 
 	@Autowired
 	private CursoRepository cursoRepository;
-	
+
 	@Autowired
 	private CursoAlunoRepository cursoAlunoRepository;
 
@@ -127,15 +127,36 @@ public class AlunoController {
 		mv.addObject("curso", curso);
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/comprarCurso", method = RequestMethod.POST)
-	public String alunoCursoCad(@RequestParam("idCurso") Long idCurso, CursoAluno cursoAluno, Usuario usu)
-	{
-		cursoAluno.setIdAluno(usu.idUsu);
+	public String alunoCursoCad(@RequestParam("idCurso") Long idCurso, CursoAluno cursoAluno, Usuario usu) {
+		cursoAluno.setIdAluno(Usuario.idUsu);
 		cursoAluno.setIdCurso(idCurso);
 		cursoAlunoRepository.save(cursoAluno);
-		return "redirect:/cursosListaAluno";
+		return "redirect:/cursosnLearning";
 	}
-	
-	
+
+	@RequestMapping(value = "/seusCursos")
+	public ModelAndView seusCursos(Usuario usu) {
+
+		ModelAndView mv = new ModelAndView("/curso/lista_cursos_aluno_comprado");
+		Iterable<CursoAluno> cursoAluno = cursoAlunoRepository.findAllByIdAluno(Usuario.idUsu);
+
+		List<Curso> list = new ArrayList<>();
+
+		mv.addObject("curso");
+
+		for (CursoAluno cursos : cursoAluno) {
+			Long idCurso = cursos.getIdCurso();
+
+			Curso cursosDoAluno = cursoRepository.findAllByIdCurso(idCurso);
+			String imagem = Base64.getEncoder().encodeToString(cursosDoAluno.getImagem());
+			cursosDoAluno.setImagem_string(imagem);
+			list.add(cursosDoAluno);
+		}
+
+		mv.addObject("curso", list);
+
+		return mv;
+	}
 }
