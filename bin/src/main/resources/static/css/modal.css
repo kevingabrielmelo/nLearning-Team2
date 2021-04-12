@@ -1,0 +1,29 @@
+
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+  
+.input_forms_modal{
+    height: 30px;
+    width: 300px;
+    margin-bottom: 15px;
+    background: #FFFFFF;
+	border: 1px solid #131549;
+	box-sizing: border-box;
+	border-radius: 4px;
+	margin-left: 5%;
+}
+
+.titulos_forms{
+    color: #000000;
+    font-family: Calibri;
+    font-style: bold;
+    font-size: 20px;
+    font-weight: 400;
+}
+

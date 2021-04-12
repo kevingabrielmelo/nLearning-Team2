@@ -65,8 +65,6 @@ h3.titulo {
 </style>
 
 </head>
-<form method="post">
-
 <body class="body">
 	<div id="header">
 		<div id="logo">
@@ -83,7 +81,7 @@ h3.titulo {
 			</ul>
 		</div>
 	</div>
-	<h3 class="titulo">Comprar curso</h3>
+	<h3 class="titulo">Lista de cursos</h3>
 	<table class="blueTable">
 		<thead>
 			<tr>
@@ -106,7 +104,8 @@ h3.titulo {
 				<td><span th:inline="text">R$
 						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</span></td>
 				<td><span th:text="${curso.tutor}"></span></td>
-				<td><a th:href="@{/comprarCurso(idCurso = ${curso.idCurso})}"><button>Comprar</button></a></td>
+				<td><a th:href="@{/comprarCurso(idCurso = ${curso.idCurso})}"><button>Escolher</button></a></td>
+
 			</tr>
 		</tbody>
 	</table>
@@ -119,5 +118,4 @@ h3.titulo {
 	</div>
 
 </body>
-</form>
 </html>

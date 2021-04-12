@@ -1,0 +1,117 @@
+#body{
+    background: #1a1a1a;
+}
+.espac{
+    margin-top: 3%;
+    margin-left: 5%;
+}
+
+.pesquisa{
+    margin-left: 5%;
+    margin-top: 40px;
+    width: 500px;
+    height: 35px;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.cursos{
+    text-align: center;
+    font-size: 25px;
+    width: 175px;
+    height: 35px;
+    margin-left: 5%;
+    margin-top:35px;
+    margin-bottom: 45px;
+    color: #1a1a1a;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+}
+
+.logo{
+	float: left;
+	width: 200px;
+	height: 100px;
+}
+
+.header{
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	height: 100px;
+}
+
+.itens_painel{
+    width: 70px;
+}
+
+.imagem1{
+    margin-left:5%;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1%;
+}
+
+.imagem2{
+    margin-left: 100px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 80px;
+}
+
+.imagem_fim1{
+    margin-left:200px ;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 40px;
+}
+
+.imagem_fim2{
+    margin-left:100px ;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 40px;
+}
+
+.container_painel{
+    width: flex;
+    margin: 0px auto;
+    
+}
+
+.div_float{
+    float: left;
+}
+
+.imagem_titulo{
+    padding: 17px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color:#3A728E;
+    display: 1%;
+    flex-direction: column;
+    text-decoration: none;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+}
+
+.porta_sair{
+    margin-left: 3%;
+    margin-top:3% ;
+    width: 40px;
+    height: 40px;
+}
+
+.sair_titulo{
+    font-size: 1.3rem;
+    margin-left: 2%;
+    margin-top: 3.5%;
+    color: white;
+    width: 200px;
+}

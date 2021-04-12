@@ -1,0 +1,76 @@
+#header{
+    background: #0B2E50;
+}
+.body{
+    background: white;
+}
+
+.main_cadastro{
+    width: 1000px;
+	margin: 0px auto;
+    flex-direction: row;
+}
+
+.titulo_cadastro{
+    margin-top: 5%;
+    margin-left: 5%;
+    color: #131549;
+    font-family: Calibri;
+	font-style: bold;
+	font-weight: 300;
+	font-size: 56px;
+	line-height: 84px;
+	display: flex;
+	align-items: center;
+	
+	color: #131549;
+	
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.titulos_forms{
+    color: #000000;
+    font-family: Calibri;
+    font-style: bold;
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 5%;
+}
+
+
+#margem_bot{
+    margin-bottom: 40%;
+}
+
+.input_forms{
+    height: 30px;
+    width: 300px;
+    margin-bottom: 15px;
+    background: #FFFFFF;
+	border: 1px solid #131549;
+	box-sizing: border-box;
+	border-radius: 4px;
+	margin-left: 5%;
+}
+
+.botao_salvar{
+    font-family: Calibri;
+    font-style: bold;
+    font-weight: 300;
+    font-size: 20px;
+    
+    height: 32px;
+    width: 100px;
+    margin-bottom: 10%;
+    margin-left: 20%;
+    margin-top: 36px;
+    background: #131549;
+	border: 1px solid #A2A0F7;
+	box-sizing: border-box;
+	border-radius: 4px;
+    
+    
+
+    background: #131549;
+    color: white;
+} 
