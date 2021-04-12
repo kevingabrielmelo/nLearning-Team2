@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Unica+One&family=Varela+Round&display=swap"
+	rel="stylesheet">
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700"
+	rel="stylesheet" type="text/css">
+<link href="/css/cadastro.css" rel="stylesheet" type="text/css" />
+<link href="/css/default.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/bootstrap/css/font-awesome.min.css" rel="stylesheet">
+<link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
+<link href="/bootstrap/css/lightbox.min.css" rel="stylesheet">
+<link href="/bootstrap/css/style.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script type="text/javascript" src="/js/maskTel.js"> </script>
+<!-- Máscara para o telefone -->
+<script type="text/javascript" src="/js/maskCPF.js"> </script>
+<!-- Máscara para o CPF -->
+<script type="text/javascript" src="/js/carregarImagem.js"> </script>
+<!-- Máscara para o CPF -->
+
+<style>
+.container {
+	margin: 1em auto;
+	width: 1000px;
+	background: #fff;
+	margin: auto;
+	border: 3px solid black;
+}
+
+h1 {
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+}
+</style>
+
+</head>
+<body class="body">
+	<div id="header">
+		<div id="logo">
+			<h1>
+				<a href="/">n<span>Learning</span></a>
+			</h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="/" accesskey="1" title="">Home</a></li>
+				<li><a href="/" accesskey="2" title="">Serviços</a></li>
+				<li><a href="/" accesskey="3" title="">Sobre nós</a></li>
+				<li><a href="/Login" accesskey="5" title="">Sair</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<table class="container">
+		<h1>Administradores</h1>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>Telefone</th>
+				<th>Endereço</th>
+				<th>CPF</th>
+				<th>Deletar</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="admin : ${admin}">
+
+				<td><span th:text="${admin.nome}"></span></td>
+				<td><span th:text="${admin.email}"></span></td>
+				<td><span th:text="${admin.telefone}"></span></td>
+				<td><span th:text="${admin.endereco}"></span></td>
+				<td><span th:text="${admin.cpf}"></span></td>
+				<td><i><b><a
+							th:href="@{/deletar/{id_admin}(idAdmin = ${admin.idAdmin})}"><i
+								class="material-icons">delete_forever</i></a></b></i></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br>
+	<br>
+	<br>
+
+	<table class="container">
+		<h1>Gestores</h1>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>Telefone</th>
+				<th>Endereço</th>
+				<th>CPF</th>
+				<th>Deletar</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="gestor : ${gestor}">
+
+				<td><span th:text="${gestor.nome}"></span></td>
+				<td><span th:text="${gestor.email}"></span></td>
+				<td><span th:text="${gestor.telefone}"></span></td>
+				<td><span th:text="${gestor.endereco}"></span></td>
+				<td><span th:text="${gestor.cpf}"></span></td>
+				<td><i><b><a
+							th:href="@{/deletar/{id_gestor}(idGestor = ${gestor.idGestor})}"><i
+								class="material-icons">delete_forever</i></a></b></i></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br>
+	<br>
+	<br>
+
+	<table class="container">
+		<h1>Tutores</h1>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>Telefone</th>
+				<th>Endereço</th>
+				<th>CPF</th>
+				<th>Deletar</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="tutor : ${tutor}">
+
+				<td><span th:text="${tutor.nome}"></span></td>
+				<td><span th:text="${tutor.email}"></span></td>
+				<td><span th:text="${tutor.telefone}"></span></td>
+				<td><span th:text="${tutor.endereco}"></span></td>
+				<td><span th:text="${tutor.cpf}"></span></td>
+				<td><i><b><a
+							th:href="@{/deletar/{id_tutor}(idTutor = ${tutor.idTutor})}"><i
+								class="material-icons">delete_forever</i></a></b></i></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br>
+	<br>
+	<br>
+
+	<table class="container">
+		<h1>Alunos</h1>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>Telefone</th>
+				<th>Endereço</th>
+				<th>CPF</th>
+				<th>Deletar</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="aluno : ${aluno}">
+
+				<td><span th:text="${aluno.nome}"></span></td>
+				<td><span th:text="${aluno.email}"></span></td>
+				<td><span th:text="${aluno.telefone}"></span></td>
+				<td><span th:text="${aluno.endereco}"></span></td>
+				<td><span th:text="${aluno.cpf}"></span></td>
+				<td><i><b><a
+							th:href="@{/deletar/{id_aluno}(idAluno = ${aluno.idAluno})}"><i
+								class="material-icons">delete_forever</i></a></b></i></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

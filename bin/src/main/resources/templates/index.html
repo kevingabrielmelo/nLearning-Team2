@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : SimpleCorp 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20132402
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Unica+One&family=Varela+Round&display=swap"
+	rel="stylesheet">
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700"
+	rel="stylesheet" type="text/css">
+<link href="/css/index.css" rel="stylesheet" type="text/css" />
+<link href="/css/modal.css" rel="stylesheet" type="text/css" />
+<link href="/css/default.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/bootstrap/css/font-awesome.min.css" rel="stylesheet">
+<link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
+<link href="/bootstrap/css/lightbox.min.css" rel="stylesheet">
+<link href="/bootstrap/css/style.css" rel="stylesheet">
+<script type="text/javascript" src="/js/curriculo.js"> </script>
+<script type="text/javascript" src="/js/maskTel.js"> </script>
+<!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+<body>
+	<div id="header">
+		<div id="logo">
+			<img class="espac" src="/imagens/logo.svg">
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="/" accesskey="1" title="">Home</a></li>
+				<li><a href="" accesskey="2" title="">Serviços</a></li>
+				<li><a href="" accesskey="3" title="">Sobre nós</a></li>
+				<li><a href="/login" accesskey="5" title="">Login</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container_principal">
+		<div id="banner" class="container">
+			<h2 class="intro">O que é o nLearning ?</h2>
+			<p class="intro_text">O nLearning é uma plataforma de ensino a
+				distância nascido da parceria entre a Fatec de São José dos Campos e
+				a Ness Health.</p>
+			<h2 class="oferecimento">E oque ele pode oferecer ?</h2>
+			<p class="oferecimento_text">O Nlearning propõe uma estrutura
+				intuitiva e organizada permitindo com que o aluno tenha fácil acesso
+				a sua agenda, atividades e cursos. Também possuimos um chat para
+				dúvidas sobre o sitemas e uma fácil comunicação entre aluno e
+				professor, pois toda dúvida é importante!</p>
+		</div>
+		<div id="page" class="div_produtos">
+			<div id="content" class="container">
+				<div class="cbox1">
+					<h2 class="produtos">Pílulas de conhecimento</h2>
+					<img src="/imagens/pilula.svg" id="imagem" alt="" />
+					<p class="text_icons">Além das video-aulas, temos também
+						pílulas de conhecimento que são partes de um contéudo resumido em
+						forma escrita</p>
+				</div>
+				<div class="cbox2">
+					<h2 class="produtos">Relatórios personalizavéis</h2>
+					<img src="/imagens/caneta.svg" id="imagem" alt="" />
+					<p class="text_icons">Disponibilizamos personalização de
+						relatório para os professores , includindo junto um dashbord para
+						avaliação de perfomace e outros detalhes</p>
+				</div>
+				<div class="cbox3">
+					<h2 class="produtos">Trilha de aprendizado</h2>
+					<img src="/imagens/pontotrilha.svg" id="imagem" alt="" />
+					<p class="text_icons">A trilha de aprendizado mostrará um
+						gráfico que análisa a taxa de acertos do aluno</p>
+				</div>
+			</div>
+		</div>
+		<div id="featured-wrapper">
+			<h3 class="style_jornada">pronto para começar sua jornada?</h3>
+			<button class="btn_jornada">Venha aprender</button>
+			<p class="desc_aprender">para formar a base do seu futuro</p>
+			<h3 class="meio_jornada">ou</h3>
+			<button  type="button" class="btn_jornada2" data-bs-toggle="modal" data-bs-target="#modal">
+				 Venha Ensinar 
+				</button>
+<!-- 			<button onclick="Mudarestado('minhaDiv')" class="btn_jornada2">Venha -->
+<!-- 				Ensinar</button> -->
+			<p class="desc_ensinar">para providenciar a base das mentes do
+				amanhã</p>
+				
+				<div class="modal" tabindex="-1" id="modal">
+	 				 <div class="modal-dialog">
+	    				<div class="modal-content">
+	      					<div class="modal-header">
+	        					<h5 class="titulo_modal">Envie seu curriculo!</h5>
+	        						
+	      					</div>
+	      				<div class="modal-body" >
+	      				<form method='post' enctype="multipart/form-data">
+					<div class="container">
+						<div class="col-lg-12">
+							<h3 class="titulos_forms ">Nome:</h3>
+							<input class="input_forms_modal" type='text' placeholder="Nome"
+								name="nome" required />
+
+							<h3 class="titulos_forms">Telefone:</h3>
+							<input class="input_forms_modal" maxlength="15" type='text'
+								id="telefone" onkeypress="mascara(this, mtel);"
+								placeholder="Telefone" name="telefone" required />
+
+							<h3 class="titulos_forms">E-mail:</h3>
+							<input class="input_forms_modal" type='text'
+								placeholder="you@example.com" name="email" required />
+
+							<h3 class="titulos_forms">Currículo:</h3>
+							<input type="file" name="curriculo" id="curriculo" required="">
+
+
+						</div>
+					</div>
+				
+	      				
+	      				</div>
+	      			<div class="modal-footer">
+	      				<input onclick="alertCadastro()" type="submit" value="Salvar" class="btn btn-primary">
+	       				 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+	      			</div>
+	      			</form>
+	    			</div>
+	  				</div>
+					</div>
+				
+<!-- 			<div style="display: none" id="minhaDiv"> -->
+
+<!-- 				<form method='post' enctype="multipart/form-data"> -->
+<!-- 					<div class="container"> -->
+<!-- 						<div class="col-lg-12"> -->
+<!-- 							<h3 class="titulos_forms ">Nome:</h3> -->
+<!-- 							<input class="input_forms" type='text' placeholder="Nome" -->
+<!-- 								name="nome" required /> -->
+
+<!-- 							<h3 class="titulos_forms">Telefone:</h3> -->
+<!-- 							<input class="input_forms" maxlength="15" type='text' -->
+<!-- 								id="telefone" onkeypress="mascara(this, mtel);" -->
+<!-- 								placeholder="Telefone" name="telefone" required /> -->
+
+<!-- 							<h3 class="titulos_forms">E-mail:</h3> -->
+<!-- 							<input class="input_forms" type='email' -->
+<!-- 								placeholder="you@example.com" name="email" required /> -->
+
+<!-- 							<h3 class="titulos_forms ">Currículo:</h3> -->
+<!-- 							<input type="file" name="curriculo" id="curriculo" required=""> -->
+
+<!-- 							<input onclick="alertCadastro()" type="submit" value="Salvar" -->
+<!-- 								class="botao_salvar"> -->
+
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</form> -->
+<!-- 			</div> -->
+		</div>
+		<div class="div_beneficios">
+			<h3 class="titulo_beneficios">Outros benefícios</h3>
+			<div id="error_margem" class="row about-container">
+				<div class="col-lg-6">
+					<div class="container_beneficios">
+						<img src="/imagens/arquivos.svg" alt=""
+							class="imagem_beneficio1 lapis_tamanho" /> <br>
+						<p class="margem_baixo desc_beneficios">suporte para vários
+							tipos de extensão de arquivos ( jpeg, png, mp3, etc )</p>
+					</div>
+					<div class="container_beneficios">
+						<img src="/imagens/layout.svg" alt=""
+							class="imagem_beneficio1 lapis_tamanho" /> <br>
+						<p class="margem_baixo desc_beneficios">Templates de layout
+							pré definidos para customização</p>
+					</div>
+					<div class="box-content container_beneficios">
+						<img src="/imagens/emoji.svg" alt="" class="imagem_beneficio1" />
+						<br>
+						<p class="margem_baixo desc_beneficios">Disponibilizar
+							avaliação por reação, permitindo o tutor interagir com o aluno.</p>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="container_beneficios">
+						<img src="/imagens/certificado.svg" alt=""
+							class="imagem_beneficio2" /> <br>
+						<p class="margem_baixo desc_beneficios">Emissão de
+							certificados de conclusão de cursos.</p>
+						<div class="container_beneficios">
+							<img src="/imagens/chatbot.svg" alt="" class="imagem_beneficio2" />
+							<br> <br> <br>
+							<p class="margem_baixo desc_beneficios">Chat bot para
+								atendimento do consultante.</p>
+						</div>
+						<div class="container_beneficios">
+							<img src="/imagens/email.svg" alt="" class="imagem_beneficio2" />
+							<br>
+							<p class="margem_baixo desc_beneficios">Mensagens automáticas
+								e personalizáveis enviadas por email</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container ">
+			<h1 class="titulo_plataforma">Não seja limitado pela plataforma</h1>
+			<div class="row about-container">
+				<div class="col-lg-6">
+					<p class="desc_plataforma">Educação é direito de qualquer um em
+						qualquer lugar, por isso, o nLearning está disponível tanto para
+						computadores quanto aparelhos móveis</p>
+				</div>
+				<div class="col-lg-6">
+					<img class="img_plataforma" src="/imagens/plataformas.svg">
+				</div>
+			</div>
+		</div>
+		<div id="div_duvidas">
+			<h1 class="titulo_duvidas">Ainda há duvidas?</h1>
+			<button class="btn_ajuda">Central de ajuda</button>
+		</div>
+
+		<div id="banner-wrapper">
+			<div id="footer" class="container">
+				<p>
+					&copy; Todos direitos reservados por NessHealth </a>.
+				</p>
+			</div>
+		</div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>	
+</body>
+</html>

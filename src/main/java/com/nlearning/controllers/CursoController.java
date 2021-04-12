@@ -16,7 +16,10 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nlearning.models.Curso;
+import com.nlearning.models.CursoAluno;
 import com.nlearning.models.CursoControllerModel;
+import com.nlearning.models.Usuario;
+import com.nlearning.repository.CursoAlunoRepository;
 import com.nlearning.repository.CursoRepository;
 
 @Controller
@@ -24,6 +27,9 @@ public class CursoController {
 
 	@Autowired
 	private CursoRepository cursoRepository;
+	
+	@Autowired
+	private CursoAlunoRepository cursoAlunoRepository;
 
 	// Rota para o get do form
 	@RequestMapping(value = "/cadastrarCurso", method = RequestMethod.GET)
@@ -81,4 +87,6 @@ public class CursoController {
 		cursoRepository.delete(curso);
 		return "redirect:/cursos";
 	}
+	
+	
 }
