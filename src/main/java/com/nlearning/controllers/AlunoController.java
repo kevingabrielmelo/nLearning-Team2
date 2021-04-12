@@ -17,8 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.nlearning.models.Aluno;
 import com.nlearning.models.Curso;
+import com.nlearning.models.CursoAluno;
 import com.nlearning.models.Usuario;
 import com.nlearning.repository.AlunoRepository;
+import com.nlearning.repository.CursoAlunoRepository;
 import com.nlearning.repository.CursoRepository;
 
 @Controller
@@ -29,6 +31,9 @@ public class AlunoController {
 
 	@Autowired
 	private CursoRepository cursoRepository;
+	
+	@Autowired
+	private CursoAlunoRepository cursoAlunoRepository;
 
 	// Validação de login (CADASTRAR)
 	@RequestMapping(value = "/cadastrarAluno")
@@ -45,7 +50,7 @@ public class AlunoController {
 	public String form(Aluno aluno, String senhaConfirmacao) {
 		if (aluno.getSenha().equals(senhaConfirmacao)) {
 			alunoRepository.save(aluno);
-			return "redirect:login";
+			return "redirect:cadastrarAluno";
 		} else {
 			return "redirect:cadastrarAluno";
 		}
@@ -122,4 +127,15 @@ public class AlunoController {
 		mv.addObject("curso", curso);
 		return mv;
 	}
+	
+	@RequestMapping(value = "/comprarCurso", method = RequestMethod.POST)
+	public String alunoCursoCad(@RequestParam("idCurso") Long idCurso, CursoAluno cursoAluno, Usuario usu)
+	{
+		cursoAluno.setIdAluno(usu.idUsu);
+		cursoAluno.setIdCurso(idCurso);
+		cursoAlunoRepository.save(cursoAluno);
+		return "redirect:/cursosListaAluno";
+	}
+	
+	
 }

@@ -7,7 +7,6 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link
 	href="https://fonts.googleapis.com/css2?family=Unica+One&family=Varela+Round&display=swap"
 	rel="stylesheet">
@@ -29,44 +28,12 @@
 <script type="text/javascript" src="/js/maskCPF.js"> </script>
 <!-- Máscara para o CPF -->
 <script type="text/javascript" src="/js/carregarImagem.js"> </script>
-<!-- Carregar Imagem -->
+<!-- Máscara para o CPF -->
 
 <style>
-table.blueTable {
-	width: 50%;
-	text-align: center;
-	border-collapse: collapse;
-	margin: auto;
-}
-
-table.blueTable td, table.blueTable th {
-	border: 1px solid #AAAAAA;
-	padding: 3px 2px;
-}
-
-table.blueTable tr:nth-child(even) {
-	background: #D0E4F5;
-}
-
-table.blueTable thead {
-	background: #1C6EA4;
-}
-
-table.blueTable thead th {
-	font-size: 16px;
-	font-weight: bold;
-	color: #FFFFFF;
-}
-
-h3.titulo {
-	text-align: center;
-	padding: 10px;
-}
 </style>
 
 </head>
-<form method="post">
-
 <body class="body">
 	<div id="header">
 		<div id="logo">
@@ -83,41 +50,28 @@ h3.titulo {
 			</ul>
 		</div>
 	</div>
-	<h3 class="titulo">Comprar curso</h3>
-	<table class="blueTable">
+
+	<table class="container">
 		<thead>
 			<tr>
-				<th>Foto</th>
-				<th>Nome do curso</th>
-				<th>Descrição</th>
-				<th>Valor</th>
-				<th>Tutor</th>
-				<th colspan="1"></th>
+				<th>Currículo do candidato</th>
+				<th>Cadastrar</th>
+				<th>Excluir</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="curso : ${curso}">
+			<tr th:each="candidato : ${candidato}">
 
 				<td><img
-					th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}"
-					width="200" height="180" /></td>
-				<td><span th:text="${curso.nomeCurso}"></span></td>
-				<td><span th:text="${curso.descricao}"></span></td>
-				<td><span th:inline="text">R$
-						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</span></td>
-				<td><span th:text="${curso.tutor}"></span></td>
-				<td><a th:href="@{/comprarCurso(idCurso = ${curso.idCurso})}"><button>Comprar</button></a></td>
+					th:src="@{'data:image/jpg;base64,'+${candidato.curriculo_string}}"
+					width="800" height="1000" /></td>
+				<td><i><b><a th:href="@{/cadastrarTutor}"><i
+								class="material-icons left">add_circle </i></a></b></i></td>
+				<td><i><b><a
+							th:href="@{/deletar/{id_candidato}(idCandidato = ${candidato.idCandidato})}"><i
+								class="material-icons">delete_forever</i></a></b></i></td>
 			</tr>
 		</tbody>
 	</table>
-	<div style="padding-top: 30%;">
-		<div id="banner-wrapper" class="footer">
-			<div id="footer" class="container">
-				<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
-			</div>
-		</div>
-	</div>
-
 </body>
-</form>
 </html>
