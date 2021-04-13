@@ -37,31 +37,37 @@ Wagner Kenji Franco (Dev Team)
 <a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Trello </a>
 do projeto com datas de entrega e futuros planejamentos separados por sprint. 
 
+# Lista de Requisitos
+![requisitos1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/req1.PNG)
+
+Feito por Kevin Gabriel 
+
+![requisitos2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/req2.PNG)
+
+Feito por Kevin Gabriel 
+
+## Cards das Sprints
+  
+![card1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_1.png) ![card_2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_2.png)
+
+![card_3](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_3.png) ![card_4](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_4.png)
+
 ## Entregas
 
 <a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_1'> Sprint 1 </a>-
-08/03/2020 a 28/03/2020
+08/03/2021 a 28/03/2021
 
 <a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_2'> Sprint 2 </a>-
-29/04/2020 a 18/04/2020	
+29/03/2021 a 18/04/2021	
 
 
 <a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_3'> Sprint 3 </a>- 
-26/04/2020 a 16/05/2020	
+26/04/2021 a 16/05/2021	
 
 
 <a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_4'> Sprint 4 </a>-
-17/05/2020 a 05/06/2020
+17/05/2021 a 05/06/2021
 
-## Cards das Sprints
-
-![card1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_1.png)
-
-![card_2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_2.png)
-
-![card_3](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_3.png)
-
-![card_4](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_4.png)
 
 ## Tecnologias Usadas
 
