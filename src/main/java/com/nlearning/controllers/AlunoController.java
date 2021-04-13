@@ -133,7 +133,7 @@ public class AlunoController {
 		cursoAluno.setIdAluno(Usuario.idUsu);
 		cursoAluno.setIdCurso(idCurso);
 		cursoAlunoRepository.save(cursoAluno);
-		return "redirect:/cursosnLearning";
+		return "redirect:/menuAluno";
 	}
 
 	@RequestMapping(value = "/seusCursos")
