@@ -11,4 +11,6 @@ public interface CursoRepository extends CrudRepository<Curso, String>{
 	Curso findByNomeCurso(String nome);
 	//Procura curso já comprado
 	Curso findAllByIdCurso(long codigo);
+	//Procura curso cadastrado pelo tutor especifico
+	Iterable<Curso> findAllByIdTutor(Long idUsu);
 }

@@ -1,15 +1,23 @@
 package com.nlearning.controllers;
 
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.nlearning.models.Curso;
 import com.nlearning.models.Tutor;
 import com.nlearning.models.Usuario;
+import com.nlearning.repository.CursoRepository;
+import com.nlearning.repository.QuestaoRepository;
 import com.nlearning.repository.TutorRepository;
 
 @Controller
@@ -17,6 +25,12 @@ public class TutorController {
 
 	@Autowired
 	private TutorRepository tutorRepository;
+
+	@Autowired
+	private CursoRepository cursoRepository;
+
+	@Autowired
+	private QuestaoRepository questaoRepository;
 
 	// Validação de login
 	@RequestMapping(value = "/cadastrarTutor", method = RequestMethod.GET)
@@ -71,16 +85,47 @@ public class TutorController {
 		if (tutor.getSenha().equals(senhaConfirmacao)) {
 			tutorRepository.save(tutor);
 			return "redirect:login";
-		}
-		else {
+		} else {
 			return "redirect:cadastrarTutor";
 		}
 	}
-	
+
 	@RequestMapping("/deletar/{id_tutor}")
 	public String deletarTutor(Long idTutor) {
 		Tutor tutor = tutorRepository.findByIdTutor(idTutor);
 		tutorRepository.delete(tutor);
 		return "redirect:/usuarios";
+	}
+
+	@RequestMapping(value = "/cursosQuestoes")
+	public ModelAndView cursosQuestoes(Usuario usu) {
+
+		ModelAndView mv = new ModelAndView("/curso/lista_cursos_tutor");
+		Iterable<Curso> curso = cursoRepository.findAllByIdTutor(Usuario.idUsu);
+
+		List<Curso> cursosTutor = new ArrayList<>();
+
+		mv.addObject("curso");
+
+		for (Curso cursos : curso) {
+
+			String imagem = Base64.getEncoder().encodeToString(cursos.getImagem());
+			cursos.setImagem_string(imagem);
+			cursosTutor.add(cursos);
+		}
+
+		mv.addObject("curso", cursosTutor);
+
+		return mv;
+	}
+
+	@RequestMapping(value = "/criarQuestaoCurso")
+	public ModelAndView criarQuestaoCurso(@RequestParam("idCurso") Long idCurso) {
+		Curso curso = cursoRepository.findByIdCurso(idCurso);
+		ModelAndView mv = new ModelAndView("/curso/criar_questao_curso");
+		String imagem = Base64.getEncoder().encodeToString(curso.getImagem());
+		curso.setImagem_string(imagem);
+		mv.addObject("curso", curso);
+		return mv;
 	}
 }

@@ -22,6 +22,7 @@ public class Curso implements Serializable {
 	private String tutor;
 	private byte[] imagem;
 	private String imagem_string;
+	private Long idTutor;
 
 	public long getIdCurso() {
 		return idCurso;
@@ -77,5 +78,13 @@ public class Curso implements Serializable {
 
 	public void setImagem_string(String imagem_string) {
 		this.imagem_string = imagem_string;
+	}
+
+	public Long getIdTutor() {
+		return idTutor;
+	}
+
+	public void setIdTutor(Long idTutor) {
+		this.idTutor = idTutor;
 	}
 }
