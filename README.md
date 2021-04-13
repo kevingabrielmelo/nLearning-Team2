@@ -1,6 +1,6 @@
 ## Organização da equipe
-<a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Trello </a>
-do projeto com datas de entrega e futuros planejamentos separados por sprint. 
+<a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Clique aqui </a>
+para ver o Trello do projeto com datas de entrega e futuros planejamentos separados por sprint. 
 
 # Lista de Requisitos
 ![requisitos1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/req1.PNG)
