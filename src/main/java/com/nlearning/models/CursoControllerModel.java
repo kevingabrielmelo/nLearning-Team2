@@ -13,6 +13,7 @@ public class CursoControllerModel implements Serializable {
 	private String descricao;
 	private Double valor;
 	private String tutor;
+	private Long idTutor;
 	private MultipartFile imagem;
 
 	public CursoControllerModel() {}
@@ -63,5 +64,13 @@ public class CursoControllerModel implements Serializable {
 
 	public void setIdCurso(Long idCurso) {
 		this.idCurso = idCurso;
+	}
+
+	public Long getIdTutor() {
+		return idTutor;
+	}
+
+	public void setIdTutor(Long idTutor) {
+		this.idTutor = idTutor;
 	}
 }
