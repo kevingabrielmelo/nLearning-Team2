@@ -142,7 +142,7 @@ public class AlunoController {
 		ModelAndView mv = new ModelAndView("/curso/lista_cursos_aluno_comprado");
 		Iterable<CursoAluno> cursoAluno = cursoAlunoRepository.findAllByIdAluno(Usuario.idUsu);
 
-		List<Curso> list = new ArrayList<>();
+		List<Curso> cursosAluno = new ArrayList<>();
 
 		mv.addObject("curso");
 
@@ -152,10 +152,10 @@ public class AlunoController {
 			Curso cursosDoAluno = cursoRepository.findAllByIdCurso(idCurso);
 			String imagem = Base64.getEncoder().encodeToString(cursosDoAluno.getImagem());
 			cursosDoAluno.setImagem_string(imagem);
-			list.add(cursosDoAluno);
+			cursosAluno.add(cursosDoAluno);
 		}
 
-		mv.addObject("curso", list);
+		mv.addObject("curso", cursosAluno);
 
 		return mv;
 	}

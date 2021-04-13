@@ -6,6 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.nlearning.models.Curso;
 import com.nlearning.models.CursoControllerModel;
+import com.nlearning.models.Usuario;
 
 public class CursoMapper {
 
@@ -18,6 +19,7 @@ public class CursoMapper {
 		cursoBanco.setTutor(curso.getTutor());
 		cursoBanco.setValor(curso.getValor());
 		cursoBanco.setImagem(imagem.getBytes());
+		cursoBanco.setIdTutor(Usuario.idUsu);
 		
 		return cursoBanco;
 	}
