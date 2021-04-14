@@ -87,51 +87,46 @@ h3.titulo {
 			<div class="">
 				<div class="row about-container">
 					<div class="col-lg-12">
-						<a href="alterarDadosAluno" class="imagem_titulo">
-							<img class="imagem1" src="/imagens/perfil_icone.svg">   Perfil</a> 
-							<a href="cursosnLearning" class="imagem_titulo">
-							<img class="imagem1" src="/imagens/seus_cursos.svg">   Cursos</a> 
-						<a href="seusCursos" class="imagem_titulo">
-							<img class="imagem1" src="/imagens/seus_cursos.svg">   Seus cursos</a>  
-						<a href="" class="imagem_titulo">	
-							<img class="imagem1" src="/imagens/pontotrilhamenu.svg">   Trilha de aprendizado</a>
-						<a href="" class="imagem_titulo">
-							<img class="imagem1" src="/imagens/calendario.svg">   Calendário</a> 
-						<a href="" class="imagem_titulo">
-							<img class="imagem1" src="/imagens/info.svg">Ajuda</a> 
+						<a href="alterarDadosAluno" class="imagem_titulo"> <img
+							class="imagem1" src="/imagens/perfil_icone.svg"> Perfil
+						</a> <a href="cursosnLearning" class="imagem_titulo"> <img
+							class="imagem1" src="/imagens/seus_cursos.svg"> Cursos
+						</a> <a href="seusCursos" class="imagem_titulo"> <img
+							class="imagem1" src="/imagens/seus_cursos.svg"> Seus cursos
+						</a> <a href="" class="imagem_titulo"> <img class="imagem1"
+							src="/imagens/pontotrilhamenu.svg"> Trilha de aprendizado
+						</a> <a href="" class="imagem_titulo"> <img class="imagem1"
+							src="/imagens/calendario.svg"> Calendário
+						</a> <a href="" class="imagem_titulo"> <img class="imagem1"
+							src="/imagens/info.svg">Ajuda
+						</a>
 					</div>
 
 				</div>
 			</div>
 		</div>
 	</div>
-	<table class="blueTable">
-		<thead>
-			<tr>
-				<th>Foto</th>
-				<th>Nome do curso</th>
-				<th>Descrição</th>
-				<th>Valor</th>
-				<th>Tutor</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="curso : ${curso}">
 
-				<td><img
-					th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}"
-					width="200" height="180" /></td>
-				<td><span th:text="${curso.nomeCurso}"></span></td>
-				<td><span th:text="${curso.descricao}"></span></td>
-				<td><span th:inline="text">R$
-						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</span></td>
-				<td><span th:text="${curso.tutor}"></span></td>
-				<td><a th:href="@{/abandonarCurso(idCurso = ${curso.idCurso})}"><button>Abandonar</button></a></td>
+	<section class="container" id="fundo_cursos">
+		<h3 class="card_title">Lista de cursos</h3>
+		<div th:each="curso : ${curso}" class="row justify-content-center">
 
-			</tr>
-		</tbody>
-	</table>
+			<article
+				class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
+				<img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
+				<div class="card-body ">
+					<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
+					<p class="card-text" th:text="${curso.descricao}"></p>
+					<p class="card-text" th:inline="text">R$
+						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</p>
+					<p class="card-text" th:text="${curso.tutor}"></p>
+					<a th:href="@{/selectCurso(idCurso = ${curso.idCurso})}"
+						class="btn botao-cor-especial">Veja o curso</a>
+				</div>
+			</article>
+		</div>
+	</section>
+
 	<div style="padding-top: 30%;">
 		<div id="banner-wrapper" class="footer">
 			<div id="footer" class="container">
