@@ -1,5 +1,6 @@
 package com.nlearning.controllers;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -11,10 +12,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nlearning.models.Curso;
-import com.nlearning.models.Questao;
 import com.nlearning.models.Tutor;
 import com.nlearning.models.Usuario;
 import com.nlearning.repository.CursoRepository;
@@ -130,10 +131,11 @@ public class TutorController {
 		return mv;
 	}
 
-	// Cadastra os dados do aluno no banco de dados
-	@RequestMapping(value = "/criarQuestaoCurso", method = RequestMethod.POST)
-	public String form(Questao questao, Long idCurso) {
-		questaoRepository.save(questao);
-		return "redirect:menuTutor";
-	}
+	// Cadastra os dados das questões no banco de dados
+	@RequestMapping(value = "/criarQuestaoCurso", method = RequestMethod.POST,  consumes = { "multipart/form-data" })
+	public String form(@RequestParam(value = "pergunta") MultipartFile pergunta, Long idCurso)
+		throws IOException {
+			questaoRepository.save(QuestaoMapper.converter(pergunta, idCurso));
+			return "redirect:menuTutor";
+		}
 }

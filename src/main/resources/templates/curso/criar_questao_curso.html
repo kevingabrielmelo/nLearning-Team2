@@ -110,23 +110,20 @@ h3.titulo {
 		</tbody>
 	</table>
 
-	<div>
-		<div class="main_cadastro">
-			<h1 class="titulo_cadastro">Cadastro de Questão</h1>
-			<form method='post'>
-				<div class="row about-container">
-					<div class="col-lg-6">
-						<h3 class="titulos_forms ">Questão:</h3>
-						<input class="input_forms" type='text'
-							placeholder="Ex: Por que utilizar um estetoscópio?" name="pergunta"
-							required /> <input type="submit" value="Salvar"
-							class="botao_salvar">
+	<div class="main_cadastro">
+		<h1 class="titulo_cadastro">Cadastro de Questão</h1>
+		<form method='post' enctype="multipart/form-data">
+			<div class="row about-container">
+				<div class="col-lg-6">
+					<h3 class="titulos_forms ">Envio de questões por PDF</h3>
 
-					</div>
+					<h3 class="titulos_forms">PDF:</h3>
+					<input type="file" name="pergunta" id="pergunta" required
+						accept="application/pdf"> <input type="submit"
+						value="Salvar" class="botao_salvar">
 				</div>
-
-			</form>
-		</div>
+			</div>
+		</form>
 	</div>
 
 	<div style="padding-top: 30%;">
