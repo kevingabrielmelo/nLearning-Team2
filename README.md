@@ -34,6 +34,7 @@ do projeto com datas de entrega e futuros planejamentos separados por sprint.
 
 ## Índice
 * [O que é o NLearning](#projeto)
+* [Card das Sprints](#cards-das-sprints)
 * [Product Backlog](#lista-de-requisitos)
 * [Cronograma de Entregas](#entregas)
 * [Tecnologias](#tecnologias)
