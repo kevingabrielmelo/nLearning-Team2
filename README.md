@@ -1,8 +1,3 @@
-
-## Projeto
-
-O projeto Ness Health consiste em uma API desenvolvida usando Java spring-boot e um website desenvolvido utilizando HTML, CSS e JavaScript. Com essas ferramentas desenvolveremos um sistema, para educação a distância, visando organização, facilitando a comunicação entre alunos e tutores e uma auto-avaliação realizada pelo aluno, para que seja possível alcançar o máximo desempenho de ensino.
-
 ## Time
 
 Daniel Vargas Ribeiro (Dev Team)
@@ -38,15 +33,14 @@ Wagner Kenji Franco (Dev Team)
 do projeto com datas de entrega e futuros planejamentos separados por sprint. 
 
 ## Índice
-* [O que é o GEOFPI](#o-que-é-o-geofpi)
-* [Ferramenta Desenvolvida](#ferramenta-desenvolvida)
-* [Benefícios](#benefícios)
+* [O que é o NLearning](#projeto)
 * [Product Backlog](#lista-de-requisitos)
-* [Tecnologias](#tecnologias)
-* [Sistema ETL em desenvolvimento](#sistema-etl-desenvolvido)
-* [Plano de Ação](#plano-de-ação-do-backlog)
 * [Cronograma de Entregas](#entregas)
+* [Tecnologias](#tecnologias)
 
+## Projeto
+
+O projeto nLearning consiste em uma API desenvolvida usando Java spring-boot e um website desenvolvido utilizando HTML, CSS e JavaScript. Com essas ferramentas desenvolveremos um sistema, para educação a distância, visando organização, facilitando a comunicação entre alunos e tutores e uma auto-avaliação realizada pelo aluno, para que seja possível alcançar o máximo desempenho de ensino.
 
 # Lista de Requisitos
 ![requisitos1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/req1.PNG)
@@ -88,7 +82,7 @@ Feito por Kevin Gabriel
 |    05/06/2021    |[Sprint 4](https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_4) |
 |   
 
-## Tecnologias Usadas
+## Tecnologias
 
 Spring Tool Suite 4 (STS)
 
