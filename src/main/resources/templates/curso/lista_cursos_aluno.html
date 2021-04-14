@@ -105,34 +105,27 @@ h3.titulo {
 			</div>
 		</div>
 	</div>
-	<h3 class="titulo">Lista de cursos</h3>
-	<table class="blueTable">
-		<thead>
-			<tr>
-				<th>Foto</th>
-				<th>Nome do curso</th>
-				<th>Descrição</th>
-				<th>Valor</th>
-				<th>Tutor</th>
-				<th colspan="1"></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="curso : ${curso}">
+	
+	<section class="container" id="fundo_cursos">
+		<h3 class="card_title">Lista de cursos</h3>
+		<div th:each="curso : ${curso}" class="row justify-content-center">
 
-				<td><img
-					th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}"
-					width="200" height="180" /></td>
-				<td><span th:text="${curso.nomeCurso}"></span></td>
-				<td><span th:text="${curso.descricao}"></span></td>
-				<td><span th:inline="text">R$
-						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</span></td>
-				<td><span th:text="${curso.tutor}"></span></td>
-				<td><a th:href="@{/comprarCurso(idCurso = ${curso.idCurso})}"><button>Escolher</button></a></td>
+			<article
+				class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
+				<img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
+				<div class="card-body ">
+					<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
+					<p class="card-text" th:text="${curso.descricao}"></p>
+					<p class="card-text" th:inline="text">R$
+						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</p>
+					<p class="card-text" th:text="${curso.tutor}"></p>
+					<a th:href="@{/comprarCurso(idCurso = ${curso.idCurso})}"
+						class="btn botao-cor-especial">Veja o curso</a>
+				</div>
+			</article>
+		</div>
+	</section>
 
-			</tr>
-		</tbody>
-	</table>
 	<div style="padding-top: 30%;">
 		<div id="banner-wrapper" class="footer">
 			<div id="footer" class="container">
