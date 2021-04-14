@@ -14,41 +14,27 @@ public class Questao implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long idQuestao;
-
-	private String questao;
-	private String nota;
-	private Long idCurso;
-
+	private long idQuestao;
+	
+	private String pergunta;
+	private long idCurso;
+	
 	public long getIdQuestao() {
 		return idQuestao;
 	}
-
 	public void setIdQuestao(long idQuestao) {
 		this.idQuestao = idQuestao;
 	}
-
-	public String getQuestao() {
-		return questao;
+	public String getPergunta() {
+		return pergunta;
 	}
-
-	public void setQuestao(String questao) {
-		this.questao = questao;
+	public void setPergunta(String pergunta) {
+		this.pergunta = pergunta;
 	}
-
-	public String getNota() {
-		return nota;
-	}
-
-	public void setNota(String nota) {
-		this.nota = nota;
-	}
-
-	public Long getIdCurso() {
+	public long getIdCurso() {
 		return idCurso;
 	}
-
-	public void setIdCurso(Long idCurso) {
+	public void setIdCurso(long idCurso) {
 		this.idCurso = idCurso;
 	}
 }
