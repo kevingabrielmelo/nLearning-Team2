@@ -1,3 +1,6 @@
+## Card da Sprint
+![card1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_1.png)
+
 ## Organização da equipe
 <a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Clique aqui </a>
 para ver o Trello do projeto com datas de entrega e futuros planejamentos separados por sprint. 
