@@ -2,21 +2,15 @@ package com.nlearning.models;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.web.multipart.MultipartFile;
 
-@Entity
-public class Questao implements Serializable {
+public class QuestaoControllerModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idQuestao;
 	
-	private byte[] pergunta;
+	private MultipartFile pergunta;
 	private long idCurso;
 	
 	public long getIdQuestao() {
@@ -25,10 +19,10 @@ public class Questao implements Serializable {
 	public void setIdQuestao(long idQuestao) {
 		this.idQuestao = idQuestao;
 	}
-	public byte[] getPergunta() {
+	public MultipartFile getPergunta() {
 		return pergunta;
 	}
-	public void setPergunta(byte[] pergunta) {
+	public void setPergunta(MultipartFile pergunta) {
 		this.pergunta = pergunta;
 	}
 	public long getIdCurso() {
