@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nlearning.models.Curso;
+import com.nlearning.models.Questao;
 import com.nlearning.models.Tutor;
 import com.nlearning.models.Usuario;
 import com.nlearning.repository.CursoRepository;
@@ -127,5 +128,12 @@ public class TutorController {
 		curso.setImagem_string(imagem);
 		mv.addObject("curso", curso);
 		return mv;
+	}
+
+	// Cadastra os dados do aluno no banco de dados
+	@RequestMapping(value = "/criarQuestaoCurso", method = RequestMethod.POST)
+	public String form(Questao questao, Long idCurso) {
+		questaoRepository.save(questao);
+		return "redirect:menuTutor";
 	}
 }
