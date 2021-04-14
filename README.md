@@ -24,7 +24,7 @@ Feito por Kevin Gabriel e Edryan Matheus
 
 Feito por Kevin Gabriel e Edryan Matheus
 
-# Wireframes
+# Wireframes(Protótipos)
 ## Index
 ![index](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/index.gif)
 
@@ -47,22 +47,22 @@ Feito por Wagner Kenji e José Alberto
 
 # Telas prontas
 
-# Cadastro administrador
+## Cadastro administrador
 ![cad1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/Cadastro1.PNG)
 
 Feito por Daniel Vargas
 
-# Cadastro aluno
+## Cadastro aluno
 ![cad2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/Cadastro2.PNG)
 
 Feito por Daniel Vargas
 
-# Cadastro Gestor
+## Cadastro Gestor
 ![cad3](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/Cadastro3.PNG)
 
 Feito por Daniel Vargas
 
-# Cadastro Tutor
+## Cadastro Tutor
 ![cad4](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/Cadastro4.PNG)
 
 Feito por Daniel Vargas
