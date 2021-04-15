@@ -18,10 +18,12 @@ import org.springframework.web.servlet.ModelAndView;
 import com.nlearning.models.Aluno;
 import com.nlearning.models.Curso;
 import com.nlearning.models.CursoAluno;
+import com.nlearning.models.Questao;
 import com.nlearning.models.Usuario;
 import com.nlearning.repository.AlunoRepository;
 import com.nlearning.repository.CursoAlunoRepository;
 import com.nlearning.repository.CursoRepository;
+import com.nlearning.repository.QuestaoRepository;
 
 @Controller
 public class AlunoController {
@@ -34,6 +36,9 @@ public class AlunoController {
 
 	@Autowired
 	private CursoAlunoRepository cursoAlunoRepository;
+	
+	@Autowired
+	private QuestaoRepository questaoRepository;
 
 	// Validação de login (CADASTRAR)
 	@RequestMapping(value = "/cadastrarAluno")
@@ -157,6 +162,29 @@ public class AlunoController {
 
 		mv.addObject("curso", cursosAluno);
 
+		return mv;
+	}
+	
+	@RequestMapping(value = "/visualizarQuestoesCurso")
+	public ModelAndView telaVisualizarQuestoes(@RequestParam("idCurso") Long idCurso) {
+		Curso curso = cursoRepository.findByIdCurso(idCurso);
+		Iterable<Questao> questao = questaoRepository.findByIdCurso(idCurso);
+		ModelAndView mv = new ModelAndView("/curso/curso_questoes");
+		String imagem = Base64.getEncoder().encodeToString(curso.getImagem());
+		curso.setImagem_string(imagem);
+		
+		List<Questao> questoesCurso = new ArrayList<>();
+		
+		for (Questao questoes : questao) {
+
+			String pdf = Base64.getEncoder().encodeToString(questoes.getPergunta());
+			questoes.setPdfStringQuestao(pdf);
+			
+			questoesCurso.add(questoes);
+		}
+		
+		mv.addObject("curso", curso);
+		mv.addObject("questao", questoesCurso);
 		return mv;
 	}
 }
