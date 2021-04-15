@@ -60,21 +60,7 @@ Feito por Kevin Gabriel
 
 ## Entregas
 
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_1'> Sprint 1 </a>-
-08/03/2021 a 28/03/2021
 
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_2'> Sprint 2 </a>-
-29/03/2021 a 18/04/2021	
-
-
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_3'> Sprint 3 </a>- 
-26/04/2021 a 16/05/2021	
-
-
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_4'> Sprint 4 </a>-
-
-
-17/05/2021 a 05/06/2021
 | Data | Links |
 | ------ | ------ |
 |    28/03/2021    |[Sprint 1](https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_1)|
