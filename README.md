@@ -28,9 +28,9 @@ Wagner Kenji Franco (Dev Team)
 ([Linkedin](https://www.linkedin.com/in/wagner-kenji-franco-kamoei-6883791b2/),
 [Github](https://github.com/UmCaraDaNet))
 
-## Organização da equipe
-<a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Trello </a>
-do projeto com datas de entrega e futuros planejamentos separados por sprint. 
+## Planejamento das Sprints
+No <a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Trello </a>
+está a disponibilização do planejamento das sprints do projeto.
 
 ## Índice
 * [O que é o NLearning](#projeto)
