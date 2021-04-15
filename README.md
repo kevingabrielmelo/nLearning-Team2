@@ -60,7 +60,6 @@ Feito por Kevin Gabriel
 
 ## Entregas
 
-
 | Data | Links |
 | ------ | ------ |
 |    28/03/2021    |[Sprint 1](https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_1)|
