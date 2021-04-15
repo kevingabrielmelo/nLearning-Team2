@@ -54,7 +54,7 @@ Feito por Kevin Gabriel
 
 #Manual de instalação
 
-![manual](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/manual.jpeg)
+![manual](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/manual.png)
 
 ## Cards das Sprints
   
