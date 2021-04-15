@@ -18,6 +18,7 @@ public class Questao implements Serializable {
 	
 	private byte[] pergunta;
 	private long idCurso;
+	private String pdfStringQuestao;
 	
 	public long getIdQuestao() {
 		return idQuestao;
@@ -36,5 +37,11 @@ public class Questao implements Serializable {
 	}
 	public void setIdCurso(long idCurso) {
 		this.idCurso = idCurso;
+	}
+	public String getPdfStringQuestao() {
+		return pdfStringQuestao;
+	}
+	public void setPdfStringQuestao(String pdfStringQuestao) {
+		this.pdfStringQuestao = pdfStringQuestao;
 	}
 }
