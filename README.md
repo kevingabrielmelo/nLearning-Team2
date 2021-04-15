@@ -1,8 +1,3 @@
-
-## Projeto
-
-O projeto Ness Health consiste em uma API desenvolvida usando Java spring-boot e um website desenvolvido utilizando HTML, CSS e JavaScript. Com essas ferramentas desenvolveremos um sistema, para educação a distância, visando organização, facilitando a comunicação entre alunos e tutores e uma auto-avaliação realizada pelo aluno, para que seja possível alcançar o máximo desempenho de ensino.
-
 ## Time
 
 Daniel Vargas Ribeiro (Dev Team)
@@ -37,6 +32,17 @@ Wagner Kenji Franco (Dev Team)
 <a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Trello </a>
 do projeto com datas de entrega e futuros planejamentos separados por sprint. 
 
+## Índice
+* [O que é o NLearning](#projeto)
+* [Product Backlog](#lista-de-requisitos)
+* [Cronograma de Entregas](#entregas)
+* [Card das Sprints](#cards-das-sprints)
+* [Tecnologias](#tecnologias)
+
+## Projeto
+
+O projeto nLearning consiste em uma API desenvolvida usando Java spring-boot e um website desenvolvido utilizando HTML, CSS e JavaScript. Com essas ferramentas desenvolveremos um sistema, para educação a distância, visando organização, facilitando a comunicação entre alunos e tutores e uma auto-avaliação realizada pelo aluno, para que seja possível alcançar o máximo desempenho de ensino.
+
 # Lista de Requisitos
 ![requisitos1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/req1.PNG)
 
@@ -66,10 +72,17 @@ Feito por Kevin Gabriel
 
 
 <a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_4'> Sprint 4 </a>-
+
+
 17/05/2021 a 05/06/2021
+| Data | Links |
+| ------ | ------ |
+|    28/03/2021    |[Sprint 1](https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_1)|
+|    18/04/2021	   |[Sprint 2](https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_2) |
+|    16/05/2021    |[Sprint 3](https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_3) |
+|    05/06/2021    |[Sprint 4](https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_4) |
 
-
-## Tecnologias Usadas
+## Tecnologias
 
 Spring Tool Suite 4 (STS)
 
