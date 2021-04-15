@@ -66,9 +66,9 @@
 					<p class="card-text" th:text="${curso.descricao}"></p>
 					<p class="card-text" th:inline="text">R$
 						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</p>
-					<p class="card-text" th:text="${curso.tutor}"></p>
-					<a th:href="@{/selectCurso(idCurso = ${curso.idCurso})}"
-						class="btn botao-cor-especial">Veja o curso</a> <i><b><a
+						<label>Tutor: <span class="card-text" th:text="${curso.tutor}"></span></label>
+					<p> <a th:href="@{/criarQuestaoCurso(idCurso = ${curso.idCurso})}"
+						class="btn botao-cor-especial">Veja o curso</a></p> <i><b><a
 							th:href="@{/deletar/{id_curso}(idCurso = ${curso.idCurso})}"><i
 								class="material-icons">delete_forever</i></a></b></i>
 				</div>

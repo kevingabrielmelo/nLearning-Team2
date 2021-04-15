@@ -61,10 +61,9 @@
 		</thead>
 		<tbody>
 			<tr th:each="candidato : ${candidato}">
-
-				<td><img
-					th:src="@{'data:image/jpg;base64,'+${candidato.curriculo_string}}"
-					width="800" height="1000" /></td>
+				<td><iframe th:src="@{'data:application/pdf;base64,'+${candidato.curriculo_string}}"
+					width="900" height="1100">
+					 </iframe></td>
 				<td><i><b><a th:href="@{/cadastrarTutor}"><i
 								class="material-icons left">add_circle </i></a></b></i></td>
 				<td><i><b><a
@@ -73,5 +72,6 @@
 			</tr>
 		</tbody>
 	</table>
+			
 </body>
 </html>
