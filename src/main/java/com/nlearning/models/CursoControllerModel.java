@@ -2,8 +2,6 @@ package com.nlearning.models;
 
 import java.io.Serializable;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public class CursoControllerModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -14,7 +12,6 @@ public class CursoControllerModel implements Serializable {
 	private Double valor;
 	private String tutor;
 	private Long idTutor;
-	private MultipartFile imagem;
 
 	public CursoControllerModel() {}
 
@@ -48,14 +45,6 @@ public class CursoControllerModel implements Serializable {
 
 	public void setTutor(String tutor) {
 		this.tutor = tutor;
-	}
-
-	public MultipartFile getImagem() {
-		return imagem;
-	}
-
-	public void setImagem(MultipartFile imagem) {
-		this.imagem = imagem;
 	}
 
 	public Long getIdCurso() {

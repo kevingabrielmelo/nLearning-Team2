@@ -1,4 +1,4 @@
-package com.nlearning.controllers;
+package com.nlearning.mapper;
 
 import java.io.IOException;
 

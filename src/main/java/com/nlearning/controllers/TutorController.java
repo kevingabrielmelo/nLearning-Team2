@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.nlearning.mapper.QuestaoMapper;
 import com.nlearning.models.Curso;
 import com.nlearning.models.Tutor;
 import com.nlearning.models.Usuario;
