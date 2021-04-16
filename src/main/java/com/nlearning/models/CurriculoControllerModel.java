@@ -2,8 +2,6 @@ package com.nlearning.models;
 
 import java.io.Serializable;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public class CurriculoControllerModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -11,7 +9,6 @@ public class CurriculoControllerModel implements Serializable {
 	private String nome;
 	private String telefone;
 	private String email;
-	private MultipartFile curriculo;
 
 	public CurriculoControllerModel() {}
 
@@ -37,13 +34,5 @@ public class CurriculoControllerModel implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public MultipartFile getCurriculo() {
-		return curriculo;
-	}
-
-	public void setCurriculo(MultipartFile curriculo) {
-		this.curriculo = curriculo;
 	}
 }

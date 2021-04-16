@@ -1,4 +1,4 @@
-package com.nlearning.controllers;
+package com.nlearning.mapper;
 
 import java.io.IOException;
 
@@ -13,19 +13,13 @@ public class CursoMapper {
 	public static Curso converter(CursoControllerModel curso, MultipartFile imagem) throws IOException {
 		
 		var cursoBanco = new Curso();
-	//	cursoBanco.setIdCurso(curso.getIdCurso());
 		cursoBanco.setNomeCurso(curso.getNomeCurso());
 		cursoBanco.setDescricao(curso.getDescricao());
 		cursoBanco.setTutor(curso.getTutor());
 		cursoBanco.setValor(curso.getValor());
 		cursoBanco.setImagem(imagem.getBytes());
+		cursoBanco.setIdTutor(Usuario.idUsu);
 		
-		if (curso.getIdTutor() == null) {
-			cursoBanco.setIdTutor(Usuario.idUsu);
-		}
-		else {
-			cursoBanco.setIdTutor(curso.getIdTutor());
-		}
 		return cursoBanco;
 	}
 }
