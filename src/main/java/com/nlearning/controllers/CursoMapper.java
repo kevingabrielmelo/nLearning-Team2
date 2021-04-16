@@ -19,8 +19,13 @@ public class CursoMapper {
 		cursoBanco.setTutor(curso.getTutor());
 		cursoBanco.setValor(curso.getValor());
 		cursoBanco.setImagem(imagem.getBytes());
-		cursoBanco.setIdTutor(Usuario.idUsu);
 		
+		if (curso.getIdTutor() == null) {
+			cursoBanco.setIdTutor(Usuario.idUsu);
+		}
+		else {
+			cursoBanco.setIdTutor(curso.getIdTutor());
+		}
 		return cursoBanco;
 	}
 }

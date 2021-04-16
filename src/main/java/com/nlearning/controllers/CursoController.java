@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.nlearning.models.Curso;
 import com.nlearning.models.CursoControllerModel;
+import com.nlearning.models.Usuario;
 import com.nlearning.repository.CursoRepository;
 
 @Controller
@@ -42,16 +43,20 @@ public class CursoController {
 	@GetMapping(value = "/cursos")
 	public ModelAndView listaCursos() throws UnsupportedEncodingException {
 		ModelAndView mv = new ModelAndView("/curso/lista_cursos");
-		Iterable<Curso> curso = cursoRepository.findAll();
-		List<Curso> lista_cursos = new ArrayList<>();
+		Iterable<Curso> curso = cursoRepository.findAllByIdTutor(Usuario.idUsu);
+
+		List<Curso> cursosTutor = new ArrayList<>();
+
+		mv.addObject("curso");
 
 		for (Curso cursos : curso) {
+
 			String imagem = Base64.getEncoder().encodeToString(cursos.getImagem());
 			cursos.setImagem_string(imagem);
-			lista_cursos.add(cursos);
+			cursosTutor.add(cursos);
 		}
 
-		mv.addObject("curso", lista_cursos);
+		mv.addObject("curso", cursosTutor);
 
 		return mv;
 	}
