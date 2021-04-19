@@ -62,6 +62,10 @@ está a disponibilização do planejamento das sprints do projeto.
 
 
 
+# Modelo de entidade e relacionamento
+
+![MER](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/MER.jpeg)
+
 # Burndown
 
 ![burndown](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/Burndown%20Sprint%202.PNG)
