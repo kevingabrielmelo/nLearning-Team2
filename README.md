@@ -7,6 +7,11 @@ Feito por Luiz Miguel
 No <a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Trello </a>
 está a disponibilização do planejamento das sprints do projeto.
 
+## Página Inicial
+![index](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/index.gif)
+
+Feito por Daniel Vargas e Kevin Melo
+
 # Telas referente a cursos
 
 ## Cadastro de curso
@@ -32,12 +37,12 @@ Feito por Kauan Souza e Kevin Melo
 ## Cursos do tutor
 ![CursoTutor](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/ListaCursoTutor.jpeg)
 
-Feito por Wagner Kenji e José Alberto
+Feito por Kevin Melo e José Alberto
 
 ## Cursos do aluno
 ![CursoAluno](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/ListaCursoAluno.jpeg)
 
-Feito por Wagner Kenji e José Alberto
+Feito por Kevin Melo e José Alberto
 
 ## Lista dos Cursos
 ![cad4](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/ListaCurso.jpeg)
@@ -64,13 +69,33 @@ Feito por Luiz Miguel e Edryan Matheus
 # Tela de Login
 ![Login](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/Login.jpeg)
 
-Feito por Luiz Miguel e Daniel Vargas
-
-# Modelo de entidade e relacionamento
-
-![MER](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/MER.jpeg)
-
 Feito por Luiz Miguel e Edryan Matheus
+
+# Telas de Menu
+
+## Menu administrador
+
+![MER](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/menu_adm.png)
+
+Feito por Daniel Vargas e Wagner Kenji
+
+## Menu aluno
+
+![Menualuno](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/menu_aluno.png)
+
+Feito por Daniel Vargas e Wagner Kenji
+
+## Menu gestor
+
+![Menugestor](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/menu_gestor.png)
+
+Feito por Daniel Vargas e Wagner Kenji
+
+## Menu tutor
+
+![Menututor](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/menu_tutor.png)
+
+Feito por Daniel Vargas e Wagner Kenji
 
 # Burndown
 
