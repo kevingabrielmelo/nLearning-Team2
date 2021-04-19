@@ -45,12 +45,7 @@ está a disponibilização do planejamento das sprints do projeto.
 ## Vizualização de questões para os alunos
 ![QuestoesAluno](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/QuestaoAluno.jpeg)
 
-
-
-## Cadastro administrador
-![cad1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/sprint_1/Cadastro1.PNG)
-
-
+# Telas referentes a currículos
 
 ## Lista dos Currículos
 ![ExibirCurriculo](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/ListaCurriculo.jpeg)
@@ -62,7 +57,7 @@ está a disponibilização do planejamento das sprints do projeto.
 
 
 
-## Tela de Login
+# Tela de Login
 ![Login](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/Login.jpeg)
 
 
