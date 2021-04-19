@@ -89,13 +89,13 @@ Feito por Daniel Vargas e Wagner Kenji
 
 ![Menugestor](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/menu_gestor.png)
 
-Feito por Daniel Vargas e Wagner Kenji
+Feito por Luiz Miguel e Wagner Kenji
 
 ## Menu tutor
 
 ![Menututor](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/menu_tutor.png)
 
-Feito por Daniel Vargas e Wagner Kenji
+Feito por Daniel Vargas e Luiz Miguel
 
 # Burndown
 
