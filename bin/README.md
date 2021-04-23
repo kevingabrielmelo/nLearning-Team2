@@ -28,9 +28,9 @@ Wagner Kenji Franco (Dev Team)
 ([Linkedin](https://www.linkedin.com/in/wagner-kenji-franco-kamoei-6883791b2/),
 [Github](https://github.com/UmCaraDaNet))
 
-## Organização da equipe
-<a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Trello </a>
-do projeto com datas de entrega e futuros planejamentos separados por sprint. 
+## Planejamento das Sprints
+No <a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Trello </a>
+está a disponibilização do planejamento das sprints do projeto.
 
 ## Índice
 * [O que é o NLearning](#projeto)
@@ -52,6 +52,10 @@ Feito por Kevin Gabriel
 
 Feito por Kevin Gabriel 
 
+## Manual de instalação
+
+![manual](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/manual.png)
+
 ## Cards das Sprints
   
 ![card1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_1.png) ![card_2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_2.png)
@@ -60,21 +64,7 @@ Feito por Kevin Gabriel
 
 ## Entregas
 
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_1'> Sprint 1 </a>-
-08/03/2021 a 28/03/2021
 
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_2'> Sprint 2 </a>-
-29/03/2021 a 18/04/2021	
-
-
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_3'> Sprint 3 </a>- 
-26/04/2021 a 16/05/2021	
-
-
-<a href='https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_4'> Sprint 4 </a>-
-
-
-17/05/2021 a 05/06/2021
 | Data | Links |
 | ------ | ------ |
 |    28/03/2021    |[Sprint 1](https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_1)|

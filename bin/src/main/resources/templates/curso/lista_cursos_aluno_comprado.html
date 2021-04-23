@@ -16,11 +16,17 @@
 	rel="stylesheet" type="text/css">
 <link href="/css/menu_padrao.css" rel="stylesheet" type="text/css" />
 <link href="/css/cadastro.css" rel="stylesheet" type="text/css" />
+<link href="/css/cursos.css" rel="stylesheet" type="text/css" />
 <link href="/css/default.css" rel="stylesheet" type="text/css"
 	media="all" />
 <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="/bootstrap/css/font-awesome.min.css" rel="stylesheet">
 <link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+	crossorigin="anonymous">
 <link href="/bootstrap/css/lightbox.min.css" rel="stylesheet">
 <link href="/bootstrap/css/style.css" rel="stylesheet">
 <link rel="stylesheet"
@@ -108,32 +114,36 @@ h3.titulo {
 	</div>
 
 	<section class="container" id="fundo_cursos">
-		<h3 class="card_title">Lista de cursos</h3>
-		<div th:each="curso : ${curso}" class="row justify-content-center">
+		<h3 class="titulo_cursos">Seus cursos</h3>
+		<div th:each="curso : ${curso}" class="">
 
 			<article
-				class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
-				<img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
+				class="alinhamento card borda-cor-especial card-largura p-3 m-3 col-md-3">
+				<img class="imagem_tamanho"
+					th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
 				<div class="card-body ">
 					<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
 					<p class="card-text" th:text="${curso.descricao}"></p>
 					<p class="card-text" th:inline="text">R$
 						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</p>
-					<p class="card-text" th:text="${curso.tutor}"></p>
-					<a th:href="@{/selectCurso(idCurso = ${curso.idCurso})}"
-						class="btn botao-cor-especial">Veja o curso</a>
+					<label>Tutor: <span class="card-text"
+						th:text="${curso.tutor}"></span></label>
+					<p>
+						<a
+							th:href="@{/visualizarQuestoesCurso(idCurso = ${curso.idCurso})}"
+							class="btn botao-cor-especial">Veja o curso</a>
+					</p>
 				</div>
 			</article>
 		</div>
 	</section>
 
-	<div style="padding-top: 30%;">
-		<div id="banner-wrapper" class="footer">
+	<div style="padding-top: 120%;">
+		<div id="banner-wrapper" class="footer alinhamento2">
 			<div id="footer" class="container">
 				<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>

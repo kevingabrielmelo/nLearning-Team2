@@ -66,7 +66,7 @@
 					<p class="card-text" th:text="${curso.descricao}"></p>
 					<p class="card-text" th:inline="text">R$
 						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</p>
-					<p class="card-text" th:text="${curso.tutor}"></p>
+						<label>Tutor: <span class="card-text" th:text="${curso.tutor}"></span></label>
 				</div>
 			</article>
 		</div>

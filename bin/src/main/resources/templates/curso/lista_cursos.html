@@ -14,6 +14,7 @@
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700"
 	rel="stylesheet" type="text/css">
+<link href="/css/menu_padrao.css" rel="stylesheet" type="text/css" />
 <link href="/css/cadastro.css" rel="stylesheet" type="text/css" />
 <link href="/css/cursos.css" rel="stylesheet" type="text/css" />
 <link href="/css/default.css" rel="stylesheet" type="text/css"
@@ -37,6 +38,39 @@
 <script type="text/javascript" src="/js/carregarImagem.js"> </script>
 <!-- Carregar Imagem -->
 
+<style>
+table.blueTable {
+	width: 50%;
+	text-align: center;
+	border-collapse: collapse;
+	margin: auto;
+}
+
+table.blueTable td, table.blueTable th {
+	border: 1px solid #AAAAAA;
+	padding: 3px 2px;
+}
+
+table.blueTable tr:nth-child(even) {
+	background: #D0E4F5;
+}
+
+table.blueTable thead {
+	background: #1C6EA4;
+}
+
+table.blueTable thead th {
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+h3.titulo {
+	text-align: center;
+	padding: 10px;
+}
+</style>
+
 </head>
 <body class="body">
 	<div id="header">
@@ -54,45 +88,38 @@
 			</ul>
 		</div>
 	</div>
+
 	<section class="container" id="fundo_cursos">
-		<h3 class="card_title">Lista de cursos</h3>
-		<div th:each="curso : ${curso}" class="row justify-content-center">
+		<h3 class="titulo_cursos">Lista de cursos</h3>
+		<div th:each="curso : ${curso}" class="">
 
 			<article
-				class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
-				<img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
+				class="alinhamento card borda-cor-especial card-largura p-3 m-3 col-md-3">
+				<img class="imagem_tamanho"
+					th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
 				<div class="card-body ">
 					<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
 					<p class="card-text" th:text="${curso.descricao}"></p>
 					<p class="card-text" th:inline="text">R$
 						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</p>
-					<p class="card-text" th:text="${curso.tutor}"></p>
-					<a th:href="@{/selectCurso(idCurso = ${curso.idCurso})}"
-						class="btn botao-cor-especial">Veja o curso</a> <i><b><a
-							th:href="@{/deletar/{id_curso}(idCurso = ${curso.idCurso})}"><i
-								class="material-icons">delete_forever</i></a></b></i>
+					<label>Tutor: <span class="card-text"
+						th:text="${curso.tutor}"></span></label>
+					<p>
+						<a
+							th:href="@{/selectCurso(idCurso = ${curso.idCurso})}"
+							class="btn botao-cor-especial">Altere o curso</a>
+					</p>
 				</div>
 			</article>
 		</div>
 	</section>
-	<div>
-		<div id="banner-wrapper" class="footer">
+
+	<div style="padding-top: 120%;">
+		<div id="banner-wrapper" class="footer alinhamento2">
 			<div id="footer" class="container">
 				<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
 			</div>
 		</div>
 	</div>
-
-</body>
-</html>
-
-<div style="padding-top: 30%;">
-	<div id="banner-wrapper" class="footer">
-		<div id="footer" class="container">
-			<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
-		</div>
-	</div>
-</div>
-
 </body>
 </html>

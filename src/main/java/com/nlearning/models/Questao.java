@@ -17,8 +17,10 @@ public class Questao implements Serializable {
 	private long idQuestao;
 	
 	private byte[] pergunta;
+	private byte[] video;
 	private long idCurso;
 	private String pdfStringQuestao;
+	private String videoString;
 	
 	public long getIdQuestao() {
 		return idQuestao;
@@ -43,5 +45,17 @@ public class Questao implements Serializable {
 	}
 	public void setPdfStringQuestao(String pdfStringQuestao) {
 		this.pdfStringQuestao = pdfStringQuestao;
+	}
+	public byte[] getVideo() {
+		return video;
+	}
+	public void setVideo(byte[] video) {
+		this.video = video;
+	}
+	public String getVideoString() {
+		return videoString;
+	}
+	public void setVideoString(String videoString) {
+		this.videoString = videoString;
 	}
 }

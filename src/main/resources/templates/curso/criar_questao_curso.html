@@ -66,12 +66,13 @@
 					<p class="card-text" th:text="${curso.descricao}"></p>
 					<p class="card-text" th:inline="text">R$
 						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</p>
-						<label>Tutor: <span class="card-text" th:text="${curso.tutor}"></span></label>
+					<label>Tutor: <span class="card-text"
+						th:text="${curso.tutor}"></span></label>
 				</div>
 			</article>
 		</div>
 	</section>
-	
+
 	<div class="main_cadastro">
 		<h1 class="titulo_cadastro">Cadastro de Questão</h1>
 		<form method='post' enctype="multipart/form-data">
@@ -79,13 +80,16 @@
 				<div class="col-lg-6">
 					<h3 class="titulos_forms ">Envio de questões por PDF:</h3>
 					<input type="file" name="pergunta" id="pergunta" required
-						accept="application/pdf"> <input type="submit"
-						value="Salvar" class="botao_salvar">
+						accept="application/pdf">
+					<h3 class="titulos_forms ">Envio de vídeos (MP4):</h3>
+					<input type="file" name="video" id="video" required
+					accept="video/mp4"> <input
+						type="submit" value="Salvar" class="botao_salvar">
 				</div>
 			</div>
 		</form>
 	</div>
-	
+
 	<div>
 		<div id="banner-wrapper" class="footer">
 			<div id="footer" class="container">

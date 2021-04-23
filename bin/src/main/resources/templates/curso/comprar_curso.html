@@ -123,9 +123,9 @@ h3.titulo {
 						<p class="card-text" th:inline="text">R$
 							[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2,
 							'POINT')}]]</p>
-						<p class="card-text" th:text="${curso.tutor}"></p>
-						<button th:href="@{/comprarCurso(idCurso = ${curso.idCurso})}"
-							class="btn botao-cor-especial">Comprar curso!</button>
+							<label>Tutor: <span class="card-text" th:text="${curso.tutor}"></span></label>
+					<p> <button th:href="@{/comprarCurso(idCurso = ${curso.idCurso})}"
+						class="btn botao-cor-especial">Comprar curso!</button></p>
 					</div>
 				</article>
 			</div>

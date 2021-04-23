@@ -29,6 +29,36 @@
 <!-- Máscara para o CPF -->
 
 <style>
+table.blueTable {
+	width: 50%;
+	text-align: center;
+	border-collapse: collapse;
+	margin: auto;
+}
+
+table.blueTable td, table.blueTable th {
+	border: 1px solid #AAAAAA;
+	padding: 3px 2px;
+}
+
+table.blueTable tr:nth-child(even) {
+	background: #D0E4F5;
+}
+
+table.blueTable thead {
+	background: #1C6EA4;
+}
+
+table.blueTable thead th {
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+h3.titulo {
+	text-align: center;
+	padding: 10px;
+}
 </style>
 
 </head>
@@ -49,20 +79,22 @@
 		</div>
 	</div>
 
-	<table class="container">
+	<table class="blueTable">
 		<thead>
 			<tr>
 				<th>Nome do candidato</th>
 				<th>Telefone do candidato</th>
 				<th>Email do candidato</th>
+				<th>Currículo</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="candidato : ${candidato}">
 			
-				<td><a th:href="@{curriculo/{id_candidato}(id_candidato = ${candidato.idCandidato})}"><span th:text="${candidato.nome}"></span></a></td>
+				<td><span th:text="${candidato.nome}"></span></a></td>
 				<td><span th:text="${candidato.telefone}"></span></td>
 				<td><span th:text="${candidato.email}"></span></td>
+				<td><a th:href="@{curriculo/{id_candidato}(id_candidato = ${candidato.idCandidato})}"><button>Visualizar</button></a></td>
 			</tr>
 		</tbody>
 	</table>
