@@ -115,6 +115,7 @@ public class TutorController {
 			String imagem = Base64.getEncoder().encodeToString(cursos.getImagem());
 			cursos.setImagem_string(imagem);
 			cursosTutor.add(cursos);
+			System.out.println("cu");
 		}
 
 		mv.addObject("curso", cursosTutor);
@@ -134,9 +135,9 @@ public class TutorController {
 
 	// Cadastra os dados das questões no banco de dados
 	@RequestMapping(value = "/criarQuestaoCurso", method = RequestMethod.POST,  consumes = { "multipart/form-data" })
-	public String form(@RequestParam(value = "pergunta") MultipartFile pergunta, Long idCurso)
+	public String form(@RequestParam(value = "pergunta") MultipartFile pergunta, Long idCurso, @RequestParam(value = "video") MultipartFile video)
 		throws IOException {
-			questaoRepository.save(QuestaoMapper.converter(pergunta, idCurso));
+			questaoRepository.save(QuestaoMapper.converter(pergunta, idCurso, video));
 			return "redirect:menuTutor";
 		}
 }

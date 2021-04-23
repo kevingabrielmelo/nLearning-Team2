@@ -180,6 +180,9 @@ public class AlunoController {
 			String pdf = Base64.getEncoder().encodeToString(questoes.getPergunta());
 			questoes.setPdfStringQuestao(pdf);
 			
+			String video = Base64.getEncoder().encodeToString(questoes.getVideo());
+			questoes.setVideoString(video);
+			
 			questoesCurso.add(questoes);
 		}
 		
