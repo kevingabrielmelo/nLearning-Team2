@@ -98,84 +98,56 @@ Released   : 20132402
 			<button class="btn_jornada">Venha aprender</button>
 			<p class="desc_aprender">para formar a base do seu futuro</p>
 			<h3 class="meio_jornada">ou</h3>
-			<button  type="button" class="btn_jornada2" data-bs-toggle="modal" data-bs-target="#modal">
-				 Venha Ensinar 
-				</button>
-<!-- 			<button onclick="Mudarestado('minhaDiv')" class="btn_jornada2">Venha -->
-<!-- 				Ensinar</button> -->
+			<button type="button" class="btn_jornada2" data-bs-toggle="modal"
+				data-bs-target="#modal">Venha Ensinar</button>
+			<!-- 			<button onclick="Mudarestado('minhaDiv')" class="btn_jornada2">Venha -->
+			<!-- 				Ensinar</button> -->
 			<p class="desc_ensinar">para providenciar a base das mentes do
 				amanhã</p>
-				
-				<div class="modal" tabindex="-1" id="modal">
-	 				 <div class="modal-dialog">
-	    				<div class="modal-content">
-	      					<div class="modal-header">
-	        					<h5 class="titulo_modal">Envie seu curriculo!</h5>
-	        						
-	      					</div>
-	      				<div class="modal-body" >
-	      				<form method='post' enctype="multipart/form-data">
-					<div class="container">
-						<div class="col-lg-12">
-							<h3 class="titulos_forms ">Nome:</h3>
-							<input class="input_forms_modal" type='text' placeholder="Nome"
-								name="nome" required />
 
-							<h3 class="titulos_forms">Telefone:</h3>
-							<input class="input_forms_modal" maxlength="15" type='text'
-								id="telefone" onkeypress="mascara(this, mtel);"
-								placeholder="Telefone" name="telefone" required />
-
-							<h3 class="titulos_forms">E-mail:</h3>
-							<input class="input_forms_modal" type='text'
-								placeholder="you@example.com" name="email" required />
-
-							<h3 class="titulos_forms">Currículo:</h3>
-							<input type="file" name="curriculo" id="curriculo" required accept="application/pdf">
-
+			<div class="modal" tabindex="-1" id="modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="titulo_modal">Envie seu curriculo!</h5>
 
 						</div>
+						<div class="modal-body">
+							<form method='post' enctype="multipart/form-data">
+								<div class="container">
+									<div class="col-lg-12">
+										<h3 class="titulos_forms ">Nome:</h3>
+										<input class="input_forms_modal" type='text'
+											placeholder="Nome" name="nome" required />
+
+										<h3 class="titulos_forms">Telefone:</h3>
+										<input class="input_forms_modal" maxlength="15" type='text'
+											id="telefone" onkeypress="mascara(this, mtel);"
+											placeholder="Telefone" name="telefone" required />
+
+										<h3 class="titulos_forms">E-mail:</h3>
+										<input class="input_forms_modal" type='text'
+											placeholder="you@example.com" name="email" required />
+
+										<h3 class="titulos_forms">Currículo:</h3>
+										<input type="file" name="curriculo" id="curriculo" required
+											accept="application/pdf">
+
+
+									</div>
+								</div>
+						</div>
+						<div class="modal-footer">
+							<input onclick="alertCadastro()" type="submit" value="Enviar"
+								class="btn btn-primary">
+							<button type="button" class="btn btn-secondary"
+								data-bs-dismiss="modal">Fechar</button>
+						</div>
+						</form>
 					</div>
-				
-	      				
-	      				</div>
-	      			<div class="modal-footer">
-	      				<input onclick="alertCadastro()" type="submit" value="Enviar" class="btn btn-primary">
-	       				 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-	      			</div>
-	      			</form>
-	    			</div>
-	  				</div>
-					</div>
-				
-<!-- 			<div style="display: none" id="minhaDiv"> -->
+				</div>
+			</div>
 
-<!-- 				<form method='post' enctype="multipart/form-data"> -->
-<!-- 					<div class="container"> -->
-<!-- 						<div class="col-lg-12"> -->
-<!-- 							<h3 class="titulos_forms ">Nome:</h3> -->
-<!-- 							<input class="input_forms" type='text' placeholder="Nome" -->
-<!-- 								name="nome" required /> -->
-
-<!-- 							<h3 class="titulos_forms">Telefone:</h3> -->
-<!-- 							<input class="input_forms" maxlength="15" type='text' -->
-<!-- 								id="telefone" onkeypress="mascara(this, mtel);" -->
-<!-- 								placeholder="Telefone" name="telefone" required /> -->
-
-<!-- 							<h3 class="titulos_forms">E-mail:</h3> -->
-<!-- 							<input class="input_forms" type='email' -->
-<!-- 								placeholder="you@example.com" name="email" required /> -->
-
-<!-- 							<h3 class="titulos_forms ">Currículo:</h3> -->
-<!-- 							<input type="file" name="curriculo" id="curriculo" required=""> -->
-
-<!-- 							<input onclick="alertCadastro()" type="submit" value="Salvar" -->
-<!-- 								class="botao_salvar"> -->
-
-<!-- 						</div> -->
-<!-- 					</div> -->
-<!-- 				</form> -->
-<!-- 			</div> -->
 		</div>
 		<div class="div_beneficios">
 			<h3 class="titulo_beneficios">Outros benefícios</h3>
@@ -222,32 +194,40 @@ Released   : 20132402
 				</div>
 			</div>
 		</div>
-		<div class="container ">
-			<h1 class="titulo_plataforma">Não seja limitado pela plataforma</h1>
-			<div class="row about-container">
-				<div class="col-lg-6">
-					<p class="desc_plataforma">Educação é direito de qualquer um em
-						qualquer lugar, por isso, o nLearning está disponível tanto para
-						computadores quanto aparelhos móveis</p>
-				</div>
-				<div class="col-lg-6">
-					<img class="img_plataforma" src="/imagens/plataformas.svg">
-				</div>
+	</div>
+	<div class="container ">
+		<h1 class="titulo_plataforma">Não seja limitado pela plataforma</h1>
+		<div class="row about-container">
+			<div class="col-lg-6">
+				<p class="desc_plataforma">Educação é direito de qualquer um em
+					qualquer lugar, por isso, o nLearning está disponível tanto para
+					computadores quanto aparelhos móveis</p>
+			</div>
+			<div class="col-lg-6">
+				<img class="img_plataforma" src="/imagens/plataformas.svg">
 			</div>
 		</div>
-		<div id="div_duvidas">
-			<h1 class="titulo_duvidas">Ainda há duvidas?</h1>
-			<button class="btn_ajuda">Central de ajuda</button>
-		</div>
+	</div>
+	<div id="div_duvidas">
+		<h1 class="titulo_duvidas">Ainda há duvidas?</h1>
+		<button class="btn_ajuda">Central de ajuda</button>
+	</div>
 
-		<div id="banner-wrapper">
-			<div id="footer" class="container">
-				<p>
-					&copy; Todos direitos reservados por NessHealth </a>.
-				</p>
-			</div>
+	<script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+</script>
+	<script type="text/javascript" src="/js/chatBot.js"> </script>
+
+	<div id="banner-wrapper">
+		<div id="footer" class="container">
+			<p>
+				&copy; Todos direitos reservados por NessHealth </a>.
+			</p>
 		</div>
-		
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>	
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+		crossorigin="anonymous"></script>
 </body>
 </html>
