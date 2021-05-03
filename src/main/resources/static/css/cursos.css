@@ -1,3 +1,11 @@
+#header{
+    background:#1a1a1a ; 
+}
+
+.espac{
+    margin-top: 10px;
+}
+
 #fundo_cursos{
     background: #fff;
 }
@@ -9,16 +17,13 @@
 
 .imagem_tamanho{
     height: 200px;
-    width: 290px;
+    width: 200px;
 }
 
 .alinhamento{
 	display:flex;
 	flex-direction:row;
-	float: left;
-	min-height: 600px;
-	height: 650px;
-	
+	float: left;	
 }
 
 .alinhamento2{
@@ -29,4 +34,71 @@
     background-color: #0B2E50!important;
     color: white!important;
 }
+
+#footer_main1{
+  background: #1B1B1B;
+  padding-top: 3.5%;
+  padding-bottom:3.5% ;
+  
+}
+
+
+/* #footer_main{ */
+/*     background: #1B1B1B; */
+/*     padding-top: 3.5%; */
+/*     padding-bottom:3.5% ; */
+/* } */
+
+/* #footer_main1{ */
+/* 	margin-top:70%; */
+/*     background: #1B1B1B; */
+/*     padding-top: 3.5%; */
+/*     padding-bottom:3.5% ; */
+/* } */
+
+/* .flex_footer_div1{ */
+/*     float: left; */
+/*     color: white; */
+/*     margin-left: 12%; */
+/* } */
+
+/* .flex_footer_div2{ */
+/*     float: left; */
+/*     color: white; */
+/*     margin-left:10%; */
+/* } */
+
+/* .h1_footer{ */
+/*     margin-bottom: 15px; */
+/*     color: white; */
+/*     font-size: 20px; */
+/* } */
+
+/* .a_footer{ */
+/*     text-decoration: none; */
+/*     color: white; */
+/*     display: block; */
+/*     font-size: 15px; */
+/* } */
+
+/* .img_midia1{ */
+/*     margin-bottom: 3%; */
+/*     margin-left: 30%; */
+/*     display: inline; */
+/* } */
+
+/* .img_midia{ */
+/*     margin-left: 1%; */
+/*     margin-bottom: 3%; */
+/*     display: inline; */
+/* } */
+
+/* .h1_footer1{ */
+/*     margin-bottom: 20px; */
+/*     margin-left: 68.5%; */
+/*     color: white; */
+/*     font-size: 20px; */
+/* } */
+
+
 

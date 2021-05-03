@@ -45,7 +45,7 @@
 		</div>
 	</div>
 		<div class="main_cadastro">
-			<h1 class="titulo_cadastro">Cadastro de Curso</h1>
+			<h1 class="titulo_cadastro_form">Cadastro de Curso</h1>
 			<form method='post' enctype="multipart/form-data">
 				<div class="row about-container">
 					<div class="col-lg-6">
@@ -68,18 +68,38 @@
 							placeholder="Tutor" name="tutor" required />
 
 						<h3 class="titulos_forms">Imagem:</h3>
-						<input type="file" class="titulos_forms" name="imagem" id="imagem" required> <br>
+						<input type="file" class="titulos_forms" name="imagem" id="imagem" required=""> <br>
 						<input onclick="alertCadastro()" type="submit" value="Salvar"
 							class="botao_salvar">
 					</div>
 				</div>
 			</form>
 		</div>
-
-		<div id="banner-wrapper">
-			<div id="footer" class="container">
-				<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
-			</div>
-		</div>
 </body>
+
+	
+<footer>
+	<div id="footer_main">
+			<div class="flex_footer">
+				<div class="flex_footer_div1">
+						<h1 class="h1_footer">Empresa</h1>
+						<a class="a_footer" href=""  title="">⸰ Sobre nós</a>
+						<a class="a_footer" href=""  title="">⸰ Legal</a>
+						<a class="a_footer" href=""  title="">⸰ Negócios</a>
+				</div>
+
+				<div class="flex_footer_div2">
+					<h1 class="h1_footer">Ajuda</h1>
+					<a class="a_footer" href="" title="">⸰ Central de ajuda</a>
+					<a class="a_footer" href="" title="">⸰ Cursos</a>
+					<a class="a_footer" href="" title="">⸰ Contato</a>
+				</div>
+
+				<div>
+					<h1 class="h1_footer1">Midias sociais</h1>
+					<img class="img_midia1 " src="/imagens/midias.svg">
+			</div>
+			
+	</div>
+</footer>
 </html>
