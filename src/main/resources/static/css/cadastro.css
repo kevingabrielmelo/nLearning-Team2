@@ -1,5 +1,17 @@
+*  {
+    margin:0;
+    padding:0;
+}
+html, body
+{
+	height: 100%;
+}
 #header{
-    background: #0B2E50;
+    background:#1a1a1a ; 
+}
+
+.espac{
+    margin-top: 10px;
 }
 .body{
     background: white;
@@ -11,9 +23,9 @@
     flex-direction: row;
 }
 
-.titulo_cadastro{
+.titulo_cadastro_form{
     margin-top: 5%;
-    margin-left: 5%;
+    margin-left: 1.5%;
     color: #131549;
     font-family: Calibri;
 	font-style: bold;
@@ -29,7 +41,7 @@
 }
 
 .titulo_cadastro{
-    margin-top: 0%;
+    margin-top: 5%;
     margin-left: 5%;
     color: #131549;
     font-family: Calibri;
@@ -91,3 +103,79 @@
     background: #131549;
     color: white;
 } 
+
+.titulo_cadastro2{
+    margin-top: 0%;
+    margin-left: 5%;
+    color: #131549;
+    font-family: Calibri;
+	font-style: bold;
+	font-weight: 300;
+	font-size: 36px;
+	line-height: 84px;
+	display: flex;
+	align-items: center;
+	
+	color: #131549;
+	
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.pdf_quest1{
+    margin-left: 5%;
+}
+
+.pdf_quest2{
+    margin-left: 30%;
+}
+
+
+/* #footer_main{ */
+/*     background: #1B1B1B; */
+/*     padding-top: 3.5%; */
+/*     padding-bottom:3.5% ; */
+/* } */
+
+/* .flex_footer_div1{ */
+/*     float: left; */
+/*     color: white; */
+/*     margin-left: 12%; */
+/* } */
+
+/* .flex_footer_div2{ */
+/*     float: left; */
+/*     color: white; */
+/*     margin-left:10%; */
+/* } */
+
+/* .h1_footer{ */
+/*     margin-bottom: 15px; */
+/*     color: white; */
+/*     font-size: 20px; */
+/* } */
+
+/* .a_footer{ */
+/*     text-decoration: none; */
+/*     color: white; */
+/*     display: block; */
+/*     font-size: 15px; */
+/* } */
+
+/* .img_midia1{ */
+/*     margin-bottom: 3%; */
+/*     margin-left: 30%; */
+/*     display: inline; */
+/* } */
+
+/* .img_midia{ */
+/*     margin-left: 1%; */
+/*     margin-bottom: 3%; */
+/*     display: inline; */
+/* } */
+
+/* .h1_footer1{ */
+/*     margin-bottom: 20px; */
+/*     margin-left: 68.5%; */
+/*     color: white; */
+/*     font-size: 20px; */
+/* } */

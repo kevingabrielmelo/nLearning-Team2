@@ -18,6 +18,8 @@
 <link href="/css/cadastro.css" rel="stylesheet" type="text/css" />
 <link href="/css/default.css" rel="stylesheet" type="text/css"
 	media="all" />
+<link href="/css/cursos.css" rel="stylesheet" type="text/css" />
+
 <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="/bootstrap/css/font-awesome.min.css" rel="stylesheet">
 <link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
@@ -25,11 +27,17 @@
 <link href="/bootstrap/css/style.css" rel="stylesheet">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script type="text/javascript" src="/js/maskTel.js"> </script>
+<script type="text/javascript" src="/js/maskTel.js">
+	
+</script>
 <!-- Máscara para o telefone -->
-<script type="text/javascript" src="/js/maskCPF.js"> </script>
+<script type="text/javascript" src="/js/maskCPF.js">
+	
+</script>
 <!-- Máscara para o CPF -->
-<script type="text/javascript" src="/js/carregarImagem.js"> </script>
+<script type="text/javascript" src="/js/carregarImagem.js">
+	
+</script>
 <!-- Carregar Imagem -->
 
 <style>
@@ -108,37 +116,57 @@ h3.titulo {
 					</div>
 				</div>
 			</div>
-		</div>
+			<section class="container" id="fundo_cursos">
+				<h3 class="card_title">Lista de cursos</h3>
+				<div th:each="curso : ${curso}">
 
-		<section class="container" id="fundo_cursos">
-			<h3 class="card_title">Lista de cursos</h3>
-			<div th:each="curso : ${curso}" class="row justify-content-center">
-
-				<article
-					class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
-					<img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
-					<div class="card-body ">
-						<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
-						<p class="card-text" th:text="${curso.descricao}"></p>
-						<p class="card-text" th:inline="text">R$
-							[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2,
-							'POINT')}]]</p>
-							<label>Tutor: <span class="card-text" th:text="${curso.tutor}"></span></label>
-					<p> <button th:href="@{/comprarCurso(idCurso = ${curso.idCurso})}"
-						class="btn botao-cor-especial">Comprar curso!</button></p>
-					</div>
-				</article>
-			</div>
-		</section>
-
-		<div style="padding-top: 30%;">
-			<div id="banner-wrapper" class="footer">
-				<div id="footer" class="container">
-					<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
+					<article
+						class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
+						<img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
+						<div class="card-body ">
+							<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
+							<p class="card-text" th:text="${curso.descricao}"></p>
+							<p class="card-text" th:inline="text">R$
+								[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2,
+								'POINT')}]]</p>
+							<label>Tutor: <span class="card-text"
+								th:text="${curso.tutor}"></span></label>
+							<p>
+								<button th:href="@{/comprarCurso(idCurso = ${curso.idCurso})}"
+									class="btn botao-cor-especial">Comprar curso!</button>
+							</p>
+						</div>
+					</article>
 				</div>
-			</div>
+			</section>
 		</div>
+
 
 	</body>
 </form>
+<footer>
+	<div id="footer_main1">
+		<div class="flex_footer">
+			<div class="flex_footer_div1">
+				<h1 class="h1_footer">Empresa</h1>
+				<a class="a_footer" href="" title="">⸰ Sobre nós</a> <a
+					class="a_footer" href="" title="">⸰ Legal</a> <a class="a_footer"
+					href="" title="">⸰ Negócios</a>
+			</div>
+
+			<div class="flex_footer_div2">
+				<h1 class="h1_footer">Ajuda</h1>
+				<a class="a_footer" href="" title="">⸰ Central de ajuda</a> <a
+					class="a_footer" href="" title="">⸰ Cursos</a> <a class="a_footer"
+					href="" title="">⸰ Contato</a>
+			</div>
+
+			<div>
+				<h1 class="h1_footer1">Midias sociais</h1>
+				<img class="img_midia1 " src="/imagens/midias.svg">
+			</div>
+		</div>
+
+	</div>
+</footer>
 </html>

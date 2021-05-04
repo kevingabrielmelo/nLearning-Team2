@@ -41,21 +41,20 @@
 <body class="body">
 	<div id="header">
 		<div id="logo">
-			<h1>
-				<a href="/">n<span>Learning</span></a>
-			</h1>
+			<img class="espac" src="/imagens/logo.svg">
 		</div>
 		<div id="menu">
 			<ul>
 				<li><a href="/" accesskey="1" title="">Home</a></li>
-				<li><a href="/" accesskey="2" title="">Serviços</a></li>
-				<li><a href="/" accesskey="3" title="">Sobre nós</a></li>
-				<li><a href="/Login" accesskey="5" title="">Sair</a></li>
+				<li><a href="" accesskey="2" title="">Serviços</a></li>
+				<li><a href="" accesskey="3" title="">Sobre nós</a></li>
+				<li><a href="/login" accesskey="5" title="">Login</a></li>
 			</ul>
 		</div>
 	</div>
+
 	<section class="container" id="fundo_cursos">
-		<h3 class="card_title">Cadastrar questão para esse curso:</h3>
+		<h3 class="titulo_cadastro2">Cadastrar questão para esse curso:</h3>
 		<div th:each="curso : ${curso}" class="row justify-content-center">
 
 			<article
@@ -66,37 +65,49 @@
 					<p class="card-text" th:text="${curso.descricao}"></p>
 					<p class="card-text" th:inline="text">R$
 						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</p>
-					<label>Tutor: <span class="card-text"
-						th:text="${curso.tutor}"></span></label>
+						<label>Tutor: <span class="card-text" th:text="${curso.tutor}"></span></label>
 				</div>
 			</article>
 		</div>
 	</section>
-
+	
 	<div class="main_cadastro">
-		<h1 class="titulo_cadastro">Cadastro de Questão</h1>
 		<form method='post' enctype="multipart/form-data">
 			<div class="row about-container">
 				<div class="col-lg-6">
-					<h3 class="titulos_forms ">Envio de questões por PDF:</h3>
-					<input type="file" name="pergunta" id="pergunta" required
-						accept="application/pdf">
-					<h3 class="titulos_forms ">Envio de vídeos (MP4):</h3>
-					<input type="file" name="video" id="video" required
-					accept="video/mp4"> <input
-						type="submit" value="Salvar" class="botao_salvar">
+					<h1 class="titulo_cadastro2">Envio de questões por PDF:</h3>
+					<input class="pdf_quest1"type="file" name="pergunta" id="pergunta" required
+						accept="application/pdf"> <input type="submit"
+						value="Salvar" class="botao_salvar pdf_quest2" >
 				</div>
 			</div>
 		</form>
 	</div>
-
-	<div>
-		<div id="banner-wrapper" class="footer">
-			<div id="footer" class="container">
-				<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
-			</div>
-		</div>
-	</div>
-
 </body>
+	
+<footer>
+	<div id="footer_main">
+			<div class="flex_footer">
+				<div class="flex_footer_div1">
+						<h1 class="h1_footer">Empresa</h1>
+						<a class="a_footer" href=""  title="">⸰ Sobre nós</a>
+						<a class="a_footer" href=""  title="">⸰ Legal</a>
+						<a class="a_footer" href=""  title="">⸰ Negócios</a>
+				</div>
+
+				<div class="flex_footer_div2">
+					<h1 class="h1_footer">Ajuda</h1>
+					<a class="a_footer" href="" title="">⸰ Central de ajuda</a>
+					<a class="a_footer" href="" title="">⸰ Cursos</a>
+					<a class="a_footer" href="" title="">⸰ Contato</a>
+				</div>
+
+				<div>
+					<h1 class="h1_footer1">Midias sociais</h1>
+					<img class="img_midia1 " src="/imagens/midias.svg">
+				</div>
+			</div>
+			
+	</div>
+</footer>
 </html>

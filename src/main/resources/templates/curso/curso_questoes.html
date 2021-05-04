@@ -66,27 +66,12 @@
 					<p class="card-text" th:text="${curso.descricao}"></p>
 					<p class="card-text" th:inline="text">R$
 						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</p>
-					<label>Tutor: <span class="card-text"
-						th:text="${curso.tutor}"></span></label>
+						<label>Tutor: <span class="card-text" th:text="${curso.tutor}"></span></label>
 				</div>
 			</article>
 		</div>
 	</section>
-
-	<section class="container" id="fundo_cursos">
-		<h3 class="card_title">Curso:</h3>
-		<div th:each="questao : ${questao}" class="row">
-
-			<article
-				class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
-				<video controls width="700" height="400">
-					<source th:src="@{'data:video/mp4;base64,'+${questao.videoString}}"
-						type="video/mp4">
-				</video>
-			</article>
-		</div>
-	</section>
-
+	
 	<table class="container">
 		<thead>
 			<tr>
@@ -95,20 +80,39 @@
 		</thead>
 		<tbody>
 			<tr th:each="questao : ${questao}">
-				<td><iframe
-						th:src="@{'data:application/pdf;base64,'+${questao.pdfStringQuestao}}"
-						width="1300" height="1100"> </iframe></td>
+				<td><iframe th:src="@{'data:application/pdf;base64,'+${questao.pdfStringQuestao}}"
+					width="1300" height="1100">
+					 </iframe></td>
 			</tr>
 		</tbody>
 	</table>
 
-	<div>
-		<div id="banner-wrapper" class="footer">
-			<div id="footer" class="container">
-				<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
-			</div>
-		</div>
-	</div>
-
 </body>
+
+	
+<footer>
+	<div id="footer_main">
+			<div class="flex_footer">
+				<div class="flex_footer_div1">
+						<h1 class="h1_footer">Empresa</h1>
+						<a class="a_footer" href=""  title="">⸰ Sobre nós</a>
+						<a class="a_footer" href=""  title="">⸰ Legal</a>
+						<a class="a_footer" href=""  title="">⸰ Negócios</a>
+				</div>
+
+				<div class="flex_footer_div2">
+					<h1 class="h1_footer">Ajuda</h1>
+					<a class="a_footer" href="" title="">⸰ Central de ajuda</a>
+					<a class="a_footer" href="" title="">⸰ Cursos</a>
+					<a class="a_footer" href="" title="">⸰ Contato</a>
+				</div>
+
+				<div>
+					<h1 class="h1_footer1">Midias sociais</h1>
+					<img class="img_midia1 " src="/imagens/midias.svg">
+				</div>
+			</div>
+			
+	</div>
+</footer>
 </html>

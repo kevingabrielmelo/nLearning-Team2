@@ -84,7 +84,7 @@ public class LoginController {
 			} else if (aluno != null && aluno.getEmail().equals(email) && aluno.getSenha().equals(senha)) {
 				Usuario.tipoUsu = "aluno";
 				Usuario.idUsu = aluno.getIdAluno();
-				return "redirect:menuAluno";
+				return "redirect:seusCursos";
 			}
 		}
 		// caso não encontre nenhum email
