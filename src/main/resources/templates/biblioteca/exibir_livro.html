@@ -27,11 +27,6 @@
 <!-- Máscara para o telefone -->
 <script type="text/javascript" src="/js/maskCPF.js"> </script>
 <!-- Máscara para o CPF -->
-<script type="text/javascript" src="/js/carregarImagem.js"> </script>
-<!-- Máscara para o CPF -->
-
-<style>
-</style>
 
 </head>
 <body class="body">
@@ -59,12 +54,44 @@
 		</thead>
 		<tbody>
 			<tr th:each="livro : ${livro}">
-				<td><iframe th:src="@{'data:application/pdf;base64,'+${livro.pdf_string}}"
-					width="900" height="1100">
-					 </iframe></td>
+
+				<td><iframe
+						th:src="@{'data:application/pdf;base64,'+${livro.pdf_string}}"
+						width="900" height="1100"> </iframe></td>
+			</tr>
+			<tr>
+				<div style="border: 1px solid black; padding: 100px;">
+
+						<input type="hidden" name="livro" th:value="${livro.pdf_string}"
+							value="${livro.pdf_string}"> <a id='dwnldLnk'
+							download='livro.pdf' style="display: none;" /></a> <a href="#"
+							onclick="downloadPDF();" title='livro.pdf'>Se o livro não
+							aparecer, faça download clicando aqui!</a>
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+  var livro_pdf = /*[[${livro.pdf_string}]]*/ "Livro";
+/*]]>*/
+
+window.downloadPDF = function downloadPDF() {
+
+    var dlnk = document.getElementById('dwnldLnk');
+    dlnk.href = pdf;
+
+    dlnk.click();
+
+
+    alert('Download Realizado com Sucesso!');
+}
+var b64 = document.getElementsByName('livro').value;
+var pdf = 'data:application/octet-stream;base64,' + livro_pdf;
+
+</script>
+
+					</div>
 			</tr>
 		</tbody>
 	</table>
-			
+
 </body>
 </html>
