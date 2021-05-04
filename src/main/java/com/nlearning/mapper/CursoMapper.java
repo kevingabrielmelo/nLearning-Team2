@@ -10,7 +10,7 @@ import com.nlearning.models.Usuario;
 
 public class CursoMapper {
 
-	public static Curso converter(CursoControllerModel curso, MultipartFile imagem) throws IOException {
+	public static Curso converter(CursoControllerModel curso, MultipartFile imagem, MultipartFile video) throws IOException {
 		
 		var cursoBanco = new Curso();
 		cursoBanco.setNomeCurso(curso.getNomeCurso());
@@ -18,6 +18,7 @@ public class CursoMapper {
 		cursoBanco.setTutor(curso.getTutor());
 		cursoBanco.setValor(curso.getValor());
 		cursoBanco.setImagem(imagem.getBytes());
+		cursoBanco.setPilula(video.getBytes());
 		cursoBanco.setIdTutor(Usuario.idUsu);
 		
 		return cursoBanco;
