@@ -172,6 +172,8 @@ public class AlunoController {
 		ModelAndView mv = new ModelAndView("/curso/curso_questoes");
 		String imagem = Base64.getEncoder().encodeToString(curso.getImagem());
 		curso.setImagem_string(imagem);
+		String pilula = Base64.getEncoder().encodeToString(curso.getPilula());
+		curso.setPilula_string(pilula);
 		
 		List<Questao> questoesCurso = new ArrayList<>();
 		
