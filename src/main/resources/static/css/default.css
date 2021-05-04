@@ -117,6 +117,8 @@ hr
 	height: 100px;
 }
 
+
+
 /** LOGO */
 
 #logo
@@ -302,7 +304,7 @@ hr
     position:relative;
     width:100%;
 	overflow: hidden;
-	padding: 5em 0em;
+	padding: 0em 0em;
 	background: #FFFFFF;
 	border-top: 1px solid #e5e5e5;
 }
