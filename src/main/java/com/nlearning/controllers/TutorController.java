@@ -115,7 +115,6 @@ public class TutorController {
 			String imagem = Base64.getEncoder().encodeToString(cursos.getImagem());
 			cursos.setImagem_string(imagem);
 			cursosTutor.add(cursos);
-			System.out.println("cu");
 		}
 
 		mv.addObject("curso", cursosTutor);
