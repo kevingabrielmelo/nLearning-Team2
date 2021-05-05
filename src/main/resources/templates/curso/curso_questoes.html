@@ -67,7 +67,16 @@
 					<p class="card-text" th:inline="text">R$
 						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</p>
 					<label>Tutor: <span class="card-text"
-						th:text="${curso.tutor}"></span></label>
+						th:text="${curso.tutor}"></span></label> <label> Pílula de
+						conhecimento do curso: </label>
+					<article
+						class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
+						<video controls width="700" height="400">
+							<source
+								th:src="@{'data:video/mp4;base64,'+${curso.pilula_string}}"
+								type="video/mp4">
+						</video>
+					</article>
 				</div>
 			</article>
 		</div>

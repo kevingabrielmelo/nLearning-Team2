@@ -35,9 +35,9 @@ public class CursoController {
 
 	// Cadastra os dados do curso no banco de dados
 	@RequestMapping(value = "/cadastrarCurso", method = RequestMethod.POST, consumes = { "multipart/form-data" })
-	public String form(@RequestParam(value = "imagem") MultipartFile imagem, CursoControllerModel curso)
+	public String form(@RequestParam(value = "imagem") MultipartFile imagem, CursoControllerModel curso, @RequestParam(value = "video") MultipartFile video)
 			throws IOException {
-		cursoRepository.save(CursoMapper.converter(curso, imagem));
+		cursoRepository.save(CursoMapper.converter(curso, imagem, video));
 		return "redirect:menuTutor";
 	}
 
@@ -74,8 +74,8 @@ public class CursoController {
 
 	@RequestMapping(value = "selectCurso", method = RequestMethod.POST, consumes = { "multipart/form-data" })
 	public String form_update(@RequestParam("idCurso") Long idCurso,
-			@RequestParam(value = "imagem") MultipartFile imagem, CursoControllerModel curso) throws IOException {
-		Curso cursoUpdate = CursoMapper.converter(curso, imagem);
+			@RequestParam(value = "imagem") MultipartFile imagem, @RequestParam(value = "video") MultipartFile video, CursoControllerModel curso) throws IOException {
+		Curso cursoUpdate = CursoMapper.converter(curso, imagem, video);
 		cursoUpdate.setIdCurso(idCurso);
 		cursoRepository.save(cursoUpdate);
 		return "redirect:/cursos";

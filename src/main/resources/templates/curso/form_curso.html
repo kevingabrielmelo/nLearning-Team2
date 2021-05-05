@@ -44,42 +44,46 @@
 			</ul>
 		</div>
 	</div>
-		<div class="main_cadastro">
-			<h1 class="titulo_cadastro">Cadastro de Curso</h1>
-			<form method='post' enctype="multipart/form-data">
-				<div class="row about-container">
-					<div class="col-lg-6">
-						<h3 class="titulos_forms ">Nome:</h3>
-						<input class="input_forms" type='text' placeholder="Nome"
-							name="nomeCurso" required />
+	<div class="main_cadastro">
+		<h1 class="titulo_cadastro">Cadastro de Curso</h1>
+		<form method='post' enctype="multipart/form-data">
+			<div class="row about-container">
+				<div class="col-lg-6">
+					<h3 class="titulos_forms ">Nome:</h3>
+					<input class="input_forms" type='text' placeholder="Nome"
+						name="nomeCurso" required />
 
-						<h3 class="titulos_forms">Descrição:</h3>
-						<input class="input_forms" type='text' id="curso"
-							placeholder="Descrição: " name="descricao" required />
-
-
-						<h3 class="titulos_forms">Valor:</h3>
-						<input class="input_forms" maxlength="15" type='number' id="valor"
-							placeholder="Valor" name="valor" required />
+					<h3 class="titulos_forms">Descrição:</h3>
+					<input class="input_forms" type='text' id="curso"
+						placeholder="Descrição: " name="descricao" required />
 
 
-						<h3 class="titulos_forms">Tutor:</h3>
-						<input id="tutor" class="input_forms" type='text'
-							placeholder="Tutor" name="tutor" required />
+					<h3 class="titulos_forms">Valor:</h3>
+					<input class="input_forms" maxlength="15" type='number' id="valor"
+						placeholder="Valor" name="valor" required />
 
-						<h3 class="titulos_forms">Imagem:</h3>
-						<input type="file" class="titulos_forms" name="imagem" id="imagem" required> <br>
-						<input onclick="alertCadastro()" type="submit" value="Salvar"
-							class="botao_salvar">
-					</div>
+
+					<h3 class="titulos_forms">Tutor:</h3>
+					<input id="tutor" class="input_forms" type='text'
+						placeholder="Tutor" name="tutor" required />
+
+					<h3 class="titulos_forms">Imagem:</h3>
+					<input type="file" class="titulos_forms" name="imagem" id="imagem"
+						required> <br>
+					<h3 class="titulos_forms ">Envio de pílula de conhecimento (MP4):</h3>
+					<input type="file" name="video" id="video" required
+						accept="video/mp4"> <br>
+					<input onclick="alertCadastro()" type="submit" value="Salvar"
+						class="botao_salvar">
 				</div>
-			</form>
-		</div>
-
-		<div id="banner-wrapper">
-			<div id="footer" class="container">
-				<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
 			</div>
+		</form>
+	</div>
+
+	<div id="banner-wrapper">
+		<div id="footer" class="container">
+			<p>&copy; Todos direitos reservados por NessHealth / nLearning.</p>
 		</div>
+	</div>
 </body>
 </html>
