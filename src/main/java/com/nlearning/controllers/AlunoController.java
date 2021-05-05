@@ -192,4 +192,42 @@ public class AlunoController {
 		mv.addObject("questao", questoesCurso);
 		return mv;
 	}
+	
+	@RequestMapping(value = "/acessoQuestoesCurso")
+	public ModelAndView VisualizarQuestoes(@RequestParam("idCurso") Long idCurso) {
+		Iterable<Questao> questao = questaoRepository.findByIdCurso(idCurso);
+		ModelAndView mv = new ModelAndView("/curso/curso_questoes_totais");
+		
+		List<Questao> questoesCurso = new ArrayList<>();
+		
+		for (Questao questoes : questao) {
+
+			String pdf = Base64.getEncoder().encodeToString(questoes.getPergunta());
+			questoes.setPdfStringQuestao(pdf);
+			
+			questoesCurso.add(questoes);
+		}
+		
+		mv.addObject("questao", questoesCurso);
+		return mv;
+	}
+	
+	@RequestMapping(value = "/acessoVideosCurso")
+	public ModelAndView VisualizarVideos(@RequestParam("idCurso") Long idCurso) {
+		Iterable<Questao> video = questaoRepository.findByIdCurso(idCurso);
+		ModelAndView mv = new ModelAndView("/curso/curso_videos_totais");
+		
+		List<Questao> videosTotais = new ArrayList<>();
+		
+		for (Questao videos : video) {
+
+			String videos_totais = Base64.getEncoder().encodeToString(videos.getVideo());
+			videos.setVideoString(videos_totais);
+			
+			videosTotais.add(videos);
+		}
+		
+		mv.addObject("video", videosTotais);
+		return mv;
+	}
 }
