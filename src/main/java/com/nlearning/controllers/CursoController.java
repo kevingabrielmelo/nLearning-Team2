@@ -27,10 +27,10 @@ public class CursoController {
 	@Autowired
 	private CursoRepository cursoRepository;
 
-	// Rota para o get do form
+	// Rota para o get do form Tutor
 	@RequestMapping(value = "/cadastrarCurso", method = RequestMethod.GET)
 	public String form() {
-		return "curso/form_curso";
+		return "curso/form_curso_tutor";
 	}
 
 	// Cadastra os dados do curso no banco de dados
@@ -40,6 +40,20 @@ public class CursoController {
 		cursoRepository.save(CursoMapper.converter(curso, imagem, video));
 		return "redirect:menuTutor";
 	}
+	
+	// Rota para o get do form Admin
+		@RequestMapping(value = "/cadastrarCursoAdmin", method = RequestMethod.GET)
+		public String formAdmin() {
+			return "curso/form_curso_admin";
+		}
+
+		// Cadastra os dados do curso no banco de dados
+		@RequestMapping(value = "/cadastrarCursoAdmin", method = RequestMethod.POST, consumes = { "multipart/form-data" })
+		public String formAdmin(@RequestParam(value = "imagem") MultipartFile imagem, CursoControllerModel curso, @RequestParam(value = "video") MultipartFile video)
+				throws IOException {
+			cursoRepository.save(CursoMapper.converter(curso, imagem, video));
+			return "redirect:menuAdmin";
+		}
 
 	@GetMapping(value = "/cursos")
 	public ModelAndView listaCursos() throws UnsupportedEncodingException {
@@ -68,6 +82,8 @@ public class CursoController {
 		ModelAndView mv = new ModelAndView("/curso/update_curso");
 		String imagem = Base64.getEncoder().encodeToString(curso.getImagem());
 		curso.setImagem_string(imagem);
+		String pilula = Base64.getEncoder().encodeToString(curso.getPilula());
+		curso.setPilula_string(pilula);
 		mv.addObject("curso", curso);
 		return mv;
 	}
