@@ -13,9 +13,10 @@ Released   : 20132402
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
+<title>nLearning</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
+
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
@@ -35,6 +36,10 @@ Released   : 20132402
 <link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
 <link href="/bootstrap/css/lightbox.min.css" rel="stylesheet">
 <link href="/bootstrap/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/curriculo.js"> </script>
 <script type="text/javascript" src="/js/maskTel.js"> </script>
 <!--[if IE 6]>
@@ -57,45 +62,94 @@ Released   : 20132402
 	</div>
 
 	<div class="container_principal">
-		<div id="banner" class="container">
+	<div class="card img-fluid" >
+    <img class="card-img-top" src="/imagens/bg.jpg" alt="Card image" style="width:100%">
+    <div  class="card-img-overlay">
+    
+		<div  class="container">
 			<h2 class="intro">O que é o nLearning ?</h2>
 			<p class="intro_text">O nLearning é uma plataforma de ensino a
 				distância nascido da parceria entre a Fatec de São José dos Campos e
 				a Ness Health.</p>
-			<h2 class="oferecimento">E oque ele pode oferecer ?</h2>
-			<p class="oferecimento_text">O Nlearning propõe uma estrutura
+			
+		</div>
+		</div>
+  </div>
+		<style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+
+<div class="container mt-3">
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ul>
+  <div id="banner" class="container">
+  <h2 class="oferecimento">E o que ele pode oferecer ?</h2>
+			<p class="oferecimento_text">O nLearning propõe uma estrutura
 				intuitiva e organizada permitindo com que o aluno tenha fácil acesso
 				a sua agenda, atividades e cursos. Também possuimos um chat para
 				dúvidas sobre o sitemas e uma fácil comunicação entre aluno e
 				professor, pois toda dúvida é importante!</p>
-		</div>
-		<div id="page" class="div_produtos">
-			<div id="content" class="container">
-				<div class="cbox1">
-					<h2 class="produtos">Pílulas de conhecimento</h2>
-					<img src="/imagens/pilula.svg" id="imagem" alt="" />
-					<p class="text_icons">Além das video-aulas, temos também
-						pílulas de conhecimento que são partes de um contéudo resumido em
-						forma escrita</p>
 				</div>
-				<div class="cbox2">
-					<h2 class="produtos">Relatórios personalizavéis</h2>
-					<img src="/imagens/caneta.svg" id="imagem" alt="" />
-					<p class="text_icons">Disponibilizamos personalização de
-						relatório para os professores , includindo junto um dashbord para
-						avaliação de perfomace e outros detalhes</p>
-				</div>
-				<div class="cbox3">
-					<h2 class="produtos">Trilha de aprendizado</h2>
-					<img src="/imagens/pontotrilha.svg" id="imagem" alt="" />
-					<p class="text_icons">A trilha de aprendizado mostrará um
-						gráfico que análisa a taxa de acertos do aluno</p>
-				</div>
-			</div>
-		</div>
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/imagens/pilulas.png" alt="Pilula" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="/imagens/relatorios.png" alt="Relatorios" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="/imagens/trilha.png" alt="Trilha" width="1100" height="500">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+</div>
+<!-- 		<div id="page" class="div_produtos"> -->
+<!-- 			<div id="content" class="container"> -->
+<!-- 				<div class="cbox1"> -->
+<!-- 					<h2 class="produtos">Pílulas de conhecimento</h2> -->
+<!-- 					<img src="/imagens/pilula.svg" id="imagem" alt="" /> -->
+<!-- 					<p class="text_icons">Além das video-aulas, temos também -->
+<!-- 						pílulas de conhecimento que são partes de um contéudo resumido em -->
+<!-- 						forma escrita</p> -->
+<!-- 				</div> -->
+<!-- 				<div class="cbox2"> -->
+<!-- 					<h2 class="produtos">Relatórios personalizavéis</h2> -->
+<!-- 					<img src="/imagens/caneta.svg" id="imagem" alt="" /> -->
+<!-- 					<p class="text_icons">Disponibilizamos personalização de -->
+<!-- 						relatório para os professores , includindo junto um dashbord para -->
+<!-- 						avaliação de perfomace e outros detalhes</p> -->
+<!-- 				</div> -->
+<!-- 				<div class="cbox3"> -->
+<!-- 					<h2 class="produtos">Trilha de aprendizado</h2> -->
+<!-- 					<img src="/imagens/pontotrilha.svg" id="imagem" alt="" /> -->
+<!-- 					<p class="text_icons">Apontamos o caminho para você atingir seus objetivos e decolar na sua carreira</p> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
 		<div id="featured-wrapper">
-			<h3 class="style_jornada">pronto para começar sua jornada?</h3>
-			<button class="btn_jornada">Venha aprender</button>
+			<h3 class="style_jornada">Pronto para começar sua jornada?</h3>
+			<a href="/login"><button class="btn_jornada">Venha aprender</button></a>
 			<p class="desc_aprender">para formar a base do seu futuro</p>
 			<h3 class="meio_jornada">ou</h3>
 			<button type="button" class="btn_jornada2" data-bs-toggle="modal"
@@ -195,16 +249,16 @@ Released   : 20132402
 			</div>
 		</div>
 	</div>
-	<div class="container ">
+	<div class="container">
 		<h1 class="titulo_plataforma">Não seja limitado pela plataforma</h1>
 		<div class="row about-container">
 			<div class="col-lg-6">
 				<p class="desc_plataforma">Educação é direito de qualquer um em
 					qualquer lugar, por isso, o nLearning está disponível tanto para
-					computadores quanto aparelhos móveis</p>
+					computadores quanto aparelhos móveis.</p>
 			</div>
 			<div class="col-lg-6">
-				<img class="img_plataforma" src="/imagens/plataformas.svg">
+				<img class="img_plataforma" src="/imagens/plataformas_icone.svg">
 			</div>
 		</div>
 	</div>
@@ -217,17 +271,35 @@ Released   : 20132402
 </script>
 	<script type="text/javascript" src="/js/chatBot.js"> </script>
 
-	<div id="banner-wrapper">
-		<div id="footer" class="container">
-			<p>
-				&copy; Todos direitos reservados por NessHealth </a>.
-			</p>
-		</div>
-	</div>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
 		crossorigin="anonymous"></script>
 </body>
+<footer>
+	<div id="footer_main">
+			<div class="flex_footer">
+				<div class="flex_footer_div1">
+						<h1 class="h1_footer">Empresa</h1>
+						<a class="a_footer" href=""  title="">⸰ Sobre nós</a>
+						<a class="a_footer" href=""  title="">⸰ Legal</a>
+						<a class="a_footer" href=""  title="">⸰ Negócios</a>
+				</div>
+
+				<div class="flex_footer_div2">
+					<h1 class="h1_footer">Ajuda</h1>
+					<a class="a_footer" href="" title="">⸰ Central de ajuda</a>
+					<a class="a_footer" href="" title="">⸰ Cursos</a>
+					<a class="a_footer" href="" title="">⸰ Contato</a>
+				</div>
+
+				<div>
+					<h1 class="h1_footer1">Midias sociais</h1>
+					<img class="img_midia1 " src="/imagens/midias.svg">
+				</div>
+			</div>
+			
+	</div>
+</footer>
 </html>
