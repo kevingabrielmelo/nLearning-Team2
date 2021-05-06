@@ -1,5 +1,5 @@
 #header{
-    background:#1a1a1a ; 
+    background:#0B2E50 ; 
 }
 
 .container_principal{
@@ -7,20 +7,24 @@
 }
 
 .intro{
-    margin-top: 3rem;
+	color: white;
+    margin-top: 4rem;
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
 .intro_text{
+	margin-top: 3rem;
+    color: white;
+    font-size: 150%;
+    text-align: center;
     
-    font-size: 17px;
 }
 
 .oferecimento_text{
-    
-    font-size: 20px;
+    margin-top: 1rem;
+    font-size: 150%;
     text-align: center;
 }
 
@@ -47,7 +51,7 @@
     width: 100px;
 }
 .container_beneficios p{
-    font-size: 16px;
+    font-size: 125%;
     
     font-weight: 400;
 }
@@ -94,16 +98,18 @@
 }
 
 .style_jornada{
-    margin-left: 33%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
     color: #1F5372;
 }
 
 .btn_jornada{
-    margin-top: 3%;
+    margin-top: 1rem;
     margin-left: 43%;
     height: 40px;
     width: 150px;
-    background: #86B6C6;
+    background: #0080c0;
     box-sizing: border-box;
     border-radius: 15px;
     color: white;
@@ -113,19 +119,23 @@
 
 .desc_aprender{
     margin-top: 1rem;
-    margin-left: 38%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
     color: #1F5372;
-    font-size: 20px;
+    font-size: 150%;
 }
 
 .meio_jornada{
-    margin-top: 3rem;
-    margin-left: 47%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
     color: #1F5372;
 }
 
 .btn_jornada2{
-    margin-top: 3%;
+    margin-top: 1rem;
     margin-left: 43%;
     height: 40px;
     width: 150px;
@@ -139,9 +149,11 @@
 
 .desc_ensinar{
     margin-top: 1rem;
-    margin-left: 33%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
     color: #1F5372;
-    font-size: 20px;
+    font-size: 150%;
 }
 
 .div_beneficios{
@@ -157,23 +169,39 @@
 }
 
 .titulo_plataforma{
-    color: white;
+    color: #1F5372;
     margin-top: 100px;
-    margin-left: 24%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
 }
 
 .img_plataforma{
+	float: right;
+	margin-top: 1rem;
     height: 350px;
     width: 350px;
     margin-bottom: 20%;
 }
 
+.img_midias{
+	float: right;
+	margin-right: 4rem;
+    height: 250px;
+    width: 250px;
+}
+
 .desc_plataforma{
-    color: white;
+    color: #1F5372;
     text-align: center;
-    width: 300px;
+    width: auto;
     margin-top: 5.5rem;
-    margin-left: 5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 150%;
+    
 }
 
 #div_duvidas{
@@ -184,16 +212,19 @@
 .titulo_duvidas{
     margin: 0;
     font-size: 2rem;
-    margin-left: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
     padding-top: 3%;
+    color: #1F5372;
 }
 
 .btn_ajuda{
-    margin-top: 3%;
+    margin-top: 1rem;
     margin-left: 43%;
     height: 40px;
     width: 150px;
-    background: #86B6C6;
+    background: #0080c0;
     box-sizing: border-box;
     border-radius: 15px;
     color: white;
@@ -201,3 +232,11 @@
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
     margin-bottom: 3%;
 }
+
+#footer_main1{
+  background: #1B1B1B;
+  padding-top: 3.5%;
+  padding-bottom:3.5% ;
+  
+}
+
