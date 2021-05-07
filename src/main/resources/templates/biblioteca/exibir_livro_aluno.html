@@ -7,26 +7,19 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link
 	href="https://fonts.googleapis.com/css2?family=Unica+One&family=Varela+Round&display=swap"
 	rel="stylesheet">
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700"
 	rel="stylesheet" type="text/css">
-<link href="/css/menu_padrao.css" rel="stylesheet" type="text/css" />
 <link href="/css/cadastro.css" rel="stylesheet" type="text/css" />
-<link href="/css/cursos.css" rel="stylesheet" type="text/css" />
 <link href="/css/default.css" rel="stylesheet" type="text/css"
 	media="all" />
+	<link href="/css/menu_padrao.css" rel="stylesheet" type="text/css" />
 <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="/bootstrap/css/font-awesome.min.css" rel="stylesheet">
 <link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-	crossorigin="anonymous">
 <link href="/bootstrap/css/lightbox.min.css" rel="stylesheet">
 <link href="/bootstrap/css/style.css" rel="stylesheet">
 <link rel="stylesheet"
@@ -35,41 +28,6 @@
 <!-- Máscara para o telefone -->
 <script type="text/javascript" src="/js/maskCPF.js"> </script>
 <!-- Máscara para o CPF -->
-<script type="text/javascript" src="/js/carregarImagem.js"> </script>
-<!-- Carregar Imagem -->
-
-<style>
-table.blueTable {
-	width: 50%;
-	text-align: center;
-	border-collapse: collapse;
-	margin: auto;
-}
-
-table.blueTable td, table.blueTable th {
-	border: 1px solid #AAAAAA;
-	padding: 3px 2px;
-}
-
-table.blueTable tr:nth-child(even) {
-	background: #D0E4F5;
-}
-
-table.blueTable thead {
-	background: #1C6EA4;
-}
-
-table.blueTable thead th {
-	font-size: 16px;
-	font-weight: bold;
-	color: #FFFFFF;
-}
-
-h3.titulo {
-	text-align: center;
-	padding: 10px;
-}
-</style>
 
 </head>
 <body class="body">
@@ -90,8 +48,8 @@ h3.titulo {
 			</ul>
 		</div>
 	</div>
-	<div id="featured-wrapper">
-	<nav class="menu-mobile">
+<div id="featured-wrapper">
+<nav class="menu-mobile">
 			<ul>
 				<li><a href="alterarDadosAluno">Perfil</a></li>
 				<li><a href="cursosnLearning">Cursos</a></li>
@@ -103,55 +61,53 @@ h3.titulo {
 				<li><a href="/Login">Sair</a></li>
 			</ul>
 		</nav>
-<!-- 		<div id="featured" class="container_painel"> -->
-<!-- 			<div class=""> -->
-<!-- 				<div class="row about-container"> -->
-<!-- 					<div class="col-lg-12"> -->
-<!-- 						<a href="alterarDadosAluno" class="imagem_titulo"> <img -->
-<!-- 							class="imagem1" src="/imagens/perfil_icone.svg"> Perfil -->
-<!-- 						</a> <a href="cursosnLearning" class="imagem_titulo"> <img -->
-<!-- 							class="imagem1" src="/imagens/seus_cursos.svg"> Cursos -->
-<!-- 						</a> <a href="seusCursos" class="imagem_titulo"> <img -->
-<!-- 							class="imagem1" src="/imagens/seus_cursos.svg"> Seus cursos -->
-<!-- 						</a> <a href="" class="imagem_titulo"> <img class="imagem1" -->
-<!-- 							src="/imagens/pontotrilhamenu.svg"> Trilha de aprendizado -->
-<!-- 						</a> <a href="" class="imagem_titulo"> <img class="imagem1" -->
-<!-- 							src="/imagens/calendario.svg"> Calendário -->
-<!-- 						</a> <a href="" class="imagem_titulo"> <img class="imagem1" -->
-<!-- 							src="/imagens/info.svg">Ajuda -->
-<!-- 						</a> -->
-<!-- 					</div> -->
+	<table class="container">
+		<thead>
+			<tr>
+				<th>Livro</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="livro : ${livro}">
 
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<section class="container" id="fundo_cursos">
-		<h3 class="titulo_cursos">Lista de cursos</h3>
-		<div th:each="curso : ${curso}" class="">
+				<td><iframe
+						th:src="@{'data:application/pdf;base64,'+${livro.pdf_string}}"
+						width="900" height="1100"> </iframe></td>
+			</tr>
+			<tr>
+				<div style="border: 1px solid black; padding: 100px;">
 
-			<article
-				class="alinhamento card borda-cor-especial card-largura p-3 m-3 col-md-3">
-				<img class="imagem_tamanho"
-					th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
-				<div class="card-body ">
-					<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
-					<p class="card-text" th:text="${curso.descricao}"></p>
-					<p class="card-text" th:inline="text">R$
-						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</p>
-					<label>Tutor: <span class="card-text"
-						th:text="${curso.tutor}"></span></label>
-					<p>
-						<a th:href="@{/comprarCurso(idCurso = ${curso.idCurso})}"
-							class="btn botao-cor-especial">Veja o curso</a>
-					</p>
-				</div>
-			</article>
-		</div>
-	</section>
+						<input type="hidden" name="livro" th:value="${livro.pdf_string}"
+							value="${livro.pdf_string}"> <a id='dwnldLnk'
+							download='livro.pdf' style="display: none;" /></a> <a href="#"
+							onclick="downloadPDF();" title='livro.pdf'>Se o livro não
+							aparecer, faça download clicando aqui!</a>
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+  var livro_pdf = /*[[${livro.pdf_string}]]*/ "Livro";
+/*]]>*/
+
+window.downloadPDF = function downloadPDF() {
+
+    var dlnk = document.getElementById('dwnldLnk');
+    dlnk.href = pdf;
+
+    dlnk.click();
+
+
+    alert('Download Realizado com Sucesso!');
+}
+var b64 = document.getElementsByName('livro').value;
+var pdf = 'data:application/octet-stream;base64,' + livro_pdf;
+
+</script>
+
+					</div>
+			</tr>
+		</tbody>
+	</table>
 	</div>
-
-	
-
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
@@ -164,6 +120,7 @@ h3.titulo {
 		  $('html').toggleClass('btn-menu-active');
 		});
 	</script>
+
 </body>
 <footer>
 	<div id="footer_main">
@@ -181,7 +138,7 @@ h3.titulo {
 					<a class="a_footer" href="" title="">⸰ Cursos</a>
 					<a class="a_footer" href="" title="">⸰ Contato</a>
 				</div>
-
+				
 				<div>
 					<h1 class="h1_footer1">Midias sociais</h1>
 					<img class="img_midia1 " src="/imagens/midias.svg">

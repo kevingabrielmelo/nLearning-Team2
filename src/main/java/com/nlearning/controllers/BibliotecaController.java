@@ -68,4 +68,33 @@ public class BibliotecaController {
 		mv.addObject("livro", livro);
 		return mv;
 	}
+	
+	@GetMapping(value = "/bibliotecaAluno")
+	public ModelAndView listaLivrosAluno() throws UnsupportedEncodingException {
+		ModelAndView mv = new ModelAndView("/biblioteca/lista_livros_aluno");
+		Iterable<Biblioteca> livro = bibliotecaRepository.findAll();
+
+		List<Biblioteca> biblioteca = new ArrayList<>();
+
+		for (Biblioteca livros : livro) {
+
+			String imagem = Base64.getEncoder().encodeToString(livros.getImagem());
+			livros.setImagem_string(imagem);
+			biblioteca.add(livros);
+		}
+
+		mv.addObject("livro", biblioteca);
+
+		return mv;
+	}
+	
+	@RequestMapping(value = "/selectLivroAluno")
+	public ModelAndView telaLivroAluno(@RequestParam("idLivro") Long idLivro) {
+		Biblioteca livro = bibliotecaRepository.findAllByIdLivro(idLivro);
+		ModelAndView mv = new ModelAndView("/biblioteca/exibir_livro_aluno");
+		String pdf = Base64.getEncoder().encodeToString(livro.getPdf());
+		livro.setPdf_string(pdf);
+		mv.addObject("livro", livro);
+		return mv;
+	}
 }

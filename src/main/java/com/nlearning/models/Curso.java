@@ -23,6 +23,7 @@ public class Curso implements Serializable {
 	private byte[] imagem;
 	private String imagem_string;
 	private Long idTutor;
+	private Long idAdmin;
 	private byte[] pilula;
 	private String pilula_string;
 
@@ -88,6 +89,14 @@ public class Curso implements Serializable {
 
 	public void setIdTutor(Long idTutor) {
 		this.idTutor = idTutor;
+	}
+
+	public Long getIdAdmin() {
+		return idAdmin;
+	}
+
+	public void setIdAdmin(Long idAdmin) {
+		this.idAdmin = idAdmin;
 	}
 
 	public byte[] getPilula() {
