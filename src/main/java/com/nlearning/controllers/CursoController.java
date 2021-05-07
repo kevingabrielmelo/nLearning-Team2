@@ -75,6 +75,27 @@ public class CursoController {
 
 		return mv;
 	}
+	
+	@GetMapping(value = "/cursosAdmin")
+	public ModelAndView listaCursosAdmin() throws UnsupportedEncodingException {
+		ModelAndView mv = new ModelAndView("/curso/cursos_admin");
+		Iterable<Curso> curso = cursoRepository.findAllByIdTutor(Usuario.idUsu);
+
+		List<Curso> cursosAdmin = new ArrayList<>();
+
+		mv.addObject("curso");
+
+		for (Curso cursos : curso) {
+
+			String imagem = Base64.getEncoder().encodeToString(cursos.getImagem());
+			cursos.setImagem_string(imagem);
+			cursosAdmin.add(cursos);
+		}
+
+		mv.addObject("curso", cursosAdmin);
+
+		return mv;
+	}
 
 	@RequestMapping(value = "/selectCurso")
 	public ModelAndView telaCurso(@RequestParam("idCurso") Long idCurso) {
@@ -95,6 +116,27 @@ public class CursoController {
 		cursoUpdate.setIdCurso(idCurso);
 		cursoRepository.save(cursoUpdate);
 		return "redirect:/cursos";
+	}
+	
+	@RequestMapping(value = "/selectCursoAdmin")
+	public ModelAndView telaCursoAdmin(@RequestParam("idCurso") Long idCurso) {
+		Curso curso = cursoRepository.findByIdCurso(idCurso);
+		ModelAndView mv = new ModelAndView("/curso/update_curso_admin");
+		String imagem = Base64.getEncoder().encodeToString(curso.getImagem());
+		curso.setImagem_string(imagem);
+		String pilula = Base64.getEncoder().encodeToString(curso.getPilula());
+		curso.setPilula_string(pilula);
+		mv.addObject("curso", curso);
+		return mv;
+	}
+
+	@RequestMapping(value = "selectCursoAdmin", method = RequestMethod.POST, consumes = { "multipart/form-data" })
+	public String form_update_admin(@RequestParam("idCurso") Long idCurso,
+			@RequestParam(value = "imagem") MultipartFile imagem, @RequestParam(value = "video") MultipartFile video, CursoControllerModel curso) throws IOException {
+		Curso cursoUpdate = CursoMapper.converter(curso, imagem, video);
+		cursoUpdate.setIdCurso(idCurso);
+		cursoRepository.save(cursoUpdate);
+		return "redirect:/cursosAdmin";
 	}
 
 	@RequestMapping("/deletar/{id_curso}")

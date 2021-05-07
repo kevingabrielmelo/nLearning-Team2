@@ -50,20 +50,17 @@
 		</div>
 	</div>
 <div id="featured-wrapper">
-<!-- 	<nav class="menu-mobile"> -->
-<!-- 			<ul> -->
-<!-- 				<li><a href="cadastrarAluno">Cadastro de Alunos</a></li> -->
-<!-- 				<li><a href="cadastrarTutor">Cadastro de Tutores</a></li> -->
-<!-- 				<li><a href="cadastrarCursoAdmin">Cadastro de Cursos</a></li> -->
-<!-- 				<li><a href="cadastrarGestor">Cadastro de Gestores</a></li> -->
-<!-- 				<li><a href="cursosQuestoes">Questões e Avaliações</a></li> -->
-<!-- 				<li><a href="cursos">Lista de Cursos</a></li> -->
-<!-- 				<li><a href="usuarios">Lista de Usuários</a></li> -->
-<!-- 				<li><a href="candidatos">Candidatos</a></li> -->
-<!-- 				<li><a href="update_admin">Alterar Dados</a></li> -->
-<!-- 				<li><a href="/Login">Sair</a></li> -->
-<!-- 			</ul> -->
-<!-- 		</nav> -->
+	<nav class="menu-mobile">
+			<ul>
+				<li><a href="alterarDadosTutor">Perfil</a></li>
+				<li><a href="cursosQuestoes">Questões e Avaliações</a></li>
+				<li><a href="cadastrarCurso">Cadastro de cursos</a></li>
+				<li><a href="">Lista de Alunos</a></li>
+				<li><a href="cursos">Lista de Cursos</a></li>
+				<li><a href="">Calendário</a></li>
+				<li><a href="/Login">Sair</a></li>
+			</ul>
+		</nav>
 	<section class="container" id="fundo_cursos">
 		<h3 class="card_title">Curso:</h3>
 		<div th:each="curso : ${curso}" class="">

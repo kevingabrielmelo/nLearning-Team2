@@ -93,7 +93,7 @@ h3.titulo {
 				<li><a href="alterarDadosAluno">Perfil</a></li>
 				<li><a href="cursosnLearning">Cursos</a></li>
 				<li><a href="seusCursos">Seus Cursos</a></li>
-				<li><a href="biblioteca">Biblioteca</a></li>
+				<li><a href="bibliotecaAluno">Biblioteca</a></li>
 				<li><a href="">Trilha de aprendizado</a></li>
 				<li><a href="">Calendário</a></li>
 				<li><a href="">Ajuda</a></li>
@@ -128,7 +128,7 @@ h3.titulo {
 			<div th:each="curso : ${curso}" class="">
 
 				<article
-					class="card borda-cor-especial card-largura p-3 m-3 col-md-3">
+					class="alinhamento card borda-cor-especial card-largura p-3 m-3 col-md-3">
 					<img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
 					<div class="card-body ">
 						<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
