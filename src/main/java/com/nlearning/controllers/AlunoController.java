@@ -19,11 +19,13 @@ import com.nlearning.models.Aluno;
 import com.nlearning.models.Curso;
 import com.nlearning.models.CursoAluno;
 import com.nlearning.models.Questao;
+import com.nlearning.models.Trilha;
 import com.nlearning.models.Usuario;
 import com.nlearning.repository.AlunoRepository;
 import com.nlearning.repository.CursoAlunoRepository;
 import com.nlearning.repository.CursoRepository;
 import com.nlearning.repository.QuestaoRepository;
+import com.nlearning.repository.TrilhaRepository;
 
 @Controller
 public class AlunoController {
@@ -39,6 +41,9 @@ public class AlunoController {
 	
 	@Autowired
 	private QuestaoRepository questaoRepository;
+	
+	@Autowired
+	private TrilhaRepository trilhaRepository;
 
 	// Validação de login (CADASTRAR)
 	@RequestMapping(value = "/cadastrarAluno")
@@ -227,7 +232,32 @@ public class AlunoController {
 			videosTotais.add(videos);
 		}
 		
+		Trilha trilha = trilhaRepository.findByIdCursoAndIdAluno(idCurso, Usuario.idUsu);
+		if (trilha != null) {
+			trilha.setAulasCurso(videosTotais.size());
+			mv.addObject("trilha", trilha);
+		}
 		mv.addObject("video", videosTotais);
 		return mv;
+	}
+	
+	@RequestMapping(value = "/acessoVideosCurso", method = RequestMethod.POST)
+	public String trilhaAprendizado(@RequestParam("idCurso") Long idCurso, Trilha trilha, Usuario usu) {
+		
+		Trilha teste = trilhaRepository.findByIdCursoAndIdAluno(idCurso, Usuario.idUsu);
+		
+		if (teste != null) {
+			trilha.setIdTrilha(teste.getIdTrilha());
+			trilha.setAulasFeitas(teste.getAulasFeitas() + 1);
+		}
+		
+		if (teste == null) {
+			trilha.setAulasFeitas(1);
+		}
+		
+		trilha.setIdAluno(Usuario.idUsu);
+		trilha.setIdCurso(idCurso);
+		trilhaRepository.save(trilha);
+		return "redirect:/seusCursos";
 	}
 }
