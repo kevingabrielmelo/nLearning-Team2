@@ -71,27 +71,39 @@
 			</ul>
 		</nav>
 	<section class="container" id="fundo_cursos">
-		<h3 class="card_title">Curso:</h3>
+		<h3 class="card_title titulo_curso"></h3>
 		<div th:each="curso : ${curso}" class="row justify-content-center">
 
-			<article
-				class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
-				<img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
-				<div class="card-body ">
-					<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
-					<p class="card-text" th:text="${curso.descricao}"></p>
-					</div>
-					</article>
-					<label> Pílula de conhecimento do curso: </label>
+
+					<label class="titulo_pilula"> Pílula de conhecimento do curso: </label>
+					<article>
+						<article class="flex_divide">
+							<video controls width="700" height="400" class="flutua">
+								<source
+									th:src="@{'data:video/mp4;base64,'+${curso.pilula_string}}"
+									type="video/mp4">
+							</video>
+							<article class="ajeitando">
+							<article
+								class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
+								<img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
+								<div class="card-body ">
+									<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
+									<p class="card-text" th:text="${curso.descricao}"></p>
+									</div>
+							</article>
+							</article>
+			
 					
-					<article
-						>
-						<video controls width="700" height="400">
-							<source
-								th:src="@{'data:video/mp4;base64,'+${curso.pilula_string}}"
-								type="video/mp4">
-						</video>
-						<p>
+					
+						</article>
+					</article>
+					
+					
+					
+					
+					<article class="margem_video">
+						<p class="espaca_p">
 							<a
 								th:href="@{/acessoVideosCurso(idCurso = ${curso.idCurso})}"
 								class="btn botao-cor-especial">Acesse os vídeos do curso!</a>
@@ -102,8 +114,8 @@
 								class="btn botao-cor-especial">Acesse as questões do curso!</a>
 						</p>
 					</article>
-				
 			
+				
 		</div>
 	</section>
 </div>

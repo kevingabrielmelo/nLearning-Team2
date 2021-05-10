@@ -75,8 +75,7 @@
 			<h3 class="card_title">Aulas concluídas:</h3>
 			<div th:each="trilha : ${trilha}" class="row">
 
-				<article
-					class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
+				<article>
 						<label>Você concluiu <span class="card-text"
 						th:text="${trilha.aulasFeitas}"></span> aulas </label>
 						<label>de <span class="card-text" th:text="${trilha.aulasCurso}"></span> disponíveis </label>
@@ -89,14 +88,13 @@
 			<h3 class="card_title">Curso:</h3>
 			<div th:each="videos : ${video}" class="row">
 
-				<article
-					class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
+				<article>
 					<video controls width="700" height="400">
 						<source th:src="@{'data:video/mp4;base64,'+${videos.videoString}}"
 							type="video/mp4">
 					</video>
 					<form method='post' enctype="multipart/form-data">
-						<input type="submit" value="Finalizar aula!" class="botao_salvar">
+						<input type="submit" value="Finalizar aula!" class="botao_finalizar">
 					</form>
 				</article>
 			</div>
