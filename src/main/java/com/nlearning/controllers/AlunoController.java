@@ -260,4 +260,16 @@ public class AlunoController {
 		trilhaRepository.save(trilha);
 		return "redirect:/seusCursos";
 	}
+	
+	@RequestMapping(value = "/emitirCertificado")
+	public ModelAndView EmitirCertificado(@RequestParam("idCurso") Long idCurso) {
+		ModelAndView mv = new ModelAndView("/curso/emitir_certificado");
+		
+		Aluno aluno = alunoRepository.findByIdAluno(Usuario.idUsu);
+		Curso curso = cursoRepository.findByIdCurso(idCurso);
+		
+		mv.addObject("aluno", aluno);
+		mv.addObject("curso", curso);
+		return mv;
+	}
 }
