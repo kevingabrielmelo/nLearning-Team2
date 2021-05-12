@@ -18,6 +18,7 @@ public class Questao implements Serializable {
 	
 	private byte[] pergunta;
 	private byte[] video;
+	private String forms;
 	private long idCurso;
 	private String pdfStringQuestao;
 	private String videoString;
@@ -57,5 +58,12 @@ public class Questao implements Serializable {
 	}
 	public void setVideoString(String videoString) {
 		this.videoString = videoString;
+	}
+	
+	public String getForms() {
+		return forms;
+	}
+	public void setForms(String forms) {
+		this.forms = forms;
 	}
 }

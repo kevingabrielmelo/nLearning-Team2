@@ -21,6 +21,7 @@ public class CursoMapper {
 		cursoBanco.setPilula(video.getBytes());
 		cursoBanco.setIdTutor(Usuario.idUsu);
 		
+		
 		return cursoBanco;
 	}
 }

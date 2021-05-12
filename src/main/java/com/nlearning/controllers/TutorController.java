@@ -134,9 +134,9 @@ public class TutorController {
 
 	// Cadastra os dados das questões no banco de dados
 	@RequestMapping(value = "/criarQuestaoCurso", method = RequestMethod.POST,  consumes = { "multipart/form-data" })
-	public String form(@RequestParam(value = "pergunta") MultipartFile pergunta, Long idCurso, @RequestParam(value = "video") MultipartFile video)
+	public String form(@RequestParam(value = "pergunta") MultipartFile pergunta, Long idCurso, @RequestParam(value = "video") MultipartFile video, String forms)
 		throws IOException {
-			questaoRepository.save(QuestaoMapper.converter(pergunta, idCurso, video));
+			questaoRepository.save(QuestaoMapper.converter(pergunta, idCurso, video, forms));
 			return "redirect:menuTutor";
 		}
 }
