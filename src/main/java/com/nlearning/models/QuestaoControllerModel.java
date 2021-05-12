@@ -10,6 +10,8 @@ public class QuestaoControllerModel implements Serializable {
 	
 	private long idCurso;
 	
+	private String forms;
+	
 	public long getIdQuestao() {
 		return idQuestao;
 	}
@@ -22,5 +24,11 @@ public class QuestaoControllerModel implements Serializable {
 	}
 	public void setIdCurso(long idCurso) {
 		this.idCurso = idCurso;
+	}
+	public String getForms() {
+		return forms;
+	}
+	public void setForms(String forms) {
+		this.forms = forms;
 	}
 }

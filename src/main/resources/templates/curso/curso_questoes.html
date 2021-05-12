@@ -92,10 +92,7 @@
 									<p class="card-text" th:text="${curso.descricao}"></p>
 									</div>
 							</article>
-							</article>
-			
-					
-					
+							</article>					
 						</article>
 					</article>
 					
@@ -112,6 +109,11 @@
 							<a
 								th:href="@{/acessoQuestoesCurso(idCurso = ${curso.idCurso})}"
 								class="btn botao-cor-especial">Acesse as questões do curso!</a>
+						</p>
+						<p>
+						<a
+								th:href="@{/acessoFormsCurso(idCurso = ${curso.idCurso})}"
+								class="btn botao-cor-especial">Acesse o questionário do curso!</a>
 						</p>
 					</article>
 			

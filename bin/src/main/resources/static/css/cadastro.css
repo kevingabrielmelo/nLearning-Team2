@@ -1,5 +1,5 @@
 #header{
-    background: #0B2E50;
+    background: #1a1a1a ;
 }
 .body{
     background: white;
@@ -91,3 +91,129 @@
     background: #131549;
     color: white;
 } 
+
+.botao_finalizar{
+    font-family: Calibri;
+    font-style: bold;
+    font-weight: 300;
+    font-size: 20px;
+    
+    height: 40px;
+    width: 150px;
+    margin-bottom: 10%;
+    margin-left: 20%;
+    margin-top: 36px;
+    background: #131549;
+	border: 1px solid #A2A0F7;
+	box-sizing: border-box;
+	border-radius: 4px;
+    
+    
+
+    background: #131549;
+    color: white;
+} 
+
+.botao-cor-especial{
+    background-color: #0B2E50!important;
+    color: white!important;
+}
+
+
+
+.espac_esquerda{
+	margin-left:5%;
+}
+
+.espac_baixo{
+	margin-bottom:5%;
+}
+
+.titulo_form{
+	margin-top:2%;
+	margin-bottom:4%;
+	font-size:1.5rem;
+	margin-left:5%;
+}
+
+.espac_file{
+	margin-bottom:2%;
+}
+
+.flutua{
+	float:left;
+}
+
+.ajeitando{
+	margin-left:10%;
+}
+
+.flex_divide{
+	display:flex;
+	justify-content:around;
+}
+
+.margem_video{
+	margin-top:5%!important;
+}
+
+.espaca_p{
+	margin-bottom:2%;
+}
+
+.titulo_curso{
+    color: #131549;
+    font-family: Calibri;
+	font-style: bold;
+	font-weight: 300;
+	font-size: 56px;
+	line-height: 84px;
+	display: flex;
+	align-items: center;
+	
+	color: #131549;
+	
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.titulo_pilula{
+	margin-top:5%!important;
+	color: #131549;
+    font-family: Calibri;
+    font-style: bold;
+    font-size: 2rem;
+    font-weight: 400
+}
+
+.titulo_alteracao{
+	margin-top: 0%;
+    margin-left: -5%;
+    color: #131549;
+    font-family: Calibri;
+	font-style: bold;
+	font-weight: 300;
+	font-size: 42px;
+	line-height: 84px;
+	display: flex;
+	align-items: center;
+	
+	color: #131549;
+	
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.titulo_alteracao1{
+	margin-top: 0%;
+    color: #131549;
+    font-family: Calibri;
+	font-style: bold;
+	font-weight: 300;
+	font-size: 42px;
+	line-height: 84px;
+	display: flex;
+	align-items: center;
+	
+	color: #131549;
+	
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

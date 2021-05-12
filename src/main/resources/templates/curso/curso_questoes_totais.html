@@ -76,14 +76,23 @@
 				<h3 class="titulo_cursos">Questões do curso:</h3>
 			</tr>
 		</thead>
-		<tbody>
-			<tr th:each="questao : ${questao}">
+		<tbody th:each="questao : ${questao}">
+			<tr >
 				<td><iframe
 						th:src="@{'data:application/pdf;base64,'+${questao.pdfStringQuestao}}"
 						width="1300" height="1100"> </iframe></td>
+						
+			<td>
+			</tr>
+			<tr th:each="questao : ${questao}">
+			
+			      <td>    <iframe width="640" height="760" th:src="@{''+${questao.forms}}"> </iframe> </td>
 			</tr>
 		</tbody>
 	</table>
+	
+	
+	
 	</div>
 
 	<script
