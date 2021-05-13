@@ -71,20 +71,17 @@
 					<div class="card-body ">
 						<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
 						<p class="card-text" th:text="${curso.descricao}"></p>
-						<p class="card-text" th:inline="text">R$
-							[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2,
-							'POINT')}]]</p>
 						<label>Tutor: <span class="card-text"
 							th:text="${curso.tutor}"></span></label>
-						
+
 					</div>
 				</article>
 			</div>
-				<label class="titulo_form"> Pílula de conhecimento do curso: </label>
+			<label class="titulo_form"> Pílula de conhecimento do curso:
+			</label>
 			<article>
 				<video controls width="700" height="400">
-					<source
-						th:src="@{'data:video/mp4;base64,'+${curso.pilula_string}}"
+					<source th:src="@{'data:video/mp4;base64,'+${curso.pilula_string}}"
 						type="video/mp4">
 				</video>
 			</article>
@@ -104,27 +101,19 @@
 							placeholder="Descrição: " name="descricao" required
 							th:value="${curso.descricao}" th:placeholder="${curso.descricao}" />
 
-
-						<h3 class="titulos_forms">Valor:</h3>
-						<input class="input_forms" maxlength="15" type='number' id="valor"
-							placeholder="Valor" name="valor" required
-							th:value="${curso.valor}" th:placeholder="${curso.valor}" />
-
-
 						<h3 class="titulos_forms ">Tutor:</h3>
 						<input id="tutor" class="input_forms" type='text'
 							placeholder="Tutor" name="tutor" required
 							th:value="${curso.tutor}" th:placeholder="${curso.tutor}" />
 
 						<h3 class="titulos_forms espac_esquerda ">Imagem:</h3>
-						<input class="espac_esquerda espac_baixo"type="file" name="imagem" id="imagem" required>
+						<input class="espac_esquerda espac_baixo" type="file"
+							name="imagem" id="imagem" required>
 
 						<h3 class="titulos_forms ">Envio de pílula de conhecimento
 							(MP4):</h3>
-						<input class="espac_esquerda" type="file" name="video" id="video" required
-							accept="video/mp4"> <br> 
-
-							<input
+						<input class="espac_esquerda" type="file" name="video" id="video"
+							required accept="video/mp4"> <br> <input
 							onclick="alertCadastro()" type="submit" value="Salvar"
 							class="botao_salvar">
 					</div>
