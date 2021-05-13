@@ -18,7 +18,6 @@ public class Curso implements Serializable {
 
 	private String nomeCurso;
 	private String descricao;
-	private Double valor;
 	private String tutor;
 	private byte[] imagem;
 	private String imagem_string;
@@ -49,14 +48,6 @@ public class Curso implements Serializable {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public Double getValor() {
-		return valor;
-	}
-
-	public void setValor(Double valor) {
-		this.valor = valor;
 	}
 
 	public String getTutor() {
