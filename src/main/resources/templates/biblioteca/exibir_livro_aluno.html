@@ -61,29 +61,30 @@
 				<li><a href="/Login">Sair</a></li>
 			</ul>
 		</nav>
-	<table class="container">
-		<thead>
-			<tr>
-				<th>Livro</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="livro : ${livro}">
-
-				<td><iframe
-						th:src="@{'data:application/pdf;base64,'+${livro.pdf_string}}"
-						width="900" height="1100"> </iframe></td>
-			</tr>
-			<tr>
-				<div style="border: 1px solid black; padding: 100px;">
-
-						<input type="hidden" name="livro" th:value="${livro.pdf_string}"
-							value="${livro.pdf_string}"> <a id='dwnldLnk'
-							download='livro.pdf' style="display: none;" /></a> <a href="#"
-							onclick="downloadPDF();" title='livro.pdf'>Se o livro não
-							aparecer, faça download clicando aqui!</a>
-
-<script th:inline="javascript">
+		<div class="forte">
+			<table class="container">
+				<thead>
+					<tr th:each="livro : ${livro}">
+						<th class="posicionamento_livro" th:text="${livro.nomeLivro}"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="livro : ${livro}">
+		
+						<td><iframe
+								th:src="@{'data:application/pdf;base64,'+${livro.pdf_string}}"
+								width="900" height="1100"> </iframe></td>
+					</tr>
+					<tr>
+						<div>
+		
+								<input type="hidden" name="livro" th:value="${livro.pdf_string}"
+									value="${livro.pdf_string}"> <a id='dwnldLnk'
+									download='livro.pdf' style="display: none;" /></a> <a href="#" class="posicionamento_download"
+									onclick="downloadPDF();" title='livro.pdf'>Se o livro não
+									aparecer, faça download clicando aqui!</a>
+		
+		<script th:inline="javascript">
 /*<![CDATA[*/
   var livro_pdf = /*[[${livro.pdf_string}]]*/ "Livro";
 /*]]>*/
@@ -102,11 +103,12 @@ var b64 = document.getElementsByName('livro').value;
 var pdf = 'data:application/octet-stream;base64,' + livro_pdf;
 
 </script>
-
-					</div>
-			</tr>
-		</tbody>
-	</table>
+		
+							</div>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"

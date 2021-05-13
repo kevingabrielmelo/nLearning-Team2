@@ -86,11 +86,12 @@
 						</video>
 						<article class="ajeitando">
 							<article
-								class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
-								<img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
-								<div class="card-body ">
-									<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
-									<p class="card-text" th:text="${curso.descricao}"></p>
+								class="card borda-cor-especial card-largura p-2 m-2 col-md-11 ">
+								<img class="card-corpo2"
+									th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
+								<div class="card-corpo1">
+									<h5 class="card-title " th:text="${curso.nomeCurso}"></h5>
+									<p class="card-text " th:text="${curso.descricao}"></p>
 								</div>
 							</article>
 						</article>
