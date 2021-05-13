@@ -4398,7 +4398,7 @@ input[type="button"].btn-block {
 }
 
 .card-body {
-  -ms-flex: 1 1 auto;
+  -ms-flex: 3 3 auto;
   flex: 1 1 auto;
   padding: 1.25rem;
 }
