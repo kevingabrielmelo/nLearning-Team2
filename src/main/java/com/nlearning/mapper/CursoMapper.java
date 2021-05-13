@@ -16,7 +16,6 @@ public class CursoMapper {
 		cursoBanco.setNomeCurso(curso.getNomeCurso());
 		cursoBanco.setDescricao(curso.getDescricao());
 		cursoBanco.setTutor(curso.getTutor());
-		cursoBanco.setValor(curso.getValor());
 		cursoBanco.setImagem(imagem.getBytes());
 		cursoBanco.setPilula(video.getBytes());
 		cursoBanco.setIdTutor(Usuario.idUsu);

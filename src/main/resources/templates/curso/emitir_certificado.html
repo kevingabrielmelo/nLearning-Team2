@@ -97,16 +97,16 @@ Released   : 20132402
 	</div>
 	<div id="featured-wrapper">
 		<nav class="menu-mobile">
-			<ul>
-				<li><a href="alterarDadosAluno">Perfil</a></li>
-				<li><a href="cursosnLearning">Cursos</a></li>
-				<li><a href="seusCursos">Seus Cursos</a></li>
-				<li><a href="bibliotecaAluno">Biblioteca</a></li>
-				<li><a href="">Trilha de aprendizado</a></li>
-				<li><a href="">Calendário</a></li>
-				<li><a href="">Ajuda</a></li>
-				<li><a href="/Login">Sair</a></li>
-			</ul>
+		<ul>
+			<li><a href="alterarDadosAluno">Perfil</a></li>
+			<li><a href="cursosnLearning">Cursos</a></li>
+			<li><a href="seusCursos">Seus Cursos</a></li>
+			<li><a href="bibliotecaAluno">Biblioteca</a></li>
+			<li><a href="">Trilha de aprendizado</a></li>
+			<li><a href="">Calendário</a></li>
+			<li><a href="">Ajuda</a></li>
+			<li><a href="/Login">Sair</a></li>
+		</ul>
 		</nav>
 
 		<script
@@ -122,105 +122,107 @@ Released   : 20132402
 		});
 	</script>
 </body>
-	<script th:inline="javascript">
+<script th:inline="javascript">
 /*<![CDATA[*/
-  var studentname = /*[[${aluno.nome}]]*/ "Nome do aluno";
-  var collegename = /*[[${curso.nomeCurso}]]*/ "Nome do curso";
+var nomeAluno = /*[[${aluno.nome}]]*/ "Nome do aluno";
+var nomeCurso = /*[[${curso.nomeCurso}]]*/ "Nome do curso";
 /*]]>*/
-            $(document).ready(function(){
-                $("#btn").click(function(){
-                
-                // Obtém a data/hora atual
-var data = new Date();
+$(document).ready(function() {
+	$("#btn").click(function() {
 
-// Guarda cada pedaço em uma variável
-var dia     = data.getDate();           // 1-31
-var mes     = data.getMonth();          // 0-11 (zero=janeiro)
-var ano4    = data.getFullYear();       // 4 dígitos
+		// Obtém a data/hora atual
+		var data = new Date();
 
-// Formata a data e a hora (note o mês + 1)
-var str_data = dia + '/' + (mes+1) + '/' + ano4;
+		// Guarda cada pedaço em uma variável
+		var dia = data.getDate();           // 1-31
+		var mes = data.getMonth();          // 0-11 (zero=janeiro)
+		var ano4 = data.getFullYear();       // 4 dígitos
 
-                	
-                	var certificado = document.querySelector("#image");
-                	
-                    var eventname = str_data;
-                    var placename = 'Place Name';
-                    var dateevent = 'Day/Year/Month';
-                    var filename = 'certificado';
-                    var doc = new jsPDF('landscape','mm', 'a4')
-                    doc.addImage(certificado, 'JPEG', 0, 0, 297, 210)
-                    doc.setFont('times')
+		// Formata a data e a hora (note o mês + 1)
+		var str_data = dia + '/' + (mes + 1) + '/' + ano4;
 
-                    /* Student Name */
-                    console.log(studentname.length)
- 
-                        doc.setFontSize(40)
-                        doc.text(65, 101, studentname)
-                    
 
-                    /* College Name*/
-                        doc.setFontSize(14)
-                        doc.text(83, 122, collegename)
-                    
+		var certificado = document.querySelector("#image");
 
-                    /* Event Name */
-                        doc.setFontSize(14)
-                        doc.text(114, 129, eventname)
-                 
-                    doc.save( filename +'.pdf')
-                });
-            });
+		var dataConclusao = str_data;
+		var placename = 'Place Name';
+		var dateevent = 'Day/Year/Month';
+		var filename = 'certificado';
+		var doc = new jsPDF('landscape', 'mm', 'a4')
+		doc.addImage(certificado, 'JPEG', 0, 0, 297, 210)
+		doc.setFont('times')
+
+		/* Nome do Aluno */
+		console.log(nomeAluno.length)
+
+		doc.setFontSize(40)
+		doc.text(65, 101, nomeAluno)
+
+
+		/* Nome do curso */
+		doc.setFontSize(14)
+		doc.text(83, 122, nomeCurso)
+
+
+		/* Data de conclusão */
+		doc.setFontSize(14)
+		doc.text(114, 129, dataConclusao)
+
+		doc.save(filename + '.pdf')
+	});
+});
         </script>
-	<center><img id="image" src="imagens/certificado.png"></center>
+<center>
+	<img id="image" src="imagens/certificado.png">
+</center>
 
-	<button class="btn_ajuda" id="btn">Gerar seu certificado</button>
-	<table class="container">
-		<thead>
-			<tr>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="aluno : ${aluno}">
+<button class="btn_ajuda" id="btn">Gerar seu certificado</button>
+<table class="container">
+	<thead>
+		<tr>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="aluno : ${aluno}">
 
-				<td></td>
-			</tr>
+			<td></td>
+		</tr>
 
-			<table class="container">
-				<thead>
-					<tr>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="curso : ${curso}">
+		<table class="container">
+			<thead>
+				<tr>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="curso : ${curso}">
 
-						<td></td>
-					</tr>
-					<footer>
-					<div id="footer_main">
-						<div class="flex_footer">
-							<div class="flex_footer_div1">
-								<h1 class="h1_footer">Empresa</h1>
-								<a class="a_footer" href="" title="">⸰ Sobre nós</a> <a
-									class="a_footer" href="" title="">⸰ Legal</a> <a
-									class="a_footer" href="" title="">⸰ Negócios</a>
-							</div>
-
-							<div class="flex_footer_div2">
-								<h1 class="h1_footer">Ajuda</h1>
-								<a class="a_footer" href="" title="">⸰ Central de ajuda</a> <a
-									class="a_footer" href="" title="">⸰ Cursos</a> <a
-									class="a_footer" href="" title="">⸰ Contato</a>
-							</div>
-
-							<div>
-								<h1 class="h1_footer1">Midias sociais</h1>
-								<img class="img_midia1 " src="/imagens/midias.svg">
-							</div>
+					<td></td>
+				</tr>
+				<footer>
+				<div id="footer_main">
+					<div class="flex_footer">
+						<div class="flex_footer_div1">
+							<h1 class="h1_footer">Empresa</h1>
+							<a class="a_footer" href="" title="">⸰ Sobre nós</a> <a
+								class="a_footer" href="" title="">⸰ Legal</a> <a
+								class="a_footer" href="" title="">⸰ Negócios</a>
 						</div>
 
+						<div class="flex_footer_div2">
+							<h1 class="h1_footer">Ajuda</h1>
+							<a class="a_footer" href="" title="">⸰ Central de ajuda</a> <a
+								class="a_footer" href="" title="">⸰ Cursos</a> <a
+								class="a_footer" href="" title="">⸰ Contato</a>
+						</div>
+
+						<div>
+							<h1 class="h1_footer1">Midias sociais</h1>
+							<img class="img_midia1 " src="/imagens/midias.svg">
+						</div>
 					</div>
-					</footer>
-</html>
+
+				</div>
+				</footer>
+				</html>

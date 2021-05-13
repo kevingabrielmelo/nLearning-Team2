@@ -116,8 +116,6 @@ h3.titulo {
 				<div class="card-body ">
 					<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
 					<p class="card-text" th:text="${curso.descricao}"></p>
-					<p class="card-text" th:inline="text">R$
-						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</p>
 					<label>Tutor: <span class="card-text"
 						th:text="${curso.tutor}"></span></label>
 					<p>
