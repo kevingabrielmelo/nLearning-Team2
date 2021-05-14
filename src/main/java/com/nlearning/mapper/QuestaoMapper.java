@@ -12,9 +12,20 @@ public class QuestaoMapper {
 
 		var questoes = new Questao();
 		
-		questoes.setPergunta(pergunta.getBytes());
+		if (pergunta.getOriginalFilename() == "") {
+			questoes.setPergunta(null);
+		}
+		else {
+			questoes.setPergunta(pergunta.getBytes());
+		}
 		questoes.setIdCurso(idCurso);
-		questoes.setVideo(video.getBytes());
+		
+		if (video.getOriginalFilename() == "") {
+			questoes.setVideo(null);
+		}
+		else {
+			questoes.setVideo(video.getBytes());
+		}
 		questoes.setForms(forms);
 
 		return questoes;

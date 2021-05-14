@@ -38,10 +38,10 @@ public class AlunoController {
 
 	@Autowired
 	private CursoAlunoRepository cursoAlunoRepository;
-	
+
 	@Autowired
 	private QuestaoRepository questaoRepository;
-	
+
 	@Autowired
 	private TrilhaRepository trilhaRepository;
 
@@ -169,69 +169,67 @@ public class AlunoController {
 
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/visualizarQuestoesCurso")
 	public ModelAndView telaVisualizarQuestoes(@RequestParam("idCurso") Long idCurso) {
 		Curso curso = cursoRepository.findByIdCurso(idCurso);
-		Iterable<Questao> questao = questaoRepository.findByIdCurso(idCurso);
 		ModelAndView mv = new ModelAndView("/curso/curso_questoes");
 		String imagem = Base64.getEncoder().encodeToString(curso.getImagem());
 		curso.setImagem_string(imagem);
 		String pilula = Base64.getEncoder().encodeToString(curso.getPilula());
 		curso.setPilula_string(pilula);
-		
-		List<Questao> questoesCurso = new ArrayList<>();
-		
-		for (Questao questoes : questao) {
 
-			String pdf = Base64.getEncoder().encodeToString(questoes.getPergunta());
-			questoes.setPdfStringQuestao(pdf);
-			
-			String video = Base64.getEncoder().encodeToString(questoes.getVideo());
-			questoes.setVideoString(video);
-			
-			questoesCurso.add(questoes);
-		}
-		
 		mv.addObject("curso", curso);
-		mv.addObject("questao", questoesCurso);
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/acessoQuestoesCurso")
 	public ModelAndView VisualizarQuestoes(@RequestParam("idCurso") Long idCurso) {
 		Iterable<Questao> questao = questaoRepository.findByIdCurso(idCurso);
 		ModelAndView mv = new ModelAndView("/curso/curso_questoes_totais");
-		
+
 		List<Questao> questoesCurso = new ArrayList<>();
-		
+
 		for (Questao questoes : questao) {
 
-			String pdf = Base64.getEncoder().encodeToString(questoes.getPergunta());
-			questoes.setPdfStringQuestao(pdf);
-			
-			questoesCurso.add(questoes);
+			if (questoes.getPergunta() == null) {
+
+				questoesCurso.add(questoes);
+
+			} else {
+				String pdf = Base64.getEncoder().encodeToString(questoes.getPergunta());
+				questoes.setPdfStringQuestao(pdf);
+
+				questoesCurso.add(questoes);
+			}
 		}
-		
+
 		mv.addObject("questao", questoesCurso);
+
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/acessoVideosCurso")
 	public ModelAndView VisualizarVideos(@RequestParam("idCurso") Long idCurso) {
 		Iterable<Questao> video = questaoRepository.findByIdCurso(idCurso);
 		ModelAndView mv = new ModelAndView("/curso/curso_videos_totais");
-		
+
 		List<Questao> videosTotais = new ArrayList<>();
-		
+
 		for (Questao videos : video) {
 
-			String videos_totais = Base64.getEncoder().encodeToString(videos.getVideo());
-			videos.setVideoString(videos_totais);
-			
-			videosTotais.add(videos);
+			if (videos.getVideo() == null) {
+				videosTotais.add(videos);
+			}
+
+			else {
+				String videos_totais = Base64.getEncoder().encodeToString(videos.getVideo());
+				videos.setVideoString(videos_totais);
+
+				videosTotais.add(videos);
+			}
 		}
-		
+
 		Trilha trilha = trilhaRepository.findByIdCursoAndIdAluno(idCurso, Usuario.idUsu);
 		if (trilha != null) {
 			trilha.setAulasCurso(videosTotais.size());
@@ -240,34 +238,34 @@ public class AlunoController {
 		mv.addObject("video", videosTotais);
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/acessoVideosCurso", method = RequestMethod.POST)
 	public String trilhaAprendizado(@RequestParam("idCurso") Long idCurso, Trilha trilha, Usuario usu) {
-		
+
 		Trilha teste = trilhaRepository.findByIdCursoAndIdAluno(idCurso, Usuario.idUsu);
-		
+
 		if (teste != null) {
 			trilha.setIdTrilha(teste.getIdTrilha());
 			trilha.setAulasFeitas(teste.getAulasFeitas() + 1);
 		}
-		
+
 		if (teste == null) {
 			trilha.setAulasFeitas(1);
 		}
-		
+
 		trilha.setIdAluno(Usuario.idUsu);
 		trilha.setIdCurso(idCurso);
 		trilhaRepository.save(trilha);
 		return "redirect:/seusCursos";
 	}
-	
+
 	@RequestMapping(value = "/emitirCertificado")
 	public ModelAndView EmitirCertificado(@RequestParam("idCurso") Long idCurso) {
 		ModelAndView mv = new ModelAndView("/curso/emitir_certificado");
-		
+
 		Aluno aluno = alunoRepository.findByIdAluno(Usuario.idUsu);
 		Curso curso = cursoRepository.findByIdCurso(idCurso);
-		
+
 		mv.addObject("aluno", aluno);
 		mv.addObject("curso", curso);
 		return mv;
