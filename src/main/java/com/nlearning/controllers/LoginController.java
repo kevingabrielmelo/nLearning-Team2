@@ -1,5 +1,9 @@
 package com.nlearning.controllers;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -14,6 +18,7 @@ import com.nlearning.models.Admin;
 import com.nlearning.models.Aluno;
 //imports de gestor
 import com.nlearning.models.Gestor;
+import com.nlearning.models.Log;
 //imports de tutor
 import com.nlearning.models.Tutor;
 import com.nlearning.models.Usuario;
@@ -21,6 +26,7 @@ import com.nlearning.repository.AdminRepository;
 // imports de aluno
 import com.nlearning.repository.AlunoRepository;
 import com.nlearning.repository.GestorRepository;
+import com.nlearning.repository.LogRepository;
 import com.nlearning.repository.TutorRepository;
 
 @Controller
@@ -35,6 +41,8 @@ public class LoginController {
 	private TutorRepository tutorRepository;
 	@Autowired
 	private AlunoRepository alunoRepository;
+	@Autowired
+	private LogRepository logRepository;
 
 	// Deslogar o usuário (usar esse mapping para deslogar)
 	@GetMapping("/login")
@@ -69,21 +77,57 @@ public class LoginController {
 		if (admin != null || gestor != null || tutor != null || aluno != null) {
 			// Verificando em cada tabela se o emais e a senha no banco são iguais as salvas
 			// no banco
+			
+			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
+			Date date = new Date(); 
+			String dataAtual = dateFormat.format(date);
+			
 			if (admin != null && admin.getEmail().equals(email) && admin.getSenha().equals(senha)) {
 				Usuario.tipoUsu = "admin";
 				Usuario.idUsu = admin.getIdAdmin();
+				
+				Log log = new Log();
+				log.setIdUsuario(Usuario.idUsu);
+				log.setData(dataAtual);
+				
+				logRepository.save(log);
+				
 				return "redirect:menuAdmin";
+				
 			} else if (gestor != null && gestor.getEmail().equals(email) && gestor.getSenha().equals(senha)) {
 				Usuario.tipoUsu = "gestor";
 				Usuario.idUsu = gestor.getIdGestor();
+				
+				Log log = new Log();
+				log.setIdUsuario(Usuario.idUsu);
+				log.setData(dataAtual);
+				
+				logRepository.save(log);
+				
 				return "redirect:menuGestor";
+				
 			} else if (tutor != null && tutor.getEmail().equals(email) && tutor.getSenha().equals(senha)) {
 				Usuario.tipoUsu = "tutor";
 				Usuario.idUsu = tutor.getIdTutor();
+				
+				Log log = new Log();
+				log.setIdUsuario(Usuario.idUsu);
+				log.setData(dataAtual);
+				
+				logRepository.save(log);
+				
 				return "redirect:menuTutor";
+				
 			} else if (aluno != null && aluno.getEmail().equals(email) && aluno.getSenha().equals(senha)) {
 				Usuario.tipoUsu = "aluno";
 				Usuario.idUsu = aluno.getIdAluno();
+				
+				Log log = new Log();
+				log.setIdUsuario(Usuario.idUsu);
+				log.setData(dataAtual);
+				
+				logRepository.save(log);
+				
 				return "redirect:menuAluno";
 			}
 		}
