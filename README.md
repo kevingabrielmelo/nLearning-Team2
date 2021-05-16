@@ -46,7 +46,7 @@ Feito por Luiz Miguel
 
 ![Log](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/log.jpeg)
 
-# Burndown
+#Burndown
 
 ![burndown](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/burndown-03.jpeg)
 
