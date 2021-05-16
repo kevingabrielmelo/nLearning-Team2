@@ -42,13 +42,13 @@ Feito por Kevin Melo
 
 Feito por Luiz Miguel
 
-#Registro de ações
+# Registro de Ações
 
 ![Log](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/log.jpeg)
 
-#Burndown
+# Burndown
 
 ![burndown](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/burndown-03.jpeg)
 
-Feito por Kauan Souza e Edryan Matheus
+Feito por Kauan Souza
 
