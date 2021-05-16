@@ -7,99 +7,48 @@ Feito por Luiz Miguel
 No <a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Trello </a>
 está a disponibilização do planejamento das sprints do projeto.
 
-## Página Inicial
-![index](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/index.gif)
-
-Feito por Daniel Vargas e Kevin Melo
-
-# Telas referente a cursos
-
-## Cadastro de curso
-![CadCurso](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/CadCurso.jpeg)
-
-Feito por Kauan Souza e Kevin Melo
-
-## Cadastro das questões dos cursos
-![CadQuestao](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/CadQuestaoTutor.jpeg)
-
-Feito por Kauan Souza e Kevin Melo
-
-## Edição de curso
-![EdicaoCurso](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/AlterarCursoTutor.jpeg)
-
-Feito por Kauan Souza e Kevin Melo
-
-## Compra de um curso
-![CompraCurso](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/ComprarCurso.jpeg)
-
-Feito por Kauan Souza e Kevin Melo
-
-## Cursos do tutor
-![CursoTutor](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/ListaCursoTutor.jpeg)
-
-Feito por Kevin Melo e José Alberto
-
-## Cursos do aluno
-![CursoAluno](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/ListaCursoAluno.jpeg)
-
-Feito por Kevin Melo e José Alberto
-
-## Lista dos Cursos
-![cad4](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/ListaCurso.jpeg)
+## Nova Página Inicial
+![index](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/indexSprint3.gif)
 
 Feito por Daniel Vargas e José Alberto
 
-## Vizualização de questões para os alunos
-![QuestoesAluno](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/QuestaoAluno.jpeg)
+## Calendário
+![Calendário](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/Calendario.png)
 
-Feito por Wagner Kenji e José Alberto
+Feito por Kevin Melo
 
-# Telas referentes a currículos
+## Novo Menu para usuários
+![MenuNovo](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/MenuNovo.png)
 
-## Lista dos Currículos
-![ExibirCurriculo](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/ListaCurriculo.jpeg)
+Feito por José Alberto
 
-Feito por Wagner Kenji e José Alberto
+# Telas referente a cursos
 
-## Exibir Currículo
-![ExibeCurrículo](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/ExibirCurriculo.jpeg)
+## Cadastro de questão (Opção de adicionar prova)
+![CadQuest](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/Cadastro%20de%20quest%C3%A3o.png)
 
-Feito por Luiz Miguel e Edryan Matheus
+## Lista de aulas
+![ListAulas](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/ListaAulas.png)
 
-# Tela de Login
-![Login](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/Login.jpeg)
+Feito por Kevin Melo e Edryan Mathes
 
-Feito por Luiz Miguel e Edryan Matheus
+## Pilula de conhecimento
+![Pilulas](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/pilulaConhecimento.png)
 
-# Telas de Menu
+Feito por Kevin Melo
 
-## Menu administrador
+## Provas por Google Forms
+![CadProva](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/questaoProva.png)
 
-![MER](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/menu_adm.png)
+Feito por Luiz Miguel
 
-Feito por Daniel Vargas e Wagner Kenji
+#Registro de ações
 
-## Menu aluno
-
-![Menualuno](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/menu_aluno.png)
-
-Feito por Daniel Vargas e Wagner Kenji
-
-## Menu gestor
-
-![Menugestor](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/menu_gestor.png)
-
-Feito por Luiz Miguel e Wagner Kenji
-
-## Menu tutor
-
-![Menututor](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/sprint_2/menu_tutor.png)
-
-Feito por Daniel Vargas e Luiz Miguel
+![Log](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/log.jpeg)
 
 # Burndown
 
-![burndown](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_2/readme-assets/Burndown%20Sprint%202.PNG)
+![burndown](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/burndown-03.jpeg)
 
 Feito por Kauan Souza e Edryan Matheus
 
