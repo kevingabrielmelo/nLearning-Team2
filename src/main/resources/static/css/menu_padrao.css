@@ -121,7 +121,7 @@
   width:270px;
   height:100%;
   background-color: #0B2E50;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   overflow-y: auto;
   transition-duration: 0.3s;
@@ -199,6 +199,11 @@
 }
 
 .btn-menu-active .row  {
+  transform: translateX(200px);
+  left: 0px;
+}
+
+.btn-menu-active .nav  {
   transform: translateX(200px);
   left: 0px;
 }
