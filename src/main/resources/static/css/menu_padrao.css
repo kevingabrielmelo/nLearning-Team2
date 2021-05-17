@@ -207,3 +207,13 @@
   transform: translateX(200px);
   left: 0px;
 }
+
+.btn-menu-active .flex_footer_div1  {
+  transform: translateX(200px);
+  left: 0px;
+}
+
+.btn-menu-active .flex_footer_div2  {
+  transform: translateX(200px);
+  left: 0px;
+}
