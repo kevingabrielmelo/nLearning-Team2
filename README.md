@@ -11,7 +11,7 @@ está a disponibilização do planejamento das sprints do projeto.
 ![index](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/indexSprint3.gif)
 
 ## Chatbot
-![ChatBot](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/ChatBot.gif)
+![ChatBot](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/ChatBot.png)
 
 Feito por Daniel Vargas e José Alberto
 
