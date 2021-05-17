@@ -13,7 +13,7 @@ está a disponibilização do planejamento das sprints do projeto.
 ## Chatbot
 ![ChatBot](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/ChatBot.png)
 
-Feito por Daniel Vargas e José Alberto
+Feito por Kevin Melo
 
 ## Calendário
 ![Calendário](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/Calendario.png)
@@ -48,6 +48,8 @@ Feito por Luiz Miguel
 # Registro de Ações
 
 ![Log](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/log.jpeg)
+
+Feito por Kevin Melo
 
 # Burndown
 
