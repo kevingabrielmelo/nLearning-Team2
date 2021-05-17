@@ -43,6 +43,9 @@ Feito por Kevin Melo
 ## Provas por Google Forms
 ![CadProva](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/questaoProva.png)
 
+## Certificado de conclusão
+![Certificado](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/certificado.png)
+
 Feito por Luiz Miguel
 
 # Registro de Ações
