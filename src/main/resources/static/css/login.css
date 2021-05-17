@@ -67,7 +67,7 @@ span.senha {
 .padrao{
   background: #0B2E50;
   align-items: center;
-  height: 500px;
+  height: 76%;
 }
 
 .color_text{
@@ -75,7 +75,7 @@ span.senha {
 }
 
 .form_design{
-  margin-top: 5%;
+  margin-top: 10%;
   height: 400px;
   margin-left: 33%;
   width: 400px;
