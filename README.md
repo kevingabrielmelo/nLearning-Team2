@@ -44,7 +44,7 @@ Feito por Kevin Melo
 ![CadProva](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/questaoProva.png)
 
 ## Certificado de conclusão
-![Certificado](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/certificado.png)
+![Certificado](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/Certificado.png)
 
 Feito por Luiz Miguel
 
