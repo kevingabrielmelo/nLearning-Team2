@@ -109,7 +109,7 @@ h3.titulo {
 				<td><span th:text="${listAlunos.nomeAluno}"></span></td>
 				<td><span th:text="${listAlunos.nomeCurso}"></span></td>
 				<td><span th:text="${listAlunos.nomeTutor}"></span></td>
-				<td><a th:href="@{DetalhesAluno/{id_aluno}(id_aluno = ${listAlunos.idAluno})}"><button>Detalhes</button></a></td>
+				<td><a th:href="@{DetalhesAluno/{idAluno}(idAluno = ${listAlunos.idAluno})}"><button>Detalhes</button></a></td>
 			</tr>
 		</tbody>
 	</table>

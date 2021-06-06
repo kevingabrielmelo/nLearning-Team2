@@ -14,21 +14,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.nlearning.mapper.QuestaoMapper;
 import com.nlearning.models.Curso;
-import com.nlearning.models.CursoAluno;
 import com.nlearning.models.Tutor;
 import com.nlearning.models.Usuario;
 import com.nlearning.models.Aluno;
-import com.nlearning.models.Biblioteca;
-import com.nlearning.models.ListaAlunosModel;
-
+import com.nlearning.models.AvaliacaoCompetenciaAluno;
 import com.nlearning.repository.CursoRepository;
 import com.nlearning.repository.QuestaoRepository;
 import com.nlearning.repository.TutorRepository;
 import com.nlearning.repository.AlunoRepository;
-import com.nlearning.repository.CursoAlunoRepository;
+import com.nlearning.repository.AvaliacaoCompetenciaAlunoRepository;
 
 @Controller
 public class TutorController {
@@ -46,7 +42,7 @@ public class TutorController {
 	private AlunoRepository alunoRepository;
 	
 	@Autowired
-	private CursoAlunoRepository CARepository;
+	private AvaliacaoCompetenciaAlunoRepository ACARepository;
 
 
 	// Validação de login
@@ -154,42 +150,30 @@ public class TutorController {
 			return "redirect:menuTutor";
 		}
 	
-	//Visualizar lista de alunos (A SER FEITO)
-	@RequestMapping(value = "/ListaAluno")
-	public ModelAndView ListaAluno() {
-		ModelAndView mv = new ModelAndView("tutor/lista_alunos");
-     	return mv;
-	}
 
 	// Encontra os dados do aluno alvo para exibição
-		@RequestMapping(value = "/DetalhesAluno", method = RequestMethod.GET)
-		public ModelAndView dadosAluno(@RequestParam("idAluno") Long idAluno) {
-			Aluno aluno = alunoRepository.findByIdAluno(idAluno);
+		@RequestMapping(value = "/DetalhesAluno/{idAluno}", method = RequestMethod.GET)
+		public ModelAndView dadosAluno( Long idAluno) {
+			Aluno aluno = alunoRepository.findByIdAluno((long)2);
 			ModelAndView mv = new ModelAndView("tutor/detalhes_aluno");
 			mv.addObject("aluno", aluno);
 			return mv;
 		}
-	
-	
-	
-	
 		
+	/*	@RequestMapping(value = "/DetalhesAluno/{idAluno}", method = RequestMethod.POST)
+		public String competenciasAluno(@RequestParam("idAluno") AvaliacaoCompetenciaAluno aca, Long idAluno) {
+			aca.setIdAluno(idAluno);
+			ACARepository.save(aca);
+			aca.setIdTutor(Usuario.idUsu);
+			return "redirect:/menuTutor";
+		}	
+	*/
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-	
-	
-	
+		@RequestMapping(value = "/DetalhesAluno/{idAluno}", method = RequestMethod.POST)
+		public String competenciasAluno(AvaliacaoCompetenciaAluno aca, Long idAluno) {
+			aca.setIdAluno((long) 2);
+			aca.setIdTutor(Usuario.idUsu);
+			ACARepository.save(aca);
+			return "redirect:/menuTutor";
+		}
 }

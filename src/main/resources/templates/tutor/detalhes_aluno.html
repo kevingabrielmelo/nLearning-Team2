@@ -27,9 +27,19 @@
 <script type="text/javascript" src="/js/maskCPF.js"> </script>
 <!-- Máscara para o CPF -->
 
-<!--[if IE 6]>
-<link href="default_ie6.css" rel="stylesheet" type="text/css" />
-<![endif]-->
+<style type="text/css">
+textarea.box{
+	display: block;
+	margin-left: 24px;
+    margin-right: auto;
+    margin-bottom: 15px;
+	border-radius: 10px;
+	width:300px;
+	height:100px;
+	}
+</style>
+
+
 </head>
 <body class="body">
 	<div id="header">
@@ -70,31 +80,43 @@
 				<div class="row about-container">
 					<div class="col-lg-6">
 						<h3 class="titulos_forms ">Nome</h3>
-						<input class="input_forms" type='text' th:value="${aluno.nome}" th:placeholder="${aluno.nome}" name="nome" required/>
+						<input disabled class="input_forms" type='text' th:value="${aluno.nome}" th:placeholder="${aluno.nome}" name="nome" required/>
 
 						<h3 class="titulos_forms">CPF</h3>
-						<input class="input_forms" maxlength="14" type='text' id="cpf"
+						<input disabled class="input_forms" maxlength="14" type='text' id="cpf"
 							onkeypress="mascara(this, mcpf);" placeholder="CPF" name="cpf" required 
 							th:value="${aluno.cpf}" th:placeholder="${aluno.cpf}"/>
 							
 						<h3 class="titulos_forms ">Endereço</h3>
-						<input id="margem_bottom" class="input_forms" type='text'
+						<input disabled id="margem_bottom" class="input_forms" type='text'
 							placeholder="Endereço" name="endereco" required 
 							th:value="${aluno.endereco}" th:placeholder="${aluno.endereco}"/>
-
-					</div>
-
-					<div class="col-lg-6">
+							
+							
 						<h3 class="titulos_forms">Telefone</h3>
-						<input class="input_forms" maxlength="15" type='text'
+						<input  disabled class="input_forms" maxlength="15" type='text'
 							id="telefone" onkeypress="mascara(this, mtel);"
 							placeholder="Telefone" name="telefone" required 
 							th:value="${aluno.telefone}" th:placeholder="${aluno.telefone}"/>
 
 						<h3 class="titulos_forms">E-mail</h3>
-						<input class="input_forms" type='email'
+						<input disabled class="input_forms" type='email'
 							placeholder="you@example.com" name="email" required 
 							th:value="${aluno.email}" th:placeholder="${aluno.email}"/>
+							
+					</div>
+					<div class="col-lg-6">			
+						<h3 class="titulos_forms">Titulo da Avaliação</h3>
+						<input  class="input_forms" type='text'
+							placeholder="" name="titulo" required/>
+									
+							<h3 class="titulos_forms">Avaliação de comportamento</h3>
+						<textarea class="box" placeholder="Digite aqui sua avaliação referente a competência comportamentais do aluno" name="AvaliacaoCompt"> </textarea>
+							
+							<h3 class="titulos_forms">Feedback de habilidade técnica</h3>
+						<textarea  class="box" placeholder="Digite aqui sua avaliação referente a habilidade técnica do aluno" name="AvaliacaoTecnica"> </textarea>
+						
+						<input type="submit" style="border-radius: 10px;" value="Salvar" class="botao_salvar">
 					</div>
 				</div>
 
