@@ -17,11 +17,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.nlearning.mapper.QuestaoMapper;
 import com.nlearning.models.Curso;
+import com.nlearning.models.CursoAluno;
 import com.nlearning.models.Tutor;
 import com.nlearning.models.Usuario;
+import com.nlearning.models.Aluno;
+import com.nlearning.models.Biblioteca;
+import com.nlearning.models.ListaAlunosModel;
+
 import com.nlearning.repository.CursoRepository;
 import com.nlearning.repository.QuestaoRepository;
 import com.nlearning.repository.TutorRepository;
+import com.nlearning.repository.AlunoRepository;
+import com.nlearning.repository.CursoAlunoRepository;
 
 @Controller
 public class TutorController {
@@ -34,6 +41,13 @@ public class TutorController {
 
 	@Autowired
 	private QuestaoRepository questaoRepository;
+
+	@Autowired
+	private AlunoRepository alunoRepository;
+	
+	@Autowired
+	private CursoAlunoRepository CARepository;
+
 
 	// Validação de login
 	@RequestMapping(value = "/cadastrarTutor", method = RequestMethod.GET)
@@ -139,4 +153,43 @@ public class TutorController {
 			questaoRepository.save(QuestaoMapper.converter(pergunta, idCurso, video, forms));
 			return "redirect:menuTutor";
 		}
+	
+	//Visualizar lista de alunos (A SER FEITO)
+	@RequestMapping(value = "/ListaAluno")
+	public ModelAndView ListaAluno() {
+		ModelAndView mv = new ModelAndView("tutor/lista_alunos");
+     	return mv;
+	}
+
+	// Encontra os dados do aluno alvo para exibição
+		@RequestMapping(value = "/DetalhesAluno", method = RequestMethod.GET)
+		public ModelAndView dadosAluno(@RequestParam("idAluno") Long idAluno) {
+			Aluno aluno = alunoRepository.findByIdAluno(idAluno);
+			ModelAndView mv = new ModelAndView("tutor/detalhes_aluno");
+			mv.addObject("aluno", aluno);
+			return mv;
+		}
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	
+	
 }

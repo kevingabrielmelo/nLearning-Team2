@@ -14,14 +14,20 @@
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700"
 	rel="stylesheet" type="text/css">
+<link href="/css/menu_padrao.css" rel="stylesheet" type="text/css" />
 <link href="/css/cadastro.css" rel="stylesheet" type="text/css" />
 <link href="/css/cursos.css" rel="stylesheet" type="text/css" />
 <link href="/css/default.css" rel="stylesheet" type="text/css"
 	media="all" />
-<link href="/css/menu_padrao.css" rel="stylesheet" type="text/css" />
 <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="/bootstrap/css/font-awesome.min.css" rel="stylesheet">
 <link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
+<link href="/css/modal.css" rel="stylesheet" type="text/css" />
+<link href="/css/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/bootstrap/css/font-awesome.min.css" rel="stylesheet">
+<link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
+<link href="/bootstrap/css/lightbox.min.css" rel="stylesheet">
+<link href="/bootstrap/css/style.css" rel="stylesheet">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -38,8 +44,33 @@
 <script type="text/javascript" src="/js/carregarImagem.js"> </script>
 <!-- Carregar Imagem -->
 
+<script>
+
+function Mudarestado(el) {
+        var display = document.getElementById(el).style.display;
+        if(display == "none")
+            document.getElementById(el).style.display = 'block';
+        else
+            document.getElementById(el).style.display = 'none';
+    }
+    function divDefault(el1,el2) {
+        var display = document.getElementById(el).style.display;       
+            document.getElementById(el1).style.display = 'none';       
+            document.getElementById(el2).style.display = 'none';
+    }
+</script>
+<style>
+
+.centro
+{
+margin-left: auto;
+margin-right: auto; 
+}
+</style>
+
+
 </head>
-<body class="body">
+<body class="body" onload="divDefault('pdf','prova')">
 	<div id="header">
 		<div id="logo">
 			<h1>
@@ -70,30 +101,29 @@
 				<li><a href="/Login">Sair</a></li>
 			</ul>
 		</nav>
-		<table class="container">
-			<thead>
-				<tr>
-					<h3 class="titulo_cursos">Questões do curso:</h3>
-				</tr>
-			</thead>
-			<tbody th:each="questao : ${questao}">
-				<tr>
-					<td><iframe
+		<div class="row" style="padding-top:10px; padding-bottom:20px">
+					<div class="col-lg-6" style="padding-left:35%">
+					<button type="button" class="btn botao-cor-especial" onclick="Mudarestado('pdf')">Abrir/Fechar Livro</button>
+					</div>
+					<div class="col-lg-6" style="padding-right:35%">
+					<button type="button" class="btn botao-cor-especial" onclick="Mudarestado('prova')">Abrir/Fechar Prova</button>
+					</div>
+		</div>
+		<div class="centro" th:each="questao : ${questao}">			
+				<div id="pdf" style="display: none; padding-top:20px">	
+				    <h3 style="padding-left:45%;"> Livro/Questões do curso </h3>			
+					<div style="padding-left:15%;"><iframe
 							th:src="@{'data:application/pdf;base64,'+${questao.pdfStringQuestao}}"
-							width="1300" height="1100"> </iframe></td>
-
-					<td>
-				</tr>
-				<tr th:each="questao : ${questao}">
-
-					<td><iframe width="640" height="760"
-							th:src="@{''+${questao.forms}}"> </iframe></td>
-				</tr>
-			</tbody>
-		</table>
-
-
-
+							width="1300" height="1100"> </iframe>
+					</div>
+				</div > 
+				<div  class="centro" id="prova" style="display: none; padding-top:20px" th:each="questao : ${questao}">	
+			        <h3 style="padding-left: 45%;"> Prova do curso </h3>							
+					<div style="padding-left: 35%;"><iframe width="640" height="760"
+						th:src="@{''+${questao.forms}}"> </iframe></div>
+			     	</div>
+			</div>
+		
 	</div>
 
 	<script
