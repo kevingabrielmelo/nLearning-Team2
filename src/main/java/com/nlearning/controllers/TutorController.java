@@ -16,9 +16,12 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nlearning.mapper.QuestaoMapper;
+import com.nlearning.models.Aluno;
 import com.nlearning.models.Curso;
 import com.nlearning.models.Tutor;
 import com.nlearning.models.Usuario;
+import com.nlearning.repository.AlunoRepository;
+import com.nlearning.repository.CursoAlunoRepository;
 import com.nlearning.repository.CursoRepository;
 import com.nlearning.repository.QuestaoRepository;
 import com.nlearning.repository.TutorRepository;
@@ -34,6 +37,12 @@ public class TutorController {
 
 	@Autowired
 	private QuestaoRepository questaoRepository;
+
+	@Autowired
+	private AlunoRepository alunoRepository;
+	
+	@Autowired
+	private CursoAlunoRepository cursoAlunoRepository;
 
 	// Validação de login
 	@RequestMapping(value = "/cadastrarTutor", method = RequestMethod.GET)
@@ -133,10 +142,30 @@ public class TutorController {
 	}
 
 	// Cadastra os dados das questões no banco de dados
-	@RequestMapping(value = "/criarQuestaoCurso", method = RequestMethod.POST,  consumes = { "multipart/form-data" })
-	public String form(@RequestParam(value = "pergunta") MultipartFile pergunta, Long idCurso, @RequestParam(value = "video") MultipartFile video, String forms)
-		throws IOException {
-			questaoRepository.save(QuestaoMapper.converter(pergunta, idCurso, video, forms));
-			return "redirect:menuTutor";
-		}
+	@RequestMapping(value = "/criarQuestaoCurso", method = RequestMethod.POST, consumes = { "multipart/form-data" })
+	public String form(@RequestParam(value = "pergunta") MultipartFile pergunta, Long idCurso,
+			@RequestParam(value = "video") MultipartFile video, String forms) throws IOException {
+		questaoRepository.save(QuestaoMapper.converter(pergunta, idCurso, video, forms));
+		return "redirect:menuTutor";
+	}
+
+	// Encontra os dados do aluno alvo para exibição
+	@RequestMapping(value = "/ListaAluno", method = RequestMethod.GET)
+	public ModelAndView listaAlunosTutor() {
+		
+		Iterable<Curso> tutor = cursoRepository.findAllByIdTutor(Usuario.idUsu);
+		
+		ModelAndView mv = new ModelAndView("tutor/listar_aluno");
+		mv.addObject("aluno", tutor);
+		return mv;
+	}
+
+	// Encontra os dados do aluno alvo para exibição
+	@RequestMapping(value = "/DetalhesAluno", method = RequestMethod.GET)
+	public ModelAndView dadosAluno(@RequestParam("idAluno") Long idAluno) {
+		Aluno aluno = alunoRepository.findByIdAluno(idAluno);
+		ModelAndView mv = new ModelAndView("tutor/detalhes_aluno");
+		mv.addObject("aluno", aluno);
+		return mv;
+	}
 }

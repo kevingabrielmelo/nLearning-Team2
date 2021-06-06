@@ -172,7 +172,8 @@ public class AlunoController {
 
 	@RequestMapping(value = "/visualizarQuestoesCurso")
 	public ModelAndView telaVisualizarQuestoes(@RequestParam("idCurso") Long idCurso) {
-		Curso curso = cursoRepository.findByIdCurso(idCurso);
+		Curso curso = cursoRepository.findAllByIdCurso(idCurso);
+		Usuario.IdCurso = idCurso;
 		ModelAndView mv = new ModelAndView("/curso/curso_questoes");
 		String imagem = Base64.getEncoder().encodeToString(curso.getImagem());
 		curso.setImagem_string(imagem);
@@ -184,8 +185,8 @@ public class AlunoController {
 	}
 
 	@RequestMapping(value = "/acessoQuestoesCurso")
-	public ModelAndView VisualizarQuestoes(@RequestParam("idCurso") Long idCurso) {
-		Iterable<Questao> questao = questaoRepository.findByIdCurso(idCurso);
+	public ModelAndView VisualizarQuestoes() {
+		Iterable<Questao> questao = questaoRepository.findByIdCurso(Usuario.IdCurso);
 		ModelAndView mv = new ModelAndView("/curso/curso_questoes_totais");
 
 		List<Questao> questoesCurso = new ArrayList<>();

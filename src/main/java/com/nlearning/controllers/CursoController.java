@@ -16,9 +16,13 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nlearning.mapper.CursoMapper;
+import com.nlearning.models.Aluno;
 import com.nlearning.models.Curso;
+import com.nlearning.models.CursoAluno;
 import com.nlearning.models.CursoControllerModel;
 import com.nlearning.models.Usuario;
+import com.nlearning.repository.AlunoRepository;
+import com.nlearning.repository.CursoAlunoRepository;
 import com.nlearning.repository.CursoRepository;
 
 @Controller
@@ -26,6 +30,12 @@ public class CursoController {
 
 	@Autowired
 	private CursoRepository cursoRepository;
+	
+	@Autowired
+	private AlunoRepository alunoRepository;
+	
+	@Autowired
+	private CursoAlunoRepository cursoAlunoRepository;
 
 	// Rota para o get do form Tutor
 	@RequestMapping(value = "/cadastrarCurso", method = RequestMethod.GET)
@@ -105,7 +115,20 @@ public class CursoController {
 		curso.setImagem_string(imagem);
 		String pilula = Base64.getEncoder().encodeToString(curso.getPilula());
 		curso.setPilula_string(pilula);
+		
+		Iterable<CursoAluno> cursoAluno = cursoAlunoRepository.findByIdCurso(idCurso);
+		
+		List<Aluno> listIdAlunos = new ArrayList<>();
+
+		for (CursoAluno cursos : cursoAluno) {
+
+			long id_aluno = cursos.getIdAluno();
+			Aluno aluno = alunoRepository.findAllByIdAluno(id_aluno);
+			listIdAlunos.add(aluno);
+		}
+		
 		mv.addObject("curso", curso);
+		mv.addObject("aluno", listIdAlunos);
 		return mv;
 	}
 

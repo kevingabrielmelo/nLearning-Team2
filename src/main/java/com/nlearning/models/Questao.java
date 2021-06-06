@@ -22,6 +22,7 @@ public class Questao implements Serializable {
 	private long idCurso;
 	private String pdfStringQuestao;
 	private String videoString;
+	private String nome;
 	
 	public long getIdQuestao() {
 		return idQuestao;
@@ -66,4 +67,13 @@ public class Questao implements Serializable {
 	public void setForms(String forms) {
 		this.forms = forms;
 	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	
+	
 }
