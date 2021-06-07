@@ -24,6 +24,6 @@ Feito por Kevin Melo e Luiz Miguel
 
 # Burndown
 
-![burndown](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/burndown-sprint-4.jpeg)
+![burndown](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_4/readme-assets/burndown-sprint-4.jpeg)
 
 Feito por Kauan Souza
