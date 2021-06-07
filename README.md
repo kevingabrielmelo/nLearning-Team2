@@ -1,85 +1,61 @@
-## Time
+## Card da Sprint
+![card1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_4.png)
 
-Daniel Vargas Ribeiro (Dev Team)
-([Linkedin](https://www.linkedin.com/in/daniel-vargas-8b806a184/),
-[Github](https://github.com/DanVargaa))
-
-Edryan Matheus dos Santos Maciel (Dev Team)
-([Linkedin](https://www.linkedin.com/in/edryan-maciel-43538b198/),
-[Github](https://github.com/edryan25))
-
-José Alberto Martins de França  (Product Owner)
-([Linkedin](https://www.linkedin.com/mwlite/in/jos%C3%A9-alberto-martins-de-fran%C3%A7a-041506170),
-[Github](https://github.com/BettoFranca))
-
-Kevin Gabriel Alves de Melo (Dev Team)
-([Linkedin](https://www.linkedin.com/in/kevin-melo-1004/),
-[Github](https://github.com/kevingabrielmelo))
-
-Kauan do Espirito Santo Souza (Dev Team)
-([Linkedin](https://www.linkedin.com/in/kauan-souza-284bb71b1/),
-[Github](https://github.com/Kauiaiai))
-
-Luiz Miguel Macedo Andre (Scrum Master)
-([Linkedin](https://www.linkedin.com/in/luiz-miguel-475347193/),
-[Github](https://github.com/Salitop))
-
-Wagner Kenji Franco (Dev Team)
-([Linkedin](https://www.linkedin.com/in/wagner-kenji-franco-kamoei-6883791b2/),
-[Github](https://github.com/UmCaraDaNet))
+Feito por Luiz Miguel
 
 ## Planejamento das Sprints
 No <a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Trello </a>
 está a disponibilização do planejamento das sprints do projeto.
 
-## Índice
-* [O que é o NLearning](#projeto)
-* [Product Backlog](#lista-de-requisitos)
-* [Cronograma de Entregas](#entregas)
-* [Card das Sprints](#cards-das-sprints)
-* [Tecnologias](#tecnologias)
+## Nova Página Inicial
+![index](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/indexSprint3.gif)
 
-## Projeto
+## Chatbot
+![ChatBot](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/ChatBot.png)
 
-O projeto nLearning consiste em uma API desenvolvida usando Java spring-boot e um website desenvolvido utilizando HTML, CSS e JavaScript. Com essas ferramentas desenvolveremos um sistema, para educação a distância, visando organização, facilitando a comunicação entre alunos e tutores e uma auto-avaliação realizada pelo aluno, para que seja possível alcançar o máximo desempenho de ensino.
+Feito por Kevin Melo
 
-# Lista de Requisitos
-![requisitos1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/req1.PNG)
+## Calendário
+![Calendário](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/Calendario.png)
 
-Feito por Kevin Gabriel 
+Feito por Kevin Melo
 
-![requisitos2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/develop/readme-assets/req2.PNG)
+## Novo Menu para usuários
+![MenuNovo](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/MenuNovo.png)
 
-Feito por Kevin Gabriel 
+Feito por José Alberto
 
-## Manual de instalação
+# Telas referente a cursos
 
-![manual](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/manual.png)
+## Cadastro de questão (Opção de adicionar prova)
+![CadQuest](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/Cadastro%20de%20quest%C3%A3o.png)
 
-## Cards das Sprints
-  
-![card1](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_1.png) ![card_2](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_2.png)
+## Lista de aulas
+![ListAulas](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/ListaAulas.png)
 
-![card_3](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_3.png) ![card_4](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/Card_4.png)
+Feito por Kevin Melo e Edryan Mathes
 
-## Entregas
+## Pilula de conhecimento
+![Pilulas](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/pilulaConhecimento.png)
 
+Feito por Kevin Melo
 
-| Data | Links |
-| ------ | ------ |
-|    28/03/2021    |[Sprint 1](https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_1)|
-|    18/04/2021	   |[Sprint 2](https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_2) |
-|    16/05/2021    |[Sprint 3](https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_3) |
-|    05/06/2021    |[Sprint 4](https://github.com/kevingabrielmelo/nLearning-Team2/tree/sprint_4) |
+## Provas por Google Forms
+![CadProva](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/questaoProva.png)
 
-## Tecnologias
+## Certificado de conclusão
+![Certificado](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/Certificado.png)
 
-Spring Tool Suite 4 (STS)
+Feito por Luiz Miguel
 
-Java JDK 11
+# Registro de Ações
 
-MySQL
+![Log](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/log.jpeg)
 
-Vscode
+Feito por Kevin Melo
 
-Bootstrap
+# Burndown
+
+![burndown](https://github.com/kevingabrielmelo/nLearning-Team2/blob/master/readme-assets/burndown-sprint-4.jpeg)
+
+Feito por Kauan Souza
