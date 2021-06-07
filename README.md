@@ -7,52 +7,20 @@ Feito por Luiz Miguel
 No <a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Trello </a>
 está a disponibilização do planejamento das sprints do projeto.
 
-## Nova Página Inicial
+## Listar alunos para tutor
 ![index](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/indexSprint3.gif)
 
-## Chatbot
+Feito por Kevin Melo, Luiz Miguel e Edryan Matheus
+
+## Avaliação de habilidades técnicas com feedback e avaliação de competências comportamentais
 ![ChatBot](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/ChatBot.png)
 
-Feito por Kevin Melo
+Feito por Luiz Miguel e Edryan Matheus
 
-## Calendário
-![Calendário](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/Calendario.png)
-
-Feito por Kevin Melo
-
-## Novo Menu para usuários
+## Exibição de prova e livros para aluno
 ![MenuNovo](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/MenuNovo.png)
 
-Feito por José Alberto
-
-# Telas referente a cursos
-
-## Cadastro de questão (Opção de adicionar prova)
-![CadQuest](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/Cadastro%20de%20quest%C3%A3o.png)
-
-## Lista de aulas
-![ListAulas](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/ListaAulas.png)
-
-Feito por Kevin Melo e Edryan Mathes
-
-## Pilula de conhecimento
-![Pilulas](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/pilulaConhecimento.png)
-
-Feito por Kevin Melo
-
-## Provas por Google Forms
-![CadProva](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/questaoProva.png)
-
-## Certificado de conclusão
-![Certificado](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/Certificado.png)
-
-Feito por Luiz Miguel
-
-# Registro de Ações
-
-![Log](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_3/readme-assets/sprint-3/log.jpeg)
-
-Feito por Kevin Melo
+Feito por Kevin Melo e Luiz Miguel
 
 # Burndown
 
