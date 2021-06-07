@@ -108,7 +108,7 @@ h3.titulo {
 		<tbody>
 			<tr th:each="candidato : ${candidato}">
 			
-				<td><span th:text="${candidato.nome}"></span></a></td>
+				<td><span th:text="${candidato.nome}"></span></td>
 				<td><span th:text="${candidato.telefone}"></span></td>
 				<td><span th:text="${candidato.email}"></span></td>
 				<td><a th:href="@{curriculo/{id_candidato}(id_candidato = ${candidato.idCandidato})}"><button>Visualizar</button></a></td>

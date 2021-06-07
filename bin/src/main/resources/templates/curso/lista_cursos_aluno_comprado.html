@@ -79,7 +79,7 @@ h3.titulo {
 				<a href="/">n<span>Learning</span></a>
 			</h1>
 			<span class="btn-menu"> <span></span> <span></span> <span></span>
-		</span>
+			</span>
 		</div>
 		<div id="menu">
 			<ul>
@@ -91,67 +91,43 @@ h3.titulo {
 		</div>
 	</div>
 	<div id="featured-wrapper">
-	<nav class="menu-mobile">
+		<nav class="menu-mobile">
 			<ul>
 				<li><a href="alterarDadosAluno">Perfil</a></li>
 				<li><a href="cursosnLearning">Cursos</a></li>
 				<li><a href="seusCursos">Seus Cursos</a></li>
 				<li><a href="bibliotecaAluno">Biblioteca</a></li>
 				<li><a href="">Trilha de aprendizado</a></li>
-				<li><a href="">Calendário</a></li>
+				<li><a href="menuAluno">Calendário</a></li>
 				<li><a href="">Ajuda</a></li>
 				<li><a href="/Login">Sair</a></li>
 			</ul>
 		</nav>
-<!-- 		<div id="featured" class="container_painel"> -->
-<!-- 			<div class=""> -->
-<!-- 				<div class="row about-container"> -->
-<!-- 					<div class="col-lg-12"> -->
-<!-- 						<a href="alterarDadosAluno" class="imagem_titulo"> <img -->
-<!-- 							class="imagem1" src="/imagens/perfil_icone.svg"> Perfil -->
-<!-- 						</a> <a href="cursosnLearning" class="imagem_titulo"> <img -->
-<!-- 							class="imagem1" src="/imagens/seus_cursos.svg"> Cursos -->
-<!-- 						</a> <a href="seusCursos" class="imagem_titulo"> <img -->
-<!-- 							class="imagem1" src="/imagens/seus_cursos.svg"> Seus cursos -->
-<!-- 						</a> <a href="" class="imagem_titulo"> <img class="imagem1" -->
-<!-- 							src="/imagens/pontotrilhamenu.svg"> Trilha de aprendizado -->
-<!-- 						</a> <a href="" class="imagem_titulo"> <img class="imagem1" -->
-<!-- 							src="/imagens/calendario.svg"> Calendário -->
-<!-- 						</a> <a href="" class="imagem_titulo"> <img class="imagem1" -->
-<!-- 							src="/imagens/info.svg">Ajuda -->
-<!-- 						</a> -->
-<!-- 					</div> -->
+		<section class="container" id="fundo_cursos">
+			<h3 class="titulo_cursos">Seus cursos</h3>
+			<div th:each="curso : ${curso}" class="">
 
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<section class="container" id="fundo_cursos">
-		<h3 class="titulo_cursos">Seus cursos</h3>
-		<div th:each="curso : ${curso}" class="">
-
-			<article
-				class="alinhamento card borda-cor-especial card-largura p-3 m-3 col-md-3">
-				<img class="imagem_tamanho"
-					th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
-				<div class="card-body ">
-					<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
-					<p class="card-text" th:text="${curso.descricao}"></p>
-					<p class="card-text" th:inline="text">R$
-						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</p>
-					<label>Tutor: <span class="card-text"
-						th:text="${curso.tutor}"></span></label>
-					<p>
-						<a
-							th:href="@{/visualizarQuestoesCurso(idCurso = ${curso.idCurso})}"
-							class="btn botao-cor-especial">Veja o curso</a>
-					</p>
-				</div>
-			</article>
-		</div>
-	</section>
+				<article
+					class="alinhamento card borda-cor-especial card-largura p-3 m-3 col-md-3">
+					<img class="imagem_tamanho"
+						th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
+					<div class="card-body ">
+						<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
+						<p class="card-text" th:text="${curso.descricao}"></p>
+						<label>Tutor: <span class="card-text"
+							th:text="${curso.tutor}"></span></label>
+						<p>
+							<a
+								th:href="@{/visualizarQuestoesCurso(idCurso = ${curso.idCurso})}"
+								class="btn botao-cor-especial">Veja o curso</a>
+						</p>
+					</div>
+				</article>
+			</div>
+		</section>
 	</div>
 
-	
+
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
@@ -168,27 +144,27 @@ h3.titulo {
 </body>
 <footer>
 	<div id="footer_main">
-			<div class="flex_footer">
-				<div class="flex_footer_div1">
-						<h1 class="h1_footer">Empresa</h1>
-						<a class="a_footer" href=""  title="">⸰ Sobre nós</a>
-						<a class="a_footer" href=""  title="">⸰ Legal</a>
-						<a class="a_footer" href=""  title="">⸰ Negócios</a>
-				</div>
-
-				<div class="flex_footer_div2">
-					<h1 class="h1_footer">Ajuda</h1>
-					<a class="a_footer" href="" title="">⸰ Central de ajuda</a>
-					<a class="a_footer" href="" title="">⸰ Cursos</a>
-					<a class="a_footer" href="" title="">⸰ Contato</a>
-				</div>
-
-				<div>
-					<h1 class="h1_footer1">Midias sociais</h1>
-					<img class="img_midia1 " src="/imagens/midias.svg">
-				</div>
+		<div class="flex_footer">
+			<div class="flex_footer_div1">
+				<h1 class="h1_footer">Empresa</h1>
+				<a class="a_footer" href="" title="">⸰ Sobre nós</a> <a
+					class="a_footer" href="" title="">⸰ Legal</a> <a class="a_footer"
+					href="" title="">⸰ Negócios</a>
 			</div>
-			
+
+			<div class="flex_footer_div2">
+				<h1 class="h1_footer">Ajuda</h1>
+				<a class="a_footer" href="" title="">⸰ Central de ajuda</a> <a
+					class="a_footer" href="" title="">⸰ Cursos</a> <a class="a_footer"
+					href="" title="">⸰ Contato</a>
+			</div>
+
+			<div>
+				<h1 class="h1_footer1">Midias sociais</h1>
+				<img class="img_midia1 " src="/imagens/midias.svg">
+			</div>
+		</div>
+
 	</div>
 </footer>
 </html>

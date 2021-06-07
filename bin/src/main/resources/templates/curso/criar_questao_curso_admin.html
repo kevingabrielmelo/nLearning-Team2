@@ -18,7 +18,7 @@
 <link href="/css/cursos.css" rel="stylesheet" type="text/css" />
 <link href="/css/default.css" rel="stylesheet" type="text/css"
 	media="all" />
-	<link href="/css/menu_padrao.css" rel="stylesheet" type="text/css" />
+<link href="/css/menu_padrao.css" rel="stylesheet" type="text/css" />
 <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="/bootstrap/css/font-awesome.min.css" rel="stylesheet">
 <link href="/bootstrap/css/ionicons.min.css" rel="stylesheet">
@@ -46,7 +46,7 @@
 				<a href="/">n<span>Learning</span></a>
 			</h1>
 			<span class="btn-menu"> <span></span> <span></span> <span></span>
-		</span>
+			</span>
 		</div>
 		<div id="menu">
 			<ul>
@@ -58,7 +58,7 @@
 		</div>
 	</div>
 	<div id="featured-wrapper">
-	<nav class="menu-mobile">
+		<nav class="menu-mobile">
 			<ul>
 				<li><a href="cadastrarAluno">Cadastro de Alunos</a></li>
 				<li><a href="cadastrarTutor">Cadastro de Tutores</a></li>
@@ -72,42 +72,52 @@
 				<li><a href="/Login">Sair</a></li>
 			</ul>
 		</nav>
-	<section class="container" id="fundo_cursos">
-		<h3 class="card_title">Cadastrar questão para esse curso:</h3>
-		<div th:each="curso : ${curso}" class="row justify-content-center">
+		<section class="container" id="fundo_cursos">
+			<h3 class="card_title">Cadastrar questão para esse curso:</h3>
+			<div th:each="curso : ${curso}" class="row justify-content-center">
 
-			<article
-				class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
-				<img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
-				<div class="card-body ">
-					<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
-					<p class="card-text" th:text="${curso.descricao}"></p>
-					<p class="card-text" th:inline="text">R$
-						[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2, 'POINT')}]]</p>
-					<label>Tutor: <span class="card-text"
-						th:text="${curso.tutor}"></span></label>
-				</div>
-			</article>
-		</div>
-	</section>
-
-	<div class="main_cadastro">
-		<h1 class="titulo_cadastro">Cadastro de Questão</h1>
-		<form method='post' enctype="multipart/form-data">
-			<div class="row about-container">
-				<div class="col-lg-6">
-					<h3 class="titulos_forms ">Envio de questões por PDF:</h3>
-					<input type="file" name="pergunta" id="pergunta" required
-						accept="application/pdf">
-					<h3 class="titulos_forms ">Envio de vídeos (MP4):</h3>
-					<input type="file" name="video" id="video" required
-					accept="video/mp4"> <input
-						type="submit" value="Salvar" class="botao_salvar">
-				</div>
+				<article
+					class="card borda-cor-especial card-largura p-0 m-4 col-md-3">
+					<img th:src="@{'data:image/jpg;base64,'+${curso.imagem_string}}">
+					<div class="card-body ">
+						<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
+						<p class="card-text" th:text="${curso.descricao}"></p>
+						<label>Tutor: <span class="card-text"
+							th:text="${curso.tutor}"></span></label>
+					</div>
+				</article>
 			</div>
-		</form>
+		</section>
+
+		<div class="main_cadastro">
+			<h1 class="titulo_alteracao1">Cadastro de Questão</h1>
+			<form method='post' enctype="multipart/form-data">
+				<div class="row about-container">
+					<div class="col-lg-6">
+						<h3 class="titulos_forms ">Envio de questões por PDF:</h3>
+						<input class="espac_esquerda" type="file" name="pergunta"
+							id="pergunta" accept="application/pdf">
+						<h3 class="titulos_forms ">Envio de vídeos (MP4):</h3>
+						<input type="file" name="video" id="video" class="espac_esquerda"
+							accept="video/mp4">
+					</div>
+					<div class="col-lg-6">
+						<h3 class="titulos_forms ">Cadastrar Questão Google Forms:</h3>
+						<input type="text" name="forms" id="forms" class="espac_esquerda"
+							size="50" placeholder="Insira o link do Google Forms">
+							<h3 class="titulos_forms ">Nomeie o material:</h3>
+							<input type="text" name="nome" id="nome" class="espac_esquerda"
+								size="50" placeholder="Ex: Estrutura celular">
+						<div>
+							<input type="submit" value="Salvar" class="botao_salvar">
+						</div>
+
+					</div>
+
+				</div>
+			</form>
+		</div>
 	</div>
-</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
@@ -124,27 +134,27 @@
 </body>
 <footer>
 	<div id="footer_main">
-			<div class="flex_footer">
-				<div class="flex_footer_div1">
-						<h1 class="h1_footer">Empresa</h1>
-						<a class="a_footer" href=""  title="">⸰ Sobre nós</a>
-						<a class="a_footer" href=""  title="">⸰ Legal</a>
-						<a class="a_footer" href=""  title="">⸰ Negócios</a>
-				</div>
-
-				<div class="flex_footer_div2">
-					<h1 class="h1_footer">Ajuda</h1>
-					<a class="a_footer" href="" title="">⸰ Central de ajuda</a>
-					<a class="a_footer" href="" title="">⸰ Cursos</a>
-					<a class="a_footer" href="" title="">⸰ Contato</a>
-				</div>
-				
-				<div>
-					<h1 class="h1_footer1">Midias sociais</h1>
-					<img class="img_midia1 " src="/imagens/midias.svg">
-				</div>
+		<div class="flex_footer">
+			<div class="flex_footer_div1">
+				<h1 class="h1_footer">Empresa</h1>
+				<a class="a_footer" href="" title="">⸰ Sobre nós</a> <a
+					class="a_footer" href="" title="">⸰ Legal</a> <a class="a_footer"
+					href="" title="">⸰ Negócios</a>
 			</div>
-			
+
+			<div class="flex_footer_div2">
+				<h1 class="h1_footer">Ajuda</h1>
+				<a class="a_footer" href="" title="">⸰ Central de ajuda</a> <a
+					class="a_footer" href="" title="">⸰ Cursos</a> <a class="a_footer"
+					href="" title="">⸰ Contato</a>
+			</div>
+
+			<div>
+				<h1 class="h1_footer1">Midias sociais</h1>
+				<img class="img_midia1 " src="/imagens/midias.svg">
+			</div>
+		</div>
+
 	</div>
 </footer>
 </html>

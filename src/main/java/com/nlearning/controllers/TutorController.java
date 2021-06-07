@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,7 +25,7 @@ import com.nlearning.repository.CursoRepository;
 import com.nlearning.repository.QuestaoRepository;
 import com.nlearning.repository.TutorRepository;
 import com.nlearning.repository.AlunoRepository;
-import com.nlearning.repository.AvaliacaoCompetenciaAlunoRepository;
+import com.nlearning.repository.AvaliacaoCompetenciaRepository;
 
 @Controller
 public class TutorController {
@@ -42,8 +43,9 @@ public class TutorController {
 	private AlunoRepository alunoRepository;
 	
 	@Autowired
-	private AvaliacaoCompetenciaAlunoRepository ACARepository;
-
+	private AvaliacaoCompetenciaRepository ACARepository;
+	
+	Long idAlunoLocal;
 
 	// Validação de login
 	@RequestMapping(value = "/cadastrarTutor", method = RequestMethod.GET)
@@ -152,28 +154,20 @@ public class TutorController {
 	
 
 	// Encontra os dados do aluno alvo para exibição
-		@RequestMapping(value = "/DetalhesAluno/{idAluno}", method = RequestMethod.GET)
-		public ModelAndView dadosAluno( Long idAluno) {
-			Aluno aluno = alunoRepository.findByIdAluno((long)2);
+		@RequestMapping(value = "/DetalhesAluno/{id_aluno}", method = RequestMethod.GET)
+		public ModelAndView dadosAluno(@PathVariable("id_aluno") Long idAluno) {
+			idAlunoLocal = idAluno;
+			Aluno aluno = alunoRepository.findByIdAluno(idAluno);
 			ModelAndView mv = new ModelAndView("tutor/detalhes_aluno");
 			mv.addObject("aluno", aluno);
 			return mv;
 		}
 		
-	/*	@RequestMapping(value = "/DetalhesAluno/{idAluno}", method = RequestMethod.POST)
-		public String competenciasAluno(@RequestParam("idAluno") AvaliacaoCompetenciaAluno aca, Long idAluno) {
-			aca.setIdAluno(idAluno);
-			ACARepository.save(aca);
-			aca.setIdTutor(Usuario.idUsu);
-			return "redirect:/menuTutor";
-		}	
-	*/
-		
 		@RequestMapping(value = "/DetalhesAluno/{idAluno}", method = RequestMethod.POST)
-		public String competenciasAluno(AvaliacaoCompetenciaAluno aca, Long idAluno) {
-			aca.setIdAluno((long) 2);
+		public String competenciasAluno( AvaliacaoCompetenciaAluno aca) {
+			aca.setIdAluno(idAlunoLocal);
 			aca.setIdTutor(Usuario.idUsu);
 			ACARepository.save(aca);
 			return "redirect:/menuTutor";
-		}
+		}		
 }

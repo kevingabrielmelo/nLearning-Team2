@@ -95,34 +95,11 @@ h3.titulo {
 				<li><a href="seusCursos">Seus Cursos</a></li>
 				<li><a href="bibliotecaAluno">Biblioteca</a></li>
 				<li><a href="">Trilha de aprendizado</a></li>
-				<li><a href="">Calendário</a></li>
+				<li><a href="menuAluno">Calendário</a></li>
 				<li><a href="">Ajuda</a></li>
 				<li><a href="/Login">Sair</a></li>
 			</ul>
 		</nav>
-<!-- 			<div id="featured" class="container_painel"> -->
-<!-- 				<div class=""> -->
-<!-- 					<div class="row about-container"> -->
-<!-- 						<div class="col-lg-12"> -->
-<!-- 							<a href="alterarDadosAluno" class="imagem_titulo"> <img -->
-<!-- 								class="imagem1" src="/imagens/perfil_icone.svg"> Perfil -->
-<!-- 							</a> <a href="cursosnLearning" class="imagem_titulo"> <img -->
-<!-- 								class="imagem1" src="/imagens/seus_cursos.svg"> Cursos -->
-<!-- 							</a> <a href="seusCursos" class="imagem_titulo"> <img -->
-<!-- 								class="imagem1" src="/imagens/seus_cursos.svg"> Seus -->
-<!-- 								cursos -->
-<!-- 							</a> <a href="" class="imagem_titulo"> <img class="imagem1" -->
-<!-- 								src="/imagens/pontotrilhamenu.svg"> Trilha de aprendizado -->
-<!-- 							</a> <a href="" class="imagem_titulo"> <img class="imagem1" -->
-<!-- 								src="/imagens/calendario.svg"> Calendário -->
-<!-- 							</a> <a href="" class="imagem_titulo"> <img class="imagem1" -->
-<!-- 								src="/imagens/info.svg">Ajuda -->
-<!-- 							</a> -->
-<!-- 						</div> -->
-
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
 <section class="container" id="fundo_cursos">
 			<h3 class="card_title">Lista de cursos</h3>
 			<div th:each="curso : ${curso}" class="">
@@ -133,9 +110,6 @@ h3.titulo {
 					<div class="card-body ">
 						<h5 class="card-title" th:text="${curso.nomeCurso}"></h5>
 						<p class="card-text" th:text="${curso.descricao}"></p>
-						<p class="card-text" th:inline="text">R$
-							[[${#numbers.formatDecimal(curso.valor, 1, 'COMMA', 2,
-							'POINT')}]]</p>
 							<label>Tutor: <span class="card-text" th:text="${curso.tutor}"></span></label>
 					<p> <button th:href="@{/comprarCurso(idCurso = ${curso.idCurso})}"
 						class="btn botao-cor-especial">Comprar curso!</button></p>

@@ -240,3 +240,15 @@
   
 }
 
+.btn_venha_aprender {
+margin-top: 1rem;
+    margin-left: 43%;
+    height: 40px;
+    width: 150px;
+    background: black;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}

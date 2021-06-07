@@ -27,3 +27,16 @@
     font-weight: 400;
 }
 
+.btn_ajuda{
+    margin-top: 1rem;
+    margin-left: 43%;
+    height: 55px;
+    width: 150px;
+    background: #0080c0;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    margin-bottom: 3%;
+}
