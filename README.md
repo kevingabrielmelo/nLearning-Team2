@@ -8,7 +8,7 @@ No <a href='https://trello.com/b/EVkEayjU/api-3-semestre'> Trello </a>
 está a disponibilização do planejamento das sprints do projeto.
 
 ## Listar alunos para tutor
-![index](htthttps://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_4/readme-assets/sprint_4/ListaAlunos.png)
+![index](https://github.com/kevingabrielmelo/nLearning-Team2/blob/sprint_4/readme-assets/sprint_4/ListaAlunos.png)
 
 Feito por Kevin Melo, Luiz Miguel e Edryan Matheus
 
